@@ -12,6 +12,7 @@
 		78A0FE8621152AAE0028A6D9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 78A0FE8421152AAE0028A6D9 /* Main.storyboard */; };
 		78A0FE8821152AB00028A6D9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 78A0FE8721152AB00028A6D9 /* Assets.xcassets */; };
 		78A0FE8B21152AB00028A6D9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 78A0FE8921152AB00028A6D9 /* LaunchScreen.storyboard */; };
+		78A0FE95211532070028A6D9 /* BackdropView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78A0FE94211532070028A6D9 /* BackdropView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		78A0FE8721152AB00028A6D9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		78A0FE8A21152AB00028A6D9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		78A0FE8C21152AB00028A6D9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		78A0FE94211532070028A6D9 /* BackdropView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackdropView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +59,7 @@
 				78A0FE8021152AAE0028A6D9 /* AppDelegate.swift */,
 				78A0FE8221152AAE0028A6D9 /* ViewController.swift */,
 				78A0FE8421152AAE0028A6D9 /* Main.storyboard */,
+				78A0FE94211532070028A6D9 /* BackdropView.swift */,
 				78A0FE8721152AB00028A6D9 /* Assets.xcassets */,
 				78A0FE8921152AB00028A6D9 /* LaunchScreen.storyboard */,
 				78A0FE8C21152AB00028A6D9 /* Info.plist */,
@@ -136,6 +139,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				78A0FE8321152AAE0028A6D9 /* ViewController.swift in Sources */,
+				78A0FE95211532070028A6D9 /* BackdropView.swift in Sources */,
 				78A0FE8121152AAE0028A6D9 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

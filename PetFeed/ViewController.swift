@@ -10,16 +10,22 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var embeddedView: UIView!
+    @IBOutlet var gestureRecognizer: UIPanGestureRecognizer!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    @IBAction func viewWasDragged(_ sender: UIPanGestureRecognizer) {
+        let translation = sender.translation(in: embeddedView)
+        
+        sender.view!.center = CGPoint(x: sender.view!.center.x , y: sender.view!.center.y + translation.y)
+        
+        sender.setTranslation(CGPoint.zero, in: self.view)
     }
-
-
+    
 }
 
