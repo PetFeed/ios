@@ -7,8 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7802DAFC2117F5D40079C311 /* NanumSquareRoundOTFB.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7802DAF82117F5D30079C311 /* NanumSquareRoundOTFB.otf */; };
+		7802DAFD2117F5D40079C311 /* NanumSquareRoundOTFR.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7802DAF92117F5D40079C311 /* NanumSquareRoundOTFR.otf */; };
+		7802DAFE2117F5D40079C311 /* NanumSquareRoundOTFL.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7802DAFA2117F5D40079C311 /* NanumSquareRoundOTFL.otf */; };
+		7802DAFF2117F5D40079C311 /* NanumSquareRoundOTFEB.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7802DAFB2117F5D40079C311 /* NanumSquareRoundOTFEB.otf */; };
+		7802DB012117F7480079C311 /* RankingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7802DB002117F7480079C311 /* RankingCell.swift */; };
+		7802DB072117FFFF0079C311 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7802DB062117FFFF0079C311 /* String.swift */; };
 		78151DA72116D1DC007EE2AA /* BackDropVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78151DA62116D1DC007EE2AA /* BackDropVC.swift */; };
-		78151DA92116D206007EE2AA /* TestVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78151DA82116D206007EE2AA /* TestVC.swift */; };
+		78151DA92116D206007EE2AA /* SearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78151DA82116D206007EE2AA /* SearchVC.swift */; };
+		7892222D2118032F00498839 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7892222C2118032F00498839 /* UIView.swift */; };
+		7892222F211803AE00498839 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7892222E211803AE00498839 /* Colors.swift */; };
 		7892BBDD2116C177005213B3 /* direction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7892BBDC2116C177005213B3 /* direction.swift */; };
 		78A0FE8121152AAE0028A6D9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78A0FE8021152AAE0028A6D9 /* AppDelegate.swift */; };
 		78A0FE8621152AAE0028A6D9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 78A0FE8421152AAE0028A6D9 /* Main.storyboard */; };
@@ -18,8 +26,16 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7802DAF82117F5D30079C311 /* NanumSquareRoundOTFB.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumSquareRoundOTFB.otf; sourceTree = "<group>"; };
+		7802DAF92117F5D40079C311 /* NanumSquareRoundOTFR.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumSquareRoundOTFR.otf; sourceTree = "<group>"; };
+		7802DAFA2117F5D40079C311 /* NanumSquareRoundOTFL.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumSquareRoundOTFL.otf; sourceTree = "<group>"; };
+		7802DAFB2117F5D40079C311 /* NanumSquareRoundOTFEB.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumSquareRoundOTFEB.otf; sourceTree = "<group>"; };
+		7802DB002117F7480079C311 /* RankingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingCell.swift; sourceTree = "<group>"; };
+		7802DB062117FFFF0079C311 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		78151DA62116D1DC007EE2AA /* BackDropVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackDropVC.swift; sourceTree = "<group>"; };
-		78151DA82116D206007EE2AA /* TestVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestVC.swift; sourceTree = "<group>"; };
+		78151DA82116D206007EE2AA /* SearchVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchVC.swift; sourceTree = "<group>"; };
+		7892222C2118032F00498839 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
+		7892222E211803AE00498839 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		7892BBDC2116C177005213B3 /* direction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = direction.swift; sourceTree = "<group>"; };
 		78A0FE7D21152AAE0028A6D9 /* PetFeed.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PetFeed.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		78A0FE8021152AAE0028A6D9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -41,6 +57,54 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7802DAF72117F5C90079C311 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				7802DAF82117F5D30079C311 /* NanumSquareRoundOTFB.otf */,
+				7802DAFB2117F5D40079C311 /* NanumSquareRoundOTFEB.otf */,
+				7802DAFA2117F5D40079C311 /* NanumSquareRoundOTFL.otf */,
+				7802DAF92117F5D40079C311 /* NanumSquareRoundOTFR.otf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		7802DB022117FE630079C311 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				7802DB002117F7480079C311 /* RankingCell.swift */,
+				78151DA82116D206007EE2AA /* SearchVC.swift */,
+				78A0FE94211532070028A6D9 /* BackdropView.swift */,
+				78151DA62116D1DC007EE2AA /* BackDropVC.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		7802DB032117FE730079C311 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				7892BBDC2116C177005213B3 /* direction.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		7802DB042117FE970079C311 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				78A0FE8421152AAE0028A6D9 /* Main.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		7802DB052117FFEC0079C311 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				7802DB062117FFFF0079C311 /* String.swift */,
+				7892222C2118032F00498839 /* UIView.swift */,
+				7892222E211803AE00498839 /* Colors.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		78A0FE7421152AAE0028A6D9 = {
 			isa = PBXGroup;
 			children = (
@@ -61,14 +125,14 @@
 			isa = PBXGroup;
 			children = (
 				78A0FE8021152AAE0028A6D9 /* AppDelegate.swift */,
-				78A0FE8421152AAE0028A6D9 /* Main.storyboard */,
-				78151DA82116D206007EE2AA /* TestVC.swift */,
-				78151DA62116D1DC007EE2AA /* BackDropVC.swift */,
-				78A0FE94211532070028A6D9 /* BackdropView.swift */,
-				7892BBDC2116C177005213B3 /* direction.swift */,
+				7802DB042117FE970079C311 /* Views */,
+				7802DB022117FE630079C311 /* ViewControllers */,
+				7802DB032117FE730079C311 /* Models */,
+				7802DB052117FFEC0079C311 /* Extensions */,
 				78A0FE8721152AB00028A6D9 /* Assets.xcassets */,
 				78A0FE8921152AB00028A6D9 /* LaunchScreen.storyboard */,
 				78A0FE8C21152AB00028A6D9 /* Info.plist */,
+				7802DAF72117F5C90079C311 /* Fonts */,
 			);
 			path = PetFeed;
 			sourceTree = "<group>";
@@ -131,8 +195,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7802DAFF2117F5D40079C311 /* NanumSquareRoundOTFEB.otf in Resources */,
+				7802DAFE2117F5D40079C311 /* NanumSquareRoundOTFL.otf in Resources */,
 				78A0FE8B21152AB00028A6D9 /* LaunchScreen.storyboard in Resources */,
+				7802DAFD2117F5D40079C311 /* NanumSquareRoundOTFR.otf in Resources */,
 				78A0FE8821152AB00028A6D9 /* Assets.xcassets in Resources */,
+				7802DAFC2117F5D40079C311 /* NanumSquareRoundOTFB.otf in Resources */,
 				78A0FE8621152AAE0028A6D9 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -144,11 +212,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				78151DA92116D206007EE2AA /* TestVC.swift in Sources */,
+				7892222D2118032F00498839 /* UIView.swift in Sources */,
+				7892222F211803AE00498839 /* Colors.swift in Sources */,
+				78151DA92116D206007EE2AA /* SearchVC.swift in Sources */,
 				78A0FE95211532070028A6D9 /* BackdropView.swift in Sources */,
 				78A0FE8121152AAE0028A6D9 /* AppDelegate.swift in Sources */,
 				78151DA72116D1DC007EE2AA /* BackDropVC.swift in Sources */,
+				7802DB072117FFFF0079C311 /* String.swift in Sources */,
 				7892BBDD2116C177005213B3 /* direction.swift in Sources */,
+				7802DB012117F7480079C311 /* RankingCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
