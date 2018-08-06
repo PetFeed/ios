@@ -11,7 +11,22 @@ import Foundation
 
 class BackdropView: UIView {
     
+    //MARK: 상수
+    let opacity_min:Float = 0.4
+    let opacity_max:Float = 1
     
+    let offset_top_y:CGFloat = 30
+    var offset_bottom_y:CGFloat {
+        get {
+            return (self.parentViewController?.tabBarController?.tabBar.frame.height) ?? 100
+        }
+    }
+    
+    //바텀바 드래그해서 올릴때 감도(?) 조절
+    let bottomBar_scroll_height:CGFloat = 80
+    let bottomBar_min_size:CGFloat = 0.85
+    
+    //MARK: 변수
     var currentDir:direction = direction.up
     var parentViewController:BackDropVC?
     
@@ -21,26 +36,30 @@ class BackdropView: UIView {
         }
     }
     
-    var percent:Float = 0.3 {
+    //얼마나 움직였는지
+    var moved:CGFloat = 0.0
+    
+    //얼마나 움직였는지를 퍼센트로 (0.0 ~ 1.0)
+    var percent:Float = 0.0 {
         didSet {
             //SetOpacity
-            if percent < 0.3 {
-                percent = 0.3
+            if percent < opacity_min {
+                percent = opacity_min
             }
             
             self.layer.opacity = percent
             
             //parentViewController?.updateFrame(percent)
-            let frame = self.scrollBar.frame
-            let width:CGFloat = self.originalFrame.width * 0.8 + (self.originalFrame.width * CGFloat(0.2 * percent))
+            let width:CGFloat = self.originalFrame.width * bottomBar_min_size + (self.originalFrame.width * CGFloat(1-bottomBar_min_size) * CGFloat(percent))
             
-            self.scrollBar.frame = CGRect(x: self.scrollBar.frame.origin.x, y: self.scrollBar.frame.origin.y, width: width, height: frame.height)
-            
+            self.parentViewController?.updateFrame(width)
         }
     }
     
-    @IBOutlet var scrollBar: UIView!
+    //눌러서 움직일 수 있는 바
+    @IBOutlet var scrollBar:UIView!
     
+    //기본값
     var originalFrame:CGRect!
     
     override func awakeFromNib() {
@@ -51,10 +70,11 @@ class BackdropView: UIView {
         self.layer.shadowRadius = 1.4
         self.layer.shadowOpacity = 0.3
         
+        //위에만 둥글게
         self.roundCorners([.topLeft,.topRight], radius: 20)
         
-        self.backgroundColor = UIColor(hexString: "442d26")
-        
+        //self.backgroundColor = UIColor(hexString: "442d26")
+        self.backgroundColor = UIColor.white
         
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleTap(_:)))
         self.scrollBar.addGestureRecognizer(tapGesture)
@@ -67,28 +87,33 @@ class BackdropView: UIView {
         make(parentView: parentView, dir: currentDir.getOpposite())
     }
     
+    
+    
     @objc func viewWasDragged(_ sender: UIPanGestureRecognizer) {
-        
-        let offsetY:CGFloat = 50
-        
         let translation = sender.translation(in: self)
         
         self.center = CGPoint(x: self.center.x , y: self.center.y + translation.y)
         
-        
         sender.setTranslation(CGPoint.zero, in: self)
         
         //percent
+        percent = 1 - Float((sender.location(in: parentView!).y) / originalFrame.height)
         
-        percent = 1 - Float(sender.location(in: parentView!).y / originalFrame.height)
+        if sender.state == .began {
+            //누르기 시작할 떄부터
+            moved = sender.location(in: parentView!).y
+        }
         
         if sender.state == .ended {
-            let centerY = (parentView.frame.height - offsetY)/2 + offsetY
+            //누르고 나서 얼마나 움직였는지 계산
+            moved = moved - sender.location(in: parentView!).y
             
-            if sender.location(in: parentView!).y < centerY {
-                self.make(parentView: parentView, dir: direction.up)
-            } else {
-                self.make(parentView: parentView, dir: direction.down)
+            //bottomBar_scroll_height 보다 많이 움직였을경우
+            if moved.magnitude > bottomBar_scroll_height {
+                self.make(parentView: parentView, dir: currentDir.getOpposite())
+            }
+            else {
+                self.make(parentView: parentView, dir: currentDir)
             }
         }
         
@@ -103,26 +128,27 @@ extension BackdropView {
         var maketo:Float {
             get {
                 if self.currentDir == direction.up {
-                    return 1
+                    return opacity_max
                 } else {
-                    return 0.3
+                    return opacity_min
                 }
             }
         }
+        self.percent = maketo
         
-        UIView.animate(withDuration: 0.2) {
+        UIView.animate(withDuration: 0.3, animations: {
             self.frame = self.getSize(parentView: parentView, dir: dir)
             self.percent = maketo
-        }
+        })
+        
     }
     
     func getSize(parentView:UIView!,dir:direction) -> CGRect {
-        let offsetY:CGFloat = 50
-        
         if dir == direction.up {
-            return CGRect(x: 0, y: offsetY, width: parentView.frame.width, height: parentView.frame.height)
+            return CGRect(x: 0, y: offset_top_y, width: parentView.frame.width, height: parentView.frame.height)
         } else {
-            return CGRect(x: 0, y: parentView.frame.height - offsetY, width: parentView.frame.width, height: parentView.frame.height)
+            //origin은 왼쪽 위기 때문에 offset을 두번 연산해줘야 원하는 값이 나옴
+            return CGRect(x: 0, y: parentView.frame.height - offset_bottom_y * 2, width: parentView.frame.width, height: parentView.frame.height)
         }
     }
 }

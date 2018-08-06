@@ -13,12 +13,16 @@ class BackDropVC: UIViewController {
     @IBOutlet weak var embeddedView: BackdropView!
     @IBOutlet weak var containerView: UIView!
     
+    @IBOutlet weak var embeddedViewWidth: NSLayoutConstraint!
+    
     var frontVC: UIViewController!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let homeVC = storyboard?.instantiateViewController(withIdentifier: "TestVC") as! SearchVC
+        let _storyboard: UIStoryboard = UIStoryboard(name: "Search", bundle: nil)
+        
+        let homeVC = _storyboard.instantiateInitialViewController() as! SearchVC
         self.containerView.addSubview(homeVC.view)
         self.addChildViewController(homeVC)
         
@@ -27,13 +31,10 @@ class BackDropVC: UIViewController {
         
     }
     
-    func updateFrame(_ percent:Float) {
-        
-        let frame = self.embeddedView.frame
-        let width:CGFloat = self.view.frame.width * 0.8 + (self.view.frame.width * CGFloat(0.2 * percent))
-        
-        self.embeddedView.frame = CGRect(x: self.embeddedView.frame.origin.x, y: self.embeddedView.frame.origin.y, width: width, height: frame.height)
-        
+    func updateFrame(_ width:CGFloat) {
+        embeddedViewWidth.constant = width
+        embeddedView.scrollBar.roundCorners([.topLeft,.topRight], radius: 20)
+        embeddedView.layoutIfNeeded()
     }
 
     
@@ -68,7 +69,7 @@ extension BackDropVC:UICollectionViewDelegate,UICollectionViewDataSource,UIColle
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 100
+        return 20
     }
     
     
