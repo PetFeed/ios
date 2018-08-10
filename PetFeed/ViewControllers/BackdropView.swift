@@ -17,9 +17,7 @@ class BackdropView: UIView {
     
     let offset_top_y:CGFloat = 30
     var offset_bottom_y:CGFloat {
-        get {
-            return (self.parentViewController?.tabBarController?.tabBar.frame.height) ?? 100
-        }
+        return (self.parentViewController?.tabBarController?.tabBar.frame.height)! + scrollBar.frame.height
     }
     
     //바텀바 드래그해서 올릴때 감도(?) 조절
@@ -31,9 +29,7 @@ class BackdropView: UIView {
     var parentViewController:BackDropVC?
     
     var parentView:UIView! {
-        get {
-            return parentViewController?.view!
-        }
+        return parentViewController?.view!
     }
     
     //얼마나 움직였는지
@@ -97,7 +93,7 @@ class BackdropView: UIView {
         sender.setTranslation(CGPoint.zero, in: self)
         
         //percent
-        percent = 1 - Float((sender.location(in: parentView!).y) / originalFrame.height)
+        percent = 1 - Float((sender.location(in: parentView!).y - offset_top_y*2) / originalFrame.height)
         
         if sender.state == .began {
             //누르기 시작할 떄부터
@@ -126,12 +122,10 @@ extension BackdropView {
         self.currentDir = dir
         
         var maketo:Float {
-            get {
-                if self.currentDir == direction.up {
-                    return opacity_max
-                } else {
-                    return opacity_min
-                }
+            if self.currentDir == direction.up {
+                return opacity_max
+            } else {
+                return opacity_min
             }
         }
         self.percent = maketo
@@ -141,6 +135,7 @@ extension BackdropView {
             self.percent = maketo
         })
         
+        
     }
     
     func getSize(parentView:UIView!,dir:direction) -> CGRect {
@@ -148,7 +143,7 @@ extension BackdropView {
             return CGRect(x: 0, y: offset_top_y, width: parentView.frame.width, height: parentView.frame.height)
         } else {
             //origin은 왼쪽 위기 때문에 offset을 두번 연산해줘야 원하는 값이 나옴
-            return CGRect(x: 0, y: parentView.frame.height - offset_bottom_y * 2, width: parentView.frame.width, height: parentView.frame.height)
+            return CGRect(x: 0, y: parentView.frame.height - offset_bottom_y, width: parentView.frame.width, height: parentView.frame.height)
         }
     }
 }

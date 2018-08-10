@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="NanumSquareRoundOTFEB.otf">
+            <string>NanumSquareRoundOTFEB</string>
+        </array>
+        <array key="NanumSquareRoundOTFR.otf">
+            <string>NanumSquareRoundOTFR</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="UY7-sJ-CNK" customClass="HashTagCell" customModule="PetFeed" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="128" height="144"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                <rect key="frame" x="0.0" y="0.0" width="128" height="144"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="EpZ-J6-DOh">
+                        <rect key="frame" x="0.0" y="0.0" width="128" height="144"/>
+                    </imageView>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="No4-Iw-xXg">
+                        <rect key="frame" x="0.0" y="0.0" width="128" height="144"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="이름" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="24z-DM-0bc">
+                        <rect key="frame" x="9" y="104" width="110" height="21"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <fontDescription key="fontDescription" name="NanumSquareRoundOTFEB" family="NanumSquareRoundOTF" pointSize="12"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Photoed by 인절미" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dFd-SZ-obg">
+                        <rect key="frame" x="9" y="122" width="110" height="13"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <fontDescription key="fontDescription" name="NanumSquareRoundOTFR" family="NanumSquareRoundOTF" pointSize="6"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="EpZ-J6-DOh" secondAttribute="bottom" id="42q-ck-iOA"/>
+                <constraint firstAttribute="trailing" secondItem="No4-Iw-xXg" secondAttribute="trailing" id="B2V-ao-XHB"/>
+                <constraint firstItem="No4-Iw-xXg" firstAttribute="leading" secondItem="UY7-sJ-CNK" secondAttribute="leading" id="BM4-Ne-bqP"/>
+                <constraint firstAttribute="trailing" secondItem="EpZ-J6-DOh" secondAttribute="trailing" id="Qh7-Gc-nLV"/>
+                <constraint firstItem="EpZ-J6-DOh" firstAttribute="top" secondItem="UY7-sJ-CNK" secondAttribute="top" id="Uc4-7A-Svh"/>
+                <constraint firstItem="No4-Iw-xXg" firstAttribute="top" secondItem="UY7-sJ-CNK" secondAttribute="top" id="pez-JV-VYw"/>
+                <constraint firstAttribute="bottom" secondItem="No4-Iw-xXg" secondAttribute="bottom" id="uHV-RF-tdW"/>
+                <constraint firstItem="EpZ-J6-DOh" firstAttribute="leading" secondItem="UY7-sJ-CNK" secondAttribute="leading" id="vzI-vY-Rm6"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="sBM-M8-IhT"/>
+            <size key="customSize" width="250" height="236"/>
+            <connections>
+                <outlet property="fromLabel" destination="dFd-SZ-obg" id="R6i-HW-Y4G"/>
+                <outlet property="gradientView" destination="No4-Iw-xXg" id="nc3-i9-Q0y"/>
+                <outlet property="imageView" destination="EpZ-J6-DOh" id="ZsY-nC-Ncr"/>
+                <outlet property="titleLabel" destination="24z-DM-0bc" id="86J-hy-ERi"/>
+            </connections>
+            <point key="canvasLocation" x="112" y="-10"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="profile.jpg" width="960" height="960"/>
+    </resources>
+</document>

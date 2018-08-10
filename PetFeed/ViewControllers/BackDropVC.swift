@@ -15,10 +15,23 @@ class BackDropVC: UIViewController {
     
     @IBOutlet weak var embeddedViewWidth: NSLayoutConstraint!
     
-    var frontVC: UIViewController!
+    @IBOutlet weak var collectionView: UICollectionView!
+    
+    var titleText:String = "Hello" {
+        didSet {
+            collectionView.reloadData()
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        collectionView.register(UINib(nibName: "FeedCell", bundle: nil), forCellWithReuseIdentifier: "cell")
+//
+//        if let flowLayout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
+//            flowLayout.estimatedItemSize = CGSize(width: 325, height: 1)
+//        }
         
         let _storyboard: UIStoryboard = UIStoryboard(name: "Search", bundle: nil)
         
@@ -36,36 +49,26 @@ class BackDropVC: UIViewController {
         embeddedView.scrollBar.roundCorners([.topLeft,.topRight], radius: 20)
         embeddedView.layoutIfNeeded()
     }
-
+    
     
 }
 
 extension BackDropVC:UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout {
+
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: 300, height: 150)
+    }
+    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as UICollectionViewCell
         
-        cell.backgroundColor = self.randomColor()
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! FeedCell
         
+        //cell.backgroundColor = self.randomColor()
+        cell.name = titleText
+        cell.date = Date()
+        cell.profileImage = #imageLiteral(resourceName: "profile.jpg")
         
         return cell
-    }
-    
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat
-    {
-        
-        return 4;
-    }
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat
-    {
-        
-        return 1;
-    }
-    
-    
-    //UICollectionViewDatasource methods
-    func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
-        return 1
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

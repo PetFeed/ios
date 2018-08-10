@@ -15,6 +15,7 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="FCL-2t-vuQ" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="FO7-yW-NnC">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
@@ -30,7 +31,7 @@
         <scene sceneID="U5u-V4-C7L">
             <objects>
                 <viewControllerPlaceholder storyboardName="Backdrop" id="uAX-2A-AcQ" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="wvn-04-bRH"/>
+                    <tabBarItem key="tabBarItem" title="" id="wvn-04-bRH"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qMT-l5-ytn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -46,7 +46,7 @@
                                 </connections>
                             </textField>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="1C0-k6-MAM">
-                                <rect key="frame" x="16" y="139" width="359" height="54"/>
+                                <rect key="frame" x="16" y="139" width="359" height="200"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="SFC-dm-LUl">
@@ -55,33 +55,7 @@
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
-                                <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="G4V-NG-6WS" customClass="RankingCell" customModule="PetFeed" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="2.5" width="150" height="49"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                            <rect key="frame" x="0.0" y="0.0" width="150" height="49"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이름" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u16-4d-6Va">
-                                                    <rect key="frame" x="15" y="8" width="120" height="33"/>
-                                                    <fontDescription key="fontDescription" name="NanumSquareRoundOTFR" family="NanumSquareRoundOTF" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                        </view>
-                                        <constraints>
-                                            <constraint firstItem="u16-4d-6Va" firstAttribute="top" secondItem="G4V-NG-6WS" secondAttribute="top" constant="8" id="EzD-jS-dbK"/>
-                                            <constraint firstItem="u16-4d-6Va" firstAttribute="leading" secondItem="G4V-NG-6WS" secondAttribute="leading" constant="15" id="Yqq-B4-EB3"/>
-                                            <constraint firstAttribute="trailing" secondItem="u16-4d-6Va" secondAttribute="trailing" constant="15" id="jqc-CU-3i5"/>
-                                            <constraint firstAttribute="bottom" secondItem="u16-4d-6Va" secondAttribute="bottom" constant="8" id="ozJ-BM-5na"/>
-                                        </constraints>
-                                        <connections>
-                                            <outlet property="textLabel" destination="u16-4d-6Va" id="Xqg-ez-PDU"/>
-                                        </connections>
-                                    </collectionViewCell>
-                                </cells>
+                                <cells/>
                                 <connections>
                                     <outlet property="dataSource" destination="NhF-C8-1Fx" id="c1e-q4-gDm"/>
                                     <outlet property="delegate" destination="NhF-C8-1Fx" id="vkf-WU-9iN"/>
