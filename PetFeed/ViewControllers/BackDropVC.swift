@@ -26,7 +26,8 @@ class BackDropVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        embeddedViewWidth.constant = self.view.frame.width
+
         collectionView.register(UINib(nibName: "FeedCell", bundle: nil), forCellWithReuseIdentifier: "cell")
 //
 //        if let flowLayout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
@@ -40,8 +41,6 @@ class BackDropVC: UIViewController {
         self.addChildViewController(homeVC)
         
         embeddedView.parentViewController = self
-        
-        
     }
     
     func updateFrame(_ width:CGFloat) {

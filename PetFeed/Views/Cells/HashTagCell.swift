@@ -48,26 +48,11 @@ class HashTagCell: UICollectionViewCell {
         
         contentView.layer.cornerRadius = 12
         contentView.layer.masksToBounds = true
-//        self.layer.borderWidth = 1
-//        self.layer.borderColor = UIColor(red: 68/255, green: 45/255, blue: 38/255, alpha: 1).cgColor
-        
-//        gradientView = UIView(frame: self.frame)
-//        insertSubview(gradientView, belowSubview: titleLabel)
-        
         
         let gradientLayer = CAGradientLayer()
-        
-        //define colors
         gradientLayer.colors = [UIColor.clear.cgColor,UIColor.black.cgColor]
-        
-        //define locations of colors as NSNumbers in range from 0.0 to 1.0
-        //if locations not provided the colors will spread evenly
         gradientLayer.locations = [0.0, 1.3]
-        
-        //define frame
         gradientLayer.frame = gradientView.bounds
-        
-        //insert the gradient layer to the view layer
         gradientView.layer.insertSublayer(gradientLayer, at: 0)
     }
 }

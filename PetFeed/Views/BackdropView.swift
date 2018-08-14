@@ -15,9 +15,9 @@ class BackdropView: UIView {
     let opacity_min:Float = 0.4
     let opacity_max:Float = 1
     
-    let offset_top_y:CGFloat = 30
+    let offset_top_y:CGFloat = 44
     var offset_bottom_y:CGFloat {
-        return (self.parentViewController?.tabBarController?.tabBar.frame.height)! + scrollBar.frame.height
+        return scrollBar.frame.height //+(self.parentViewController?.tabBarController?.tabBar.frame.height)!
     }
     
     //바텀바 드래그해서 올릴때 감도(?) 조절
@@ -46,7 +46,9 @@ class BackdropView: UIView {
             self.layer.opacity = percent
             
             //parentViewController?.updateFrame(percent)
-            let width:CGFloat = self.originalFrame.width * bottomBar_min_size + (self.originalFrame.width * CGFloat(1-bottomBar_min_size) * CGFloat(percent))
+            let width:CGFloat = self.originalFrame.width * bottomBar_min_size
+                                + (self.originalFrame.width * CGFloat(1-bottomBar_min_size)
+                                * CGFloat(percent))
             
             self.parentViewController?.updateFrame(width)
         }

@@ -28,3 +28,32 @@ extension UIColor {
         self.init(red: CGFloat(r) / 255, green: CGFloat(g) / 255, blue: CGFloat(b) / 255, alpha: CGFloat(a) / 255)
     }
 }
+
+
+extension UIColor {
+    
+    @nonobjc class var black30: UIColor {
+        return UIColor(white: 32.0 / 255.0, alpha: 0.3)
+    }
+    
+    @nonobjc class var camoGreen10: UIColor {
+        return UIColor(red: 68.0 / 255.0, green: 45.0 / 255.0, blue: 38.0 / 255.0, alpha: 0.1)
+    }
+    
+    @nonobjc class var black: UIColor {
+        return UIColor(white: 32.0 / 255.0, alpha: 1.0)
+    }
+    
+    @nonobjc class var veryLightPink: UIColor {
+        return UIColor(red: 1.0, green: 249.0 / 255.0, blue: 245.0 / 255.0, alpha: 1.0)
+    }
+    
+    @nonobjc class var camoGreen: UIColor {
+        return UIColor(red: 68.0 / 255.0, green: 45.0 / 255.0, blue: 38.0 / 255.0, alpha: 1.0)
+    }
+    
+    @nonobjc class var grapefruit: UIColor {
+        return UIColor(red: 1.0, green: 85.0 / 255.0, blue: 85.0 / 255.0, alpha: 1.0)
+    }
+    
+}

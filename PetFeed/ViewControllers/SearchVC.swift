@@ -14,11 +14,13 @@ class SearchVC: UIViewController,UITextViewDelegate {
     
     @IBOutlet weak var collectionView: UICollectionView!
     
+    
     let items = ["샤트룩스","골든 리트리버","코카투","치와와","말티즈","미니어쳐 핀셔","파피용","포메라니안","푸들","시추"]
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         
         collectionView.register(UINib(nibName: "HashTagCell", bundle: nil), forCellWithReuseIdentifier: "cell")
         

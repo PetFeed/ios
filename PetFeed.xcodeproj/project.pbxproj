@@ -87,9 +87,6 @@
 			children = (
 				78151DA82116D206007EE2AA /* SearchVC.swift */,
 				78151DA62116D1DC007EE2AA /* BackDropVC.swift */,
-				7841B69C21189F9F00E7D121 /* FeedCell.swift */,
-				7802DB002117F7480079C311 /* HashTagCell.swift */,
-				78A0FE94211532070028A6D9 /* BackdropView.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -107,9 +104,9 @@
 			children = (
 				78A0FE8421152AAE0028A6D9 /* Backdrop.storyboard */,
 				7841B6982118879B00E7D121 /* Search.storyboard */,
-				78E61E00211D5D5900BEBE67 /* HashTagCell.xib */,
 				7841B69A211887B800E7D121 /* TabBar.storyboard */,
-				7841B69D21189F9F00E7D121 /* FeedCell.xib */,
+				78A0FE94211532070028A6D9 /* BackdropView.swift */,
+				78F7411121232A5A00972923 /* Cells */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -156,6 +153,17 @@
 				7802DAF72117F5C90079C311 /* Fonts */,
 			);
 			path = PetFeed;
+			sourceTree = "<group>";
+		};
+		78F7411121232A5A00972923 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				7802DB002117F7480079C311 /* HashTagCell.swift */,
+				78E61E00211D5D5900BEBE67 /* HashTagCell.xib */,
+				7841B69C21189F9F00E7D121 /* FeedCell.swift */,
+				7841B69D21189F9F00E7D121 /* FeedCell.xib */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
