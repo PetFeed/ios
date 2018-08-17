@@ -26,12 +26,10 @@ class BackDropVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        embeddedViewWidth.constant = self.view.frame.width
-
         collectionView.register(UINib(nibName: "FeedCell", bundle: nil), forCellWithReuseIdentifier: "cell")
-//
+
 //        if let flowLayout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
-//            flowLayout.estimatedItemSize = CGSize(width: 325, height: 1)
+//            flowLayout.estimatedItemSize = CGSize(width: 200, height: 100)
 //        }
         
         let _storyboard: UIStoryboard = UIStoryboard(name: "Search", bundle: nil)
@@ -41,6 +39,7 @@ class BackDropVC: UIViewController {
         self.addChildViewController(homeVC)
         
         embeddedView.parentViewController = self
+        embeddedView.originalFrame = self.view.frame
     }
     
     func updateFrame(_ width:CGFloat) {
@@ -54,9 +53,6 @@ class BackDropVC: UIViewController {
 
 extension BackDropVC:UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout {
 
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 300, height: 150)
-    }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
@@ -65,13 +61,18 @@ extension BackDropVC:UICollectionViewDelegate,UICollectionViewDataSource,UIColle
         //cell.backgroundColor = self.randomColor()
         cell.name = titleText
         cell.date = Date()
-        cell.profileImage = #imageLiteral(resourceName: "profile.jpg")
+        cell.profileImage = #imageLiteral(resourceName: "profile.jpeg")
         
         return cell
     }
     
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: collectionView.frame.size.width-20, height: 400)
+    }
+    
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 20
+        return 5
     }
     
     

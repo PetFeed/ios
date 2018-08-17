@@ -30,8 +30,17 @@
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2cD-p9-ZCe" userLabel="move">
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="30"/>
-                                                <color key="backgroundColor" white="0.86946614580000003" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <subviews>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hIB-pd-bNY">
+                                                        <rect key="frame" x="152" y="10" width="71" height="10"/>
+                                                        <color key="backgroundColor" red="0.26666666666666666" green="0.1764705882352941" blue="0.14901960784313725" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </view>
+                                                </subviews>
                                                 <constraints>
+                                                    <constraint firstAttribute="trailing" secondItem="hIB-pd-bNY" secondAttribute="trailing" constant="152" id="6te-em-KCx"/>
+                                                    <constraint firstAttribute="bottom" secondItem="hIB-pd-bNY" secondAttribute="bottom" constant="10" id="GLN-nl-k2n"/>
+                                                    <constraint firstItem="hIB-pd-bNY" firstAttribute="leading" secondItem="2cD-p9-ZCe" secondAttribute="leading" constant="152" id="LLB-mG-QCv"/>
+                                                    <constraint firstItem="hIB-pd-bNY" firstAttribute="top" secondItem="2cD-p9-ZCe" secondAttribute="top" constant="10" id="e5U-ke-3I0"/>
                                                     <constraint firstAttribute="height" constant="30" id="yyI-MU-BYO"/>
                                                 </constraints>
                                             </view>

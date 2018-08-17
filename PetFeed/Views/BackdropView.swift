@@ -12,12 +12,16 @@ import Foundation
 class BackdropView: UIView {
     
     //MARK: 상수
-    let opacity_min:Float = 0.4
+    let opacity_min:Float = 0
     let opacity_max:Float = 1
     
     let offset_top_y:CGFloat = 44
     var offset_bottom_y:CGFloat {
         return scrollBar.frame.height //+(self.parentViewController?.tabBarController?.tabBar.frame.height)!
+    }
+    
+    var tabbar_height: CGFloat {
+        return (self.parentViewController?.tabBarController?.tabBar.frame.height)!
     }
     
     //바텀바 드래그해서 올릴때 감도(?) 조절
@@ -39,18 +43,21 @@ class BackdropView: UIView {
     var percent:Float = 0.0 {
         didSet {
             //SetOpacity
-            if percent < opacity_min {
-                percent = opacity_min
-            }
+//            self.parentView.backgroundColor = UIColor.white.toColor(UIColor.camoGreen, percentage: CGFloat(percent*100))
+//            if percent < opacity_min {
+//                percent = opacity_min
+//            }
+//
+//            self.layer.opacity = percent
+//
+//            //parentViewController?.updateFrame(percent)
+//            let width:CGFloat = self.originalFrame.width * bottomBar_min_size
+//                                + (self.originalFrame.width * CGFloat(1-bottomBar_min_size)
+//                                * CGFloat(percent))
+//
+//            self.parentViewController?.updateFrame(width)
+            print(percent)
             
-            self.layer.opacity = percent
-            
-            //parentViewController?.updateFrame(percent)
-            let width:CGFloat = self.originalFrame.width * bottomBar_min_size
-                                + (self.originalFrame.width * CGFloat(1-bottomBar_min_size)
-                                * CGFloat(percent))
-            
-            self.parentViewController?.updateFrame(width)
         }
     }
     
@@ -61,7 +68,7 @@ class BackdropView: UIView {
     var originalFrame:CGRect!
     
     override func awakeFromNib() {
-        originalFrame = self.frame
+        
         
         self.layer.shadowColor = UIColor.gray.cgColor
         self.layer.shadowOffset = CGSize(width: 0, height: -5)
@@ -95,8 +102,11 @@ class BackdropView: UIView {
         sender.setTranslation(CGPoint.zero, in: self)
         
         //percent
-        percent = 1 - Float((sender.location(in: parentView!).y - offset_top_y*2) / originalFrame.height)
         
+        //percent = 1 - Float((sender.location(in: parentView!).y) / (originalFrame.height-(self.parentViewController?.tabBarController?.tabBar.frame.height)!))
+        
+        percent = Float((sender.location(in: parentView).y-offset_top_y)) / Float(originalFrame.height+offset_top_y)
+        print("height1 : \(sender.location(in: parentView).y-offset_top_y) and height2 : \(originalFrame.height+offset_top_y)")
         if sender.state == .began {
             //누르기 시작할 떄부터
             moved = sender.location(in: parentView!).y

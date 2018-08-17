@@ -28,8 +28,9 @@
 		78A0FE8821152AB00028A6D9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 78A0FE8721152AB00028A6D9 /* Assets.xcassets */; };
 		78A0FE8B21152AB00028A6D9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 78A0FE8921152AB00028A6D9 /* LaunchScreen.storyboard */; };
 		78A0FE95211532070028A6D9 /* BackdropView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78A0FE94211532070028A6D9 /* BackdropView.swift */; };
-		78ACE82C211945F600A028D3 /* profile.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 78ACE82B211945F600A028D3 /* profile.jpg */; };
 		78E61E01211D5D5900BEBE67 /* HashTagCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 78E61E00211D5D5900BEBE67 /* HashTagCell.xib */; };
+		78F741132123356700972923 /* profile.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 78F741122123356700972923 /* profile.jpeg */; };
+		78F741152123357000972923 /* content.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 78F741142123357000972923 /* content.jpeg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,8 +57,9 @@
 		78A0FE8A21152AB00028A6D9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		78A0FE8C21152AB00028A6D9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		78A0FE94211532070028A6D9 /* BackdropView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackdropView.swift; sourceTree = "<group>"; };
-		78ACE82B211945F600A028D3 /* profile.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = profile.jpg; sourceTree = "<group>"; };
 		78E61E00211D5D5900BEBE67 /* HashTagCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HashTagCell.xib; sourceTree = "<group>"; };
+		78F741122123356700972923 /* profile.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = profile.jpeg; sourceTree = "<group>"; };
+		78F741142123357000972923 /* content.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = content.jpeg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,7 +144,8 @@
 			isa = PBXGroup;
 			children = (
 				78A0FE8021152AAE0028A6D9 /* AppDelegate.swift */,
-				78ACE82B211945F600A028D3 /* profile.jpg */,
+				78F741122123356700972923 /* profile.jpeg */,
+				78F741142123357000972923 /* content.jpeg */,
 				7802DB042117FE970079C311 /* Views */,
 				7802DB032117FE730079C311 /* Models */,
 				7802DB022117FE630079C311 /* ViewControllers */,
@@ -228,13 +231,14 @@
 				7802DAFF2117F5D40079C311 /* NanumSquareRoundOTFEB.otf in Resources */,
 				7802DAFE2117F5D40079C311 /* NanumSquareRoundOTFL.otf in Resources */,
 				78A0FE8B21152AB00028A6D9 /* LaunchScreen.storyboard in Resources */,
+				78F741152123357000972923 /* content.jpeg in Resources */,
 				78E61E01211D5D5900BEBE67 /* HashTagCell.xib in Resources */,
 				7802DAFD2117F5D40079C311 /* NanumSquareRoundOTFR.otf in Resources */,
 				78A0FE8821152AB00028A6D9 /* Assets.xcassets in Resources */,
-				78ACE82C211945F600A028D3 /* profile.jpg in Resources */,
 				7802DAFC2117F5D40079C311 /* NanumSquareRoundOTFB.otf in Resources */,
 				7841B6992118879B00E7D121 /* Search.storyboard in Resources */,
 				78A0FE8621152AAE0028A6D9 /* Backdrop.storyboard in Resources */,
+				78F741132123356700972923 /* profile.jpeg in Resources */,
 				7841B69F21189F9F00E7D121 /* FeedCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

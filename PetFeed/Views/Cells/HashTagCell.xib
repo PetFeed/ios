@@ -27,7 +27,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="128" height="144"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="EpZ-J6-DOh">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="EpZ-J6-DOh">
                         <rect key="frame" x="0.0" y="0.0" width="128" height="144"/>
                     </imageView>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="No4-Iw-xXg">
@@ -72,6 +72,6 @@
         </collectionViewCell>
     </objects>
     <resources>
-        <image name="profile.jpg" width="960" height="960"/>
+        <image name="profile.jpeg" width="300" height="300"/>
     </resources>
 </document>
