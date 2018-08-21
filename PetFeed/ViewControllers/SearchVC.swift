@@ -21,6 +21,7 @@ class SearchVC: UIViewController,UITextViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.view.backgroundColor = UIColor.clear
         
         collectionView.register(UINib(nibName: "HashTagCell", bundle: nil), forCellWithReuseIdentifier: "cell")
         

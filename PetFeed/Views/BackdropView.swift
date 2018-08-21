@@ -42,21 +42,21 @@ class BackdropView: UIView {
     //얼마나 움직였는지를 퍼센트로 (0.0 ~ 1.0)
     var percent:Float = 0.0 {
         didSet {
+            let col=UIColor.white.toColor(UIColor.camoGreen, percentage: CGFloat(percent*100))
+            
             //SetOpacity
-//            self.parentView.backgroundColor = UIColor.white.toColor(UIColor.camoGreen, percentage: CGFloat(percent*100))
-//            if percent < opacity_min {
-//                percent = opacity_min
-//            }
-//
-//            self.layer.opacity = percent
-//
-//            //parentViewController?.updateFrame(percent)
-//            let width:CGFloat = self.originalFrame.width * bottomBar_min_size
-//                                + (self.originalFrame.width * CGFloat(1-bottomBar_min_size)
-//                                * CGFloat(percent))
-//
-//            self.parentViewController?.updateFrame(width)
-            print(percent)
+            self.parentView.backgroundColor = col
+            
+            //print(percent)
+
+            self.parentViewController?.collectionView.layer.opacity = percent
+
+            //parentViewController?.updateFrame(percent)
+            let width:CGFloat = self.originalFrame.width * bottomBar_min_size
+                                + (self.originalFrame.width * CGFloat(1-bottomBar_min_size)
+                                * CGFloat(percent))
+
+            self.parentViewController?.updateFrame(width)
             
         }
     }
@@ -105,8 +105,11 @@ class BackdropView: UIView {
         
         //percent = 1 - Float((sender.location(in: parentView!).y) / (originalFrame.height-(self.parentViewController?.tabBarController?.tabBar.frame.height)!))
         
-        percent = Float((sender.location(in: parentView).y-offset_top_y)) / Float(originalFrame.height+offset_top_y)
-        print("height1 : \(sender.location(in: parentView).y-offset_top_y) and height2 : \(originalFrame.height+offset_top_y)")
+        let touchPosY = self.frame.origin.y-UIApplication.shared.statusBarFrame.height
+        
+        percent = 1 - Float(touchPosY / (parentView.frame.height - offset_top_y - offset_bottom_y))
+        
+        //print("height1 : \(sender.location(in: parentView).y-offset_top_y) and height2 : \(originalFrame.height+offset_top_y)")
         if sender.state == .began {
             //누르기 시작할 떄부터
             moved = sender.location(in: parentView!).y

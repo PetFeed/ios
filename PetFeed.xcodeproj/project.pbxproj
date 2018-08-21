@@ -28,6 +28,8 @@
 		78A0FE8821152AB00028A6D9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 78A0FE8721152AB00028A6D9 /* Assets.xcassets */; };
 		78A0FE8B21152AB00028A6D9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 78A0FE8921152AB00028A6D9 /* LaunchScreen.storyboard */; };
 		78A0FE95211532070028A6D9 /* BackdropView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78A0FE94211532070028A6D9 /* BackdropView.swift */; };
+		78CE7CD1212C15A900A3CB41 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 78CE7CD0212C15A900A3CB41 /* Login.storyboard */; };
+		78CE7CD3212C181D00A3CB41 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78CE7CD2212C181D00A3CB41 /* LoginVC.swift */; };
 		78E61E01211D5D5900BEBE67 /* HashTagCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 78E61E00211D5D5900BEBE67 /* HashTagCell.xib */; };
 		78F741132123356700972923 /* profile.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 78F741122123356700972923 /* profile.jpeg */; };
 		78F741152123357000972923 /* content.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 78F741142123357000972923 /* content.jpeg */; };
@@ -57,6 +59,8 @@
 		78A0FE8A21152AB00028A6D9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		78A0FE8C21152AB00028A6D9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		78A0FE94211532070028A6D9 /* BackdropView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackdropView.swift; sourceTree = "<group>"; };
+		78CE7CD0212C15A900A3CB41 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
+		78CE7CD2212C181D00A3CB41 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoginVC.swift; path = PetFeed/ViewControllers/LoginVC.swift; sourceTree = SOURCE_ROOT; };
 		78E61E00211D5D5900BEBE67 /* HashTagCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HashTagCell.xib; sourceTree = "<group>"; };
 		78F741122123356700972923 /* profile.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = profile.jpeg; sourceTree = "<group>"; };
 		78F741142123357000972923 /* content.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = content.jpeg; sourceTree = "<group>"; };
@@ -87,6 +91,7 @@
 		7802DB022117FE630079C311 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				78CE7CD2212C181D00A3CB41 /* LoginVC.swift */,
 				78151DA82116D206007EE2AA /* SearchVC.swift */,
 				78151DA62116D1DC007EE2AA /* BackDropVC.swift */,
 			);
@@ -104,6 +109,7 @@
 		7802DB042117FE970079C311 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				78CE7CD0212C15A900A3CB41 /* Login.storyboard */,
 				78A0FE8421152AAE0028A6D9 /* Backdrop.storyboard */,
 				7841B6982118879B00E7D121 /* Search.storyboard */,
 				7841B69A211887B800E7D121 /* TabBar.storyboard */,
@@ -229,6 +235,7 @@
 			files = (
 				7841B69B211887B800E7D121 /* TabBar.storyboard in Resources */,
 				7802DAFF2117F5D40079C311 /* NanumSquareRoundOTFEB.otf in Resources */,
+				78CE7CD1212C15A900A3CB41 /* Login.storyboard in Resources */,
 				7802DAFE2117F5D40079C311 /* NanumSquareRoundOTFL.otf in Resources */,
 				78A0FE8B21152AB00028A6D9 /* LaunchScreen.storyboard in Resources */,
 				78F741152123357000972923 /* content.jpeg in Resources */,
@@ -252,6 +259,7 @@
 			files = (
 				7892222D2118032F00498839 /* UIView.swift in Sources */,
 				7841B69E21189F9F00E7D121 /* FeedCell.swift in Sources */,
+				78CE7CD3212C181D00A3CB41 /* LoginVC.swift in Sources */,
 				7892222F211803AE00498839 /* Colors.swift in Sources */,
 				78151DA92116D206007EE2AA /* SearchVC.swift in Sources */,
 				78A0FE95211532070028A6D9 /* BackdropView.swift in Sources */,

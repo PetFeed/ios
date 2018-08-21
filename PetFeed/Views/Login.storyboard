@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="NnI-FO-IcW">
+    <device id="retina5_9" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="NanumSquareRoundOTFEB.otf">
+            <string>NanumSquareRoundOTFEB</string>
+        </array>
+        <array key="NanumSquareRoundOTFR.otf">
+            <string>NanumSquareRoundOTFR</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Login-->
+        <scene sceneID="S0p-HU-Zf7">
+            <objects>
+                <viewController title="Login" id="NnI-FO-IcW" customClass="LoginVC" customModule="PetFeed" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ENA-7y-ZPm">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="아이디" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oEk-lA-RXO">
+                                <rect key="frame" x="45" y="331" width="285" height="48"/>
+                                <color key="backgroundColor" red="0.96862745098039216" green="0.96862745098039216" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="eSx-u0-fVQ"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" name="NanumSquareRoundOTFR" family="NanumSquareRoundOTF" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="비밀번호" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FyD-ac-maN">
+                                <rect key="frame" x="45" y="395" width="285" height="48"/>
+                                <color key="backgroundColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="fQr-jT-eyT"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" name="NanumSquareRoundOTFR" family="NanumSquareRoundOTF" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H9c-vV-vpx">
+                                <rect key="frame" x="45" y="459" width="285" height="48"/>
+                                <color key="backgroundColor" red="0.2666666667" green="0.1764705882" blue="0.14901960780000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="5eL-zg-4e5"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="NanumSquareRoundOTFEB" family="NanumSquareRoundOTF" pointSize="16"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="로그인"/>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logotypo_color" translatesAutoresizingMaskIntoConstraints="NO" id="PyS-c6-f74" userLabel="logo">
+                                <rect key="frame" x="115" y="228" width="144" height="31"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BS8-Ky-Dnu">
+                                <rect key="frame" x="133.66666666666666" y="523" width="108" height="26"/>
+                                <fontDescription key="fontDescription" name="NanumSquareRoundOTFR" family="NanumSquareRoundOTF" pointSize="12"/>
+                                <state key="normal" title="아이디, 비밀번호 찾기">
+                                    <color key="titleColor" red="0.2666666667" green="0.1764705882" blue="0.14901960780000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fCv-Xk-xDT">
+                                <rect key="frame" x="104.33333333333331" y="736" width="166" height="26"/>
+                                <fontDescription key="fontDescription" name="NanumSquareRoundOTFR" family="NanumSquareRoundOTF" pointSize="12"/>
+                                <state key="normal" title="계정이 없으신가요? 회원가입하기">
+                                    <color key="titleColor" red="0.2666666667" green="0.1764705882" blue="0.14901960780000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="zDz-0W-Rc9" firstAttribute="trailing" secondItem="oEk-lA-RXO" secondAttribute="trailing" constant="45" id="1kD-HZ-BV4"/>
+                            <constraint firstItem="oEk-lA-RXO" firstAttribute="centerX" secondItem="ENA-7y-ZPm" secondAttribute="centerX" id="2T9-SN-dgM"/>
+                            <constraint firstItem="H9c-vV-vpx" firstAttribute="top" secondItem="FyD-ac-maN" secondAttribute="bottom" constant="16" id="51s-s7-ru0"/>
+                            <constraint firstItem="oEk-lA-RXO" firstAttribute="top" secondItem="PyS-c6-f74" secondAttribute="bottom" constant="72" id="7SS-lI-Su1"/>
+                            <constraint firstItem="BS8-Ky-Dnu" firstAttribute="top" secondItem="H9c-vV-vpx" secondAttribute="bottom" constant="16" id="8rd-u6-ut1"/>
+                            <constraint firstItem="oEk-lA-RXO" firstAttribute="leading" secondItem="zDz-0W-Rc9" secondAttribute="leading" constant="45" id="9GE-gc-PZa"/>
+                            <constraint firstItem="BS8-Ky-Dnu" firstAttribute="centerX" secondItem="ENA-7y-ZPm" secondAttribute="centerX" id="I6r-TE-jrI"/>
+                            <constraint firstItem="PyS-c6-f74" firstAttribute="centerX" secondItem="ENA-7y-ZPm" secondAttribute="centerX" id="IVE-ev-R6Y"/>
+                            <constraint firstItem="zDz-0W-Rc9" firstAttribute="bottom" secondItem="fCv-Xk-xDT" secondAttribute="bottom" constant="16" id="V7p-Zk-rQb"/>
+                            <constraint firstItem="zDz-0W-Rc9" firstAttribute="trailing" secondItem="FyD-ac-maN" secondAttribute="trailing" constant="45" id="cEG-RF-0Cr"/>
+                            <constraint firstItem="fCv-Xk-xDT" firstAttribute="centerX" secondItem="ENA-7y-ZPm" secondAttribute="centerX" id="cI3-Qq-emM"/>
+                            <constraint firstItem="H9c-vV-vpx" firstAttribute="leading" secondItem="zDz-0W-Rc9" secondAttribute="leading" constant="45" id="mgj-AD-5CD"/>
+                            <constraint firstItem="FyD-ac-maN" firstAttribute="top" secondItem="oEk-lA-RXO" secondAttribute="bottom" constant="16" id="nXu-SV-RaC"/>
+                            <constraint firstItem="PyS-c6-f74" firstAttribute="top" secondItem="zDz-0W-Rc9" secondAttribute="top" constant="184" id="pW1-Vl-kok"/>
+                            <constraint firstItem="zDz-0W-Rc9" firstAttribute="trailing" secondItem="H9c-vV-vpx" secondAttribute="trailing" constant="45" id="sz9-sg-HDG"/>
+                            <constraint firstItem="FyD-ac-maN" firstAttribute="centerX" secondItem="ENA-7y-ZPm" secondAttribute="centerX" id="t5P-NF-95a"/>
+                            <constraint firstItem="FyD-ac-maN" firstAttribute="leading" secondItem="zDz-0W-Rc9" secondAttribute="leading" constant="45" id="uq4-wf-RDf"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="zDz-0W-Rc9"/>
+                    </view>
+                    <connections>
+                        <outlet property="findButton" destination="BS8-Ky-Dnu" id="oHx-YU-gO3"/>
+                        <outlet property="idField" destination="oEk-lA-RXO" id="l20-UT-kE2"/>
+                        <outlet property="loginButton" destination="H9c-vV-vpx" id="Kvr-Wf-w5b"/>
+                        <outlet property="passwordField" destination="FyD-ac-maN" id="bbD-ar-LZH"/>
+                        <outlet property="registerButton" destination="fCv-Xk-xDT" id="WWZ-Rk-yIP"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kBN-63-k0T" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="204" y="125"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="logotypo_color" width="144" height="31"/>
+    </resources>
+</document>
