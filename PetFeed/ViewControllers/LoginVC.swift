@@ -61,4 +61,7 @@ class LoginVC: UIViewController {
         
     }
 
+    @IBAction func loginButtonPressed(_ sender: UIButton) {
+        performSegue(withIdentifier: "logined", sender: self)
+    }
 }

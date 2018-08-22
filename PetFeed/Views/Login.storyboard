@@ -10,6 +10,9 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
+        <array key="NanumSquareRoundOTFB.otf">
+            <string>NanumSquareRoundOTFB</string>
+        </array>
         <array key="NanumSquareRoundOTFEB.otf">
             <string>NanumSquareRoundOTFEB</string>
         </array>
@@ -33,7 +36,7 @@
                                     <constraint firstAttribute="height" constant="48" id="eSx-u0-fVQ"/>
                                 </constraints>
                                 <nil key="textColor"/>
-                                <fontDescription key="fontDescription" name="NanumSquareRoundOTFR" family="NanumSquareRoundOTF" pointSize="14"/>
+                                <fontDescription key="fontDescription" name="NanumSquareRoundOTFB" family="NanumSquareRoundOTF" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="비밀번호" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FyD-ac-maN">
@@ -43,7 +46,7 @@
                                     <constraint firstAttribute="height" constant="48" id="fQr-jT-eyT"/>
                                 </constraints>
                                 <nil key="textColor"/>
-                                <fontDescription key="fontDescription" name="NanumSquareRoundOTFR" family="NanumSquareRoundOTF" pointSize="14"/>
+                                <fontDescription key="fontDescription" name="NanumSquareRoundOTFB" family="NanumSquareRoundOTF" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H9c-vV-vpx">
@@ -55,6 +58,9 @@
                                 <fontDescription key="fontDescription" name="NanumSquareRoundOTFEB" family="NanumSquareRoundOTF" pointSize="16"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="로그인"/>
+                                <connections>
+                                    <action selector="loginButtonPressed:" destination="NnI-FO-IcW" eventType="touchUpInside" id="I0I-ud-Gqw"/>
+                                </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logotypo_color" translatesAutoresizingMaskIntoConstraints="NO" id="PyS-c6-f74" userLabel="logo">
                                 <rect key="frame" x="115" y="228" width="144" height="31"/>
@@ -72,6 +78,9 @@
                                 <state key="normal" title="계정이 없으신가요? 회원가입하기">
                                     <color key="titleColor" red="0.2666666667" green="0.1764705882" blue="0.14901960780000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <segue destination="xIp-cQ-aim" kind="show" id="B50-ox-sxi"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -102,14 +111,328 @@
                         <outlet property="loginButton" destination="H9c-vV-vpx" id="Kvr-Wf-w5b"/>
                         <outlet property="passwordField" destination="FyD-ac-maN" id="bbD-ar-LZH"/>
                         <outlet property="registerButton" destination="fCv-Xk-xDT" id="WWZ-Rk-yIP"/>
+                        <segue destination="TUY-xB-RNv" kind="show" identifier="logined" id="pzB-zR-cyO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kBN-63-k0T" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="204" y="125"/>
         </scene>
+        <!--TabBar-->
+        <scene sceneID="mFp-93-q8o">
+            <objects>
+                <viewControllerPlaceholder storyboardName="TabBar" id="TUY-xB-RNv" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bvL-dJ-Lsx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="204" y="669"/>
+        </scene>
+        <!--RegisterVC-->
+        <scene sceneID="kB4-yd-h4e">
+            <objects>
+                <viewController id="xIp-cQ-aim" customClass="RegisterVC" customModule="PetFeed" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="RKb-gb-Z9q">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bma-CH-rGn">
+                                <rect key="frame" x="16" y="48" width="24" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="24" id="hE7-et-eJb"/>
+                                    <constraint firstAttribute="width" constant="24" id="jR0-k9-wA2"/>
+                                </constraints>
+                                <state key="normal" image="add">
+                                    <color key="titleColor" red="0.2666666667" green="0.1764705882" blue="0.14901960780000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="exitButtonPressed:" destination="xIp-cQ-aim" eventType="touchUpInside" id="r7k-mT-nVh"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="회원가입" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OhY-wh-mN2">
+                                <rect key="frame" x="16" y="96" width="88" height="27"/>
+                                <fontDescription key="fontDescription" name="NanumSquareRoundOTFEB" family="NanumSquareRoundOTF" pointSize="24"/>
+                                <color key="textColor" red="0.21568627450980393" green="0.21568627450980393" blue="0.21568627450980393" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="아이디" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cmw-cs-AA7">
+                                <rect key="frame" x="16" y="147" width="39" height="16"/>
+                                <fontDescription key="fontDescription" name="NanumSquareRoundOTFEB" family="NanumSquareRoundOTF" pointSize="14"/>
+                                <color key="textColor" red="0.2156862745" green="0.2156862745" blue="0.2156862745" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="아이디 입력" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ASe-gq-Ipb">
+                                <rect key="frame" x="16" y="175" width="280" height="48"/>
+                                <color key="backgroundColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="De8-DP-3I6"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" name="NanumSquareRoundOTFB" family="NanumSquareRoundOTF" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="4"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="0.5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" red="0.2666666667" green="0.1764705882" blue="0.14901960780000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="비밀번호" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o7A-GK-4n0">
+                                <rect key="frame" x="16" y="247" width="51" height="16"/>
+                                <fontDescription key="fontDescription" name="NanumSquareRoundOTFEB" family="NanumSquareRoundOTF" pointSize="14"/>
+                                <color key="textColor" red="0.2156862745" green="0.2156862745" blue="0.2156862745" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="비밀번호 입력" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Vzg-Db-zZX">
+                                <rect key="frame" x="16" y="275" width="280" height="48"/>
+                                <color key="backgroundColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="vdN-Sn-nwA"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" name="NanumSquareRoundOTFB" family="NanumSquareRoundOTF" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="4"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="0.5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" red="0.2666666667" green="0.1764705882" blue="0.14901960780000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="비밀번호 재입력" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gOF-bu-7qj">
+                                <rect key="frame" x="16" y="347" width="93" height="16"/>
+                                <fontDescription key="fontDescription" name="NanumSquareRoundOTFEB" family="NanumSquareRoundOTF" pointSize="14"/>
+                                <color key="textColor" red="0.2156862745" green="0.2156862745" blue="0.2156862745" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JIV-tp-tQs">
+                                <rect key="frame" x="0.0" y="778" width="375" height="34"/>
+                                <color key="backgroundColor" red="0.2666666667" green="0.1764705882" blue="0.14901960780000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="34" id="LfP-yB-ptc"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QWh-m1-IYx">
+                                <rect key="frame" x="0.0" y="726" width="375" height="52"/>
+                                <color key="backgroundColor" red="0.2666666667" green="0.1764705882" blue="0.14901960780000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="52" id="25X-q4-Kj1"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="NanumSquareRoundOTFEB" family="NanumSquareRoundOTF" pointSize="16"/>
+                                <state key="normal" title="다음">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <segue destination="fSP-Rq-Tcd" kind="show" id="ztf-LJ-Ku4"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="비밀번호 재입력" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iXh-Wj-O2X">
+                                <rect key="frame" x="16" y="375" width="280" height="48"/>
+                                <color key="backgroundColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="GHJ-md-hFM"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" name="NanumSquareRoundOTFB" family="NanumSquareRoundOTF" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="4"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="0.5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" red="0.2666666667" green="0.1764705882" blue="0.14901960780000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Cmw-cs-AA7" firstAttribute="top" secondItem="OhY-wh-mN2" secondAttribute="bottom" constant="24" id="2e5-5m-CU9"/>
+                            <constraint firstItem="JIV-tp-tQs" firstAttribute="top" secondItem="QWh-m1-IYx" secondAttribute="bottom" id="2na-WS-gku"/>
+                            <constraint firstItem="OhY-wh-mN2" firstAttribute="top" secondItem="Bma-CH-rGn" secondAttribute="bottom" constant="24" id="6tn-qJ-Cgd"/>
+                            <constraint firstItem="o7A-GK-4n0" firstAttribute="leading" secondItem="H6f-EW-wSd" secondAttribute="leading" constant="16" id="9KC-dd-VpY"/>
+                            <constraint firstItem="iXh-Wj-O2X" firstAttribute="leading" secondItem="H6f-EW-wSd" secondAttribute="leading" constant="16" id="Ag3-86-pXm"/>
+                            <constraint firstItem="iXh-Wj-O2X" firstAttribute="top" secondItem="gOF-bu-7qj" secondAttribute="bottom" constant="12" id="Axi-p5-3Ge"/>
+                            <constraint firstItem="QWh-m1-IYx" firstAttribute="leading" secondItem="H6f-EW-wSd" secondAttribute="leading" id="C7M-eW-1gM"/>
+                            <constraint firstItem="H6f-EW-wSd" firstAttribute="trailing" secondItem="ASe-gq-Ipb" secondAttribute="trailing" constant="79" id="G4w-is-X4g"/>
+                            <constraint firstItem="Vzg-Db-zZX" firstAttribute="leading" secondItem="H6f-EW-wSd" secondAttribute="leading" constant="16" id="G70-0D-2wK"/>
+                            <constraint firstItem="H6f-EW-wSd" firstAttribute="trailing" secondItem="QWh-m1-IYx" secondAttribute="trailing" id="IcI-qn-K5w"/>
+                            <constraint firstItem="Cmw-cs-AA7" firstAttribute="leading" secondItem="H6f-EW-wSd" secondAttribute="leading" constant="16" id="Mod-EB-9zG"/>
+                            <constraint firstItem="ASe-gq-Ipb" firstAttribute="leading" secondItem="H6f-EW-wSd" secondAttribute="leading" constant="16" id="PqY-Zt-t2M"/>
+                            <constraint firstAttribute="trailing" secondItem="JIV-tp-tQs" secondAttribute="trailing" id="TdX-HM-ztd"/>
+                            <constraint firstAttribute="bottom" secondItem="JIV-tp-tQs" secondAttribute="bottom" id="Thz-Hl-cxG"/>
+                            <constraint firstItem="ASe-gq-Ipb" firstAttribute="top" secondItem="Cmw-cs-AA7" secondAttribute="bottom" constant="12" id="UHM-UZ-BI7"/>
+                            <constraint firstItem="OhY-wh-mN2" firstAttribute="leading" secondItem="H6f-EW-wSd" secondAttribute="leading" constant="16" id="YJP-CO-Vys"/>
+                            <constraint firstItem="JIV-tp-tQs" firstAttribute="leading" secondItem="RKb-gb-Z9q" secondAttribute="leading" id="aBc-UT-n7Q"/>
+                            <constraint firstItem="o7A-GK-4n0" firstAttribute="top" secondItem="ASe-gq-Ipb" secondAttribute="bottom" constant="24" id="iBm-7h-mGb"/>
+                            <constraint firstItem="Bma-CH-rGn" firstAttribute="top" secondItem="H6f-EW-wSd" secondAttribute="top" constant="4" id="lE7-B7-oF5"/>
+                            <constraint firstItem="H6f-EW-wSd" firstAttribute="trailing" secondItem="Vzg-Db-zZX" secondAttribute="trailing" constant="79" id="rbu-yv-m3e"/>
+                            <constraint firstItem="gOF-bu-7qj" firstAttribute="top" secondItem="Vzg-Db-zZX" secondAttribute="bottom" constant="24" id="rnf-ah-PMt"/>
+                            <constraint firstItem="H6f-EW-wSd" firstAttribute="trailing" secondItem="iXh-Wj-O2X" secondAttribute="trailing" constant="79" id="uvX-Dp-829"/>
+                            <constraint firstItem="gOF-bu-7qj" firstAttribute="leading" secondItem="H6f-EW-wSd" secondAttribute="leading" constant="16" id="v72-6j-qh9"/>
+                            <constraint firstItem="Vzg-Db-zZX" firstAttribute="top" secondItem="o7A-GK-4n0" secondAttribute="bottom" constant="12" id="v8d-AR-Se9"/>
+                            <constraint firstItem="Bma-CH-rGn" firstAttribute="leading" secondItem="H6f-EW-wSd" secondAttribute="leading" constant="16" id="zmu-f3-aSk"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="H6f-EW-wSd"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1oM-OT-eKF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1055" y="125"/>
+        </scene>
+        <!--RegisterVC-->
+        <scene sceneID="fuW-OJ-rBj">
+            <objects>
+                <viewController id="fSP-Rq-Tcd" customClass="RegisterVC" customModule="PetFeed" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="sah-VU-LnB">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6NO-Gb-LTh">
+                                <rect key="frame" x="16" y="48" width="24" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="24" id="JXu-vP-4kJ"/>
+                                    <constraint firstAttribute="height" constant="24" id="u9X-cl-klm"/>
+                                </constraints>
+                                <state key="normal" image="more_vert">
+                                    <color key="titleColor" red="0.2666666667" green="0.1764705882" blue="0.14901960780000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="exitButtonPressed:" destination="fSP-Rq-Tcd" eventType="touchUpInside" id="lNR-ew-DAa"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="반려동물 등록인증" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bhV-3T-Yj7">
+                                <rect key="frame" x="16" y="96" width="181" height="27"/>
+                                <fontDescription key="fontDescription" name="NanumSquareRoundOTFEB" family="NanumSquareRoundOTF" pointSize="24"/>
+                                <color key="textColor" red="0.2156862745" green="0.2156862745" blue="0.2156862745" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="반려동물 이름" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e6I-c9-C5z">
+                                <rect key="frame" x="16" y="177" width="80" height="16"/>
+                                <fontDescription key="fontDescription" name="NanumSquareRoundOTFEB" family="NanumSquareRoundOTF" pointSize="14"/>
+                                <color key="textColor" red="0.2156862745" green="0.2156862745" blue="0.2156862745" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="이름 입력" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aaj-aq-vcs">
+                                <rect key="frame" x="16" y="205" width="280" height="48"/>
+                                <color key="backgroundColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="DzA-Z8-5L3"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" name="NanumSquareRoundOTFB" family="NanumSquareRoundOTF" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="4"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="0.5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" red="0.2666666667" green="0.1764705882" blue="0.14901960780000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="등록번호" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MhE-ne-VmW">
+                                <rect key="frame" x="16" y="277" width="51" height="16"/>
+                                <fontDescription key="fontDescription" name="NanumSquareRoundOTFEB" family="NanumSquareRoundOTF" pointSize="14"/>
+                                <color key="textColor" red="0.2156862745" green="0.2156862745" blue="0.2156862745" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="등록번호 입력" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Oev-IG-JkK">
+                                <rect key="frame" x="16" y="305" width="280" height="48"/>
+                                <color key="backgroundColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="4Hp-WQ-cOd"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" name="NanumSquareRoundOTFB" family="NanumSquareRoundOTF" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="4"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="0.5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" red="0.2666666667" green="0.1764705882" blue="0.14901960780000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SVE-lk-8DU">
+                                <rect key="frame" x="0.0" y="778" width="375" height="34"/>
+                                <color key="backgroundColor" red="0.2666666667" green="0.1764705882" blue="0.14901960780000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="34" id="pgV-Cz-hX0"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0YA-V7-in6">
+                                <rect key="frame" x="0.0" y="726" width="375" height="52"/>
+                                <color key="backgroundColor" red="0.2666666667" green="0.1764705882" blue="0.14901960780000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="52" id="Eya-7k-kt6"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="NanumSquareRoundOTFEB" family="NanumSquareRoundOTF" pointSize="16"/>
+                                <state key="normal" title="다음">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="자신의 반려동물을 인증해주세요." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VvY-yZ-1ok">
+                                <rect key="frame" x="16" y="131" width="161.66666666666666" height="14"/>
+                                <fontDescription key="fontDescription" name="NanumSquareRoundOTFR" family="NanumSquareRoundOTF" pointSize="12"/>
+                                <color key="textColor" red="0.12549019607843137" green="0.12549019607843137" blue="0.12549019607843137" alpha="0.20000000000000001" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="6NO-Gb-LTh" firstAttribute="leading" secondItem="D61-MR-IE9" secondAttribute="leading" constant="16" id="0YC-rq-zXn"/>
+                            <constraint firstItem="SVE-lk-8DU" firstAttribute="leading" secondItem="sah-VU-LnB" secondAttribute="leading" id="2my-cg-2nC"/>
+                            <constraint firstItem="MhE-ne-VmW" firstAttribute="leading" secondItem="D61-MR-IE9" secondAttribute="leading" constant="16" id="C2i-9v-uDI"/>
+                            <constraint firstItem="0YA-V7-in6" firstAttribute="leading" secondItem="D61-MR-IE9" secondAttribute="leading" id="DGo-ne-SID"/>
+                            <constraint firstItem="SVE-lk-8DU" firstAttribute="top" secondItem="0YA-V7-in6" secondAttribute="bottom" id="FAO-nG-PGN"/>
+                            <constraint firstItem="e6I-c9-C5z" firstAttribute="leading" secondItem="D61-MR-IE9" secondAttribute="leading" constant="16" id="FeH-36-XQg"/>
+                            <constraint firstItem="Oev-IG-JkK" firstAttribute="top" secondItem="MhE-ne-VmW" secondAttribute="bottom" constant="12" id="KZo-kz-VV9"/>
+                            <constraint firstItem="bhV-3T-Yj7" firstAttribute="top" secondItem="6NO-Gb-LTh" secondAttribute="bottom" constant="24" id="SFT-Q8-le3"/>
+                            <constraint firstAttribute="trailing" secondItem="SVE-lk-8DU" secondAttribute="trailing" id="XRe-LD-L6I"/>
+                            <constraint firstItem="D61-MR-IE9" firstAttribute="trailing" secondItem="Oev-IG-JkK" secondAttribute="trailing" constant="79" id="Z1C-hP-gwn"/>
+                            <constraint firstItem="e6I-c9-C5z" firstAttribute="top" secondItem="VvY-yZ-1ok" secondAttribute="bottom" constant="32" id="bxc-Ek-9m3"/>
+                            <constraint firstItem="VvY-yZ-1ok" firstAttribute="leading" secondItem="D61-MR-IE9" secondAttribute="leading" constant="16" id="cZg-Ck-GzO"/>
+                            <constraint firstItem="6NO-Gb-LTh" firstAttribute="top" secondItem="D61-MR-IE9" secondAttribute="top" constant="4" id="i0v-xQ-bk5"/>
+                            <constraint firstItem="MhE-ne-VmW" firstAttribute="top" secondItem="aaj-aq-vcs" secondAttribute="bottom" constant="24" id="mE1-9X-TVK"/>
+                            <constraint firstItem="bhV-3T-Yj7" firstAttribute="leading" secondItem="D61-MR-IE9" secondAttribute="leading" constant="16" id="maF-S5-Nkv"/>
+                            <constraint firstAttribute="bottom" secondItem="SVE-lk-8DU" secondAttribute="bottom" id="oBI-aX-cSY"/>
+                            <constraint firstItem="D61-MR-IE9" firstAttribute="trailing" secondItem="aaj-aq-vcs" secondAttribute="trailing" constant="79" id="r4W-Wm-iO1"/>
+                            <constraint firstItem="aaj-aq-vcs" firstAttribute="top" secondItem="e6I-c9-C5z" secondAttribute="bottom" constant="12" id="vcd-9f-nr2"/>
+                            <constraint firstItem="D61-MR-IE9" firstAttribute="trailing" secondItem="0YA-V7-in6" secondAttribute="trailing" id="x9j-0L-Lfo"/>
+                            <constraint firstItem="aaj-aq-vcs" firstAttribute="leading" secondItem="D61-MR-IE9" secondAttribute="leading" constant="16" id="xFp-HB-8z7"/>
+                            <constraint firstItem="VvY-yZ-1ok" firstAttribute="top" secondItem="bhV-3T-Yj7" secondAttribute="bottom" constant="8" id="xho-CV-M7c"/>
+                            <constraint firstItem="Oev-IG-JkK" firstAttribute="leading" secondItem="D61-MR-IE9" secondAttribute="leading" constant="16" id="yb4-aZ-PkT"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="D61-MR-IE9"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pLW-7U-M0V" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1852" y="124.8768472906404"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="add" width="48" height="48"/>
         <image name="logotypo_color" width="144" height="31"/>
+        <image name="more_vert" width="48" height="48"/>
     </resources>
 </document>

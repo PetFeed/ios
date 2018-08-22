@@ -31,6 +31,7 @@
 		78CE7CD1212C15A900A3CB41 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 78CE7CD0212C15A900A3CB41 /* Login.storyboard */; };
 		78CE7CD3212C181D00A3CB41 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78CE7CD2212C181D00A3CB41 /* LoginVC.swift */; };
 		78E61E01211D5D5900BEBE67 /* HashTagCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 78E61E00211D5D5900BEBE67 /* HashTagCell.xib */; };
+		78F3D2E8212C243B0065BD89 /* RegisterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F3D2E7212C243B0065BD89 /* RegisterVC.swift */; };
 		78F741132123356700972923 /* profile.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 78F741122123356700972923 /* profile.jpeg */; };
 		78F741152123357000972923 /* content.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 78F741142123357000972923 /* content.jpeg */; };
 /* End PBXBuildFile section */
@@ -62,6 +63,7 @@
 		78CE7CD0212C15A900A3CB41 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		78CE7CD2212C181D00A3CB41 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoginVC.swift; path = PetFeed/ViewControllers/LoginVC.swift; sourceTree = SOURCE_ROOT; };
 		78E61E00211D5D5900BEBE67 /* HashTagCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HashTagCell.xib; sourceTree = "<group>"; };
+		78F3D2E7212C243B0065BD89 /* RegisterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RegisterVC.swift; path = PetFeed/ViewControllers/RegisterVC.swift; sourceTree = SOURCE_ROOT; };
 		78F741122123356700972923 /* profile.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = profile.jpeg; sourceTree = "<group>"; };
 		78F741142123357000972923 /* content.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = content.jpeg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -91,6 +93,7 @@
 		7802DB022117FE630079C311 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				78F3D2E7212C243B0065BD89 /* RegisterVC.swift */,
 				78CE7CD2212C181D00A3CB41 /* LoginVC.swift */,
 				78151DA82116D206007EE2AA /* SearchVC.swift */,
 				78151DA62116D1DC007EE2AA /* BackDropVC.swift */,
@@ -269,6 +272,7 @@
 				7802DB072117FFFF0079C311 /* String.swift in Sources */,
 				7892BBDD2116C177005213B3 /* direction.swift in Sources */,
 				7802DB012117F7480079C311 /* HashTagCell.swift in Sources */,
+				78F3D2E8212C243B0065BD89 /* RegisterVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
