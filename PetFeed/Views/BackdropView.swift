@@ -43,9 +43,12 @@ class BackdropView: UIView {
     var percent:Float = 0.0 {
         didSet {
             let col=UIColor.white.toColor(UIColor.camoGreen, percentage: CGFloat(percent*100))
+            let col2=UIColor.camoGreen.toColor(UIColor.white, percentage: CGFloat(percent*100))
+
             
             //SetOpacity
             self.parentView.backgroundColor = col
+            self.scrollBar.backgroundColor = col2
             
             //print(percent)
 
