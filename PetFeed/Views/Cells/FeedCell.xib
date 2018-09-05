@@ -22,20 +22,20 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="gTV-IL-0wX" customClass="FeedCell" customModule="PetFeed" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="393" height="562"/>
+            <rect key="frame" x="0.0" y="0.0" width="393" height="431"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="393" height="562"/>
+                <rect key="frame" x="0.0" y="0.0" width="393" height="431"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="pXt-Mr-Utn">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="431"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="NOD-eU-t7Z">
-                                <rect key="frame" x="0.0" y="0.0" width="393" height="78.5"/>
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="58.5"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="4JT-02-aJZ" userLabel="profileImage">
-                                        <rect key="frame" x="16" y="20" width="42" height="42.5"/>
+                                        <rect key="frame" x="16" y="0.0" width="42" height="42.5"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="42" id="Hfp-gF-9be"/>
                                             <constraint firstAttribute="width" secondItem="4JT-02-aJZ" secondAttribute="height" multiplier="1:1" id="odf-dQ-5bb"/>
@@ -43,7 +43,7 @@
                                         </constraints>
                                     </imageView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="txo-ra-fYT">
-                                        <rect key="frame" x="70" y="23.5" width="271" height="36"/>
+                                        <rect key="frame" x="70" y="3.5" width="271" height="36"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이창현" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7at-wJ-MeO" userLabel="name">
                                                 <rect key="frame" x="0.0" y="0.0" width="271" height="18"/>
@@ -60,7 +60,7 @@
                                         </subviews>
                                     </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="STM-5i-txL">
-                                        <rect key="frame" x="353" y="29" width="24" height="24.5"/>
+                                        <rect key="frame" x="353" y="9" width="24" height="24.5"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="24" id="CqG-1g-F9h"/>
                                             <constraint firstAttribute="height" constant="24" id="Trd-7z-wjy"/>
@@ -73,7 +73,7 @@
                                 <edgeInsets key="layoutMargins" top="0.0" left="16" bottom="16" right="16"/>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Dq-ic-8cz">
-                                <rect key="frame" x="0.0" y="204" width="393" height="38"/>
+                                <rect key="frame" x="0.0" y="128.5" width="393" height="38"/>
                                 <attributedString key="attributedText">
                                     <fragment content="본문~~본문~~본문~~본문~~본문~~본문~~본문~~본문~~본문~~본문~~본문~~본문~~본문~~">
                                         <attributes>
@@ -85,7 +85,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="content.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="mXe-6j-nIo">
-                                <rect key="frame" x="0.0" y="367" width="393" height="195"/>
+                                <rect key="frame" x="0.0" y="236" width="393" height="195"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="195" id="zEl-hP-MdT"/>
                                 </constraints>
@@ -101,14 +101,14 @@
                 <constraint firstAttribute="trailing" secondItem="pXt-Mr-Utn" secondAttribute="trailing" id="dcG-bo-5sU"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
-            <size key="customSize" width="655" height="382"/>
+            <size key="customSize" width="655" height="251"/>
             <connections>
                 <outlet property="dateLabel" destination="qc0-7k-RZg" id="HH1-oz-m3A"/>
                 <outlet property="imageView" destination="mXe-6j-nIo" id="Raq-fg-80x"/>
                 <outlet property="nameLabel" destination="7at-wJ-MeO" id="yOq-AC-n7U"/>
                 <outlet property="profileImageView" destination="4JT-02-aJZ" id="4uY-na-CFN"/>
             </connections>
-            <point key="canvasLocation" x="-270.5" y="-42"/>
+            <point key="canvasLocation" x="-270.5" y="-107.5"/>
         </collectionViewCell>
     </objects>
     <resources>

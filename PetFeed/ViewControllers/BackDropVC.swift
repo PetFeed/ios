@@ -28,9 +28,10 @@ class BackDropVC: UIViewController {
         
         collectionView.register(UINib(nibName: "FeedCell", bundle: nil), forCellWithReuseIdentifier: "cell")
 
-//        if let flowLayout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
-//            flowLayout.estimatedItemSize = CGSize(width: 200, height: 100)
-//        }
+        if let flowLayout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
+            flowLayout.estimatedItemSize = CGSize(width: embeddedViewWidth.constant-20, height: 100)
+        }
+        
         
         let _storyboard: UIStoryboard = UIStoryboard(name: "Search", bundle: nil)
         
@@ -45,7 +46,6 @@ class BackDropVC: UIViewController {
     func updateFrame(_ width:CGFloat) {
         embeddedViewWidth.constant = width
         embeddedView.scrollBar.roundCorners([.topLeft,.topRight], radius: 20)
-        embeddedView.layoutIfNeeded()
     }
     
     
@@ -67,8 +67,10 @@ extension BackDropVC:UICollectionViewDelegate,UICollectionViewDataSource,UIColle
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: collectionView.frame.size.width-20, height: 400)
+        return CGSize(width: 250, height: 400)
     }
+    
+    
     
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

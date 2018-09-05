@@ -29,23 +29,26 @@
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="719"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2cD-p9-ZCe" userLabel="move">
-                                                <rect key="frame" x="0.0" y="0.0" width="375" height="30"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="26"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hIB-pd-bNY">
-                                                        <rect key="frame" x="152" y="10" width="71" height="10"/>
+                                                        <rect key="frame" x="151.66666666666666" y="10" width="72" height="6"/>
                                                         <color key="backgroundColor" red="0.26666666666666666" green="0.1764705882352941" blue="0.14901960784313725" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="6" id="PbA-4x-ahy"/>
+                                                            <constraint firstAttribute="width" constant="72" id="x7G-4W-Qqh"/>
+                                                        </constraints>
                                                     </view>
                                                 </subviews>
                                                 <constraints>
-                                                    <constraint firstAttribute="trailing" secondItem="hIB-pd-bNY" secondAttribute="trailing" constant="152" id="6te-em-KCx"/>
-                                                    <constraint firstAttribute="bottom" secondItem="hIB-pd-bNY" secondAttribute="bottom" constant="10" id="GLN-nl-k2n"/>
-                                                    <constraint firstItem="hIB-pd-bNY" firstAttribute="leading" secondItem="2cD-p9-ZCe" secondAttribute="leading" constant="152" id="LLB-mG-QCv"/>
-                                                    <constraint firstItem="hIB-pd-bNY" firstAttribute="top" secondItem="2cD-p9-ZCe" secondAttribute="top" constant="10" id="e5U-ke-3I0"/>
-                                                    <constraint firstAttribute="height" constant="30" id="yyI-MU-BYO"/>
+                                                    <constraint firstItem="hIB-pd-bNY" firstAttribute="centerX" secondItem="2cD-p9-ZCe" secondAttribute="centerX" id="Ae0-TT-5Aq"/>
+                                                    <constraint firstAttribute="height" constant="26" id="ncL-X6-dSK"/>
+                                                    <constraint firstAttribute="width" constant="375" id="qrY-xq-Vfr"/>
+                                                    <constraint firstItem="hIB-pd-bNY" firstAttribute="centerY" secondItem="2cD-p9-ZCe" secondAttribute="centerY" id="wnQ-tb-026"/>
                                                 </constraints>
                                             </view>
                                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="tb8-al-ZYP">
-                                                <rect key="frame" x="0.0" y="30" width="375" height="689"/>
+                                                <rect key="frame" x="0.0" y="26" width="375" height="693"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="N45-QS-cUk">
                                                     <size key="itemSize" width="0.0" height="0.0"/>
@@ -61,10 +64,12 @@
                                             </collectionView>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="375" id="lHt-xx-kfe"/>
+                                            <constraint firstAttribute="trailing" secondItem="tb8-al-ZYP" secondAttribute="trailing" id="Blg-zv-DDw"/>
+                                            <constraint firstItem="tb8-al-ZYP" firstAttribute="leading" secondItem="eRu-Yp-Ymw" secondAttribute="leading" id="gmh-DB-Hbz"/>
                                         </constraints>
                                     </stackView>
                                 </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="eRu-Yp-Ymw" secondAttribute="bottom" id="CQh-b3-RKj"/>
@@ -90,7 +95,7 @@
                         <outlet property="collectionView" destination="tb8-al-ZYP" id="0ap-13-IZC"/>
                         <outlet property="containerView" destination="fTg-r0-st0" id="wak-DJ-B8D"/>
                         <outlet property="embeddedView" destination="fpd-y5-pEd" id="Bdw-PK-0kl"/>
-                        <outlet property="embeddedViewWidth" destination="lHt-xx-kfe" id="g7d-fX-nbU"/>
+                        <outlet property="embeddedViewWidth" destination="qrY-xq-Vfr" id="UEQ-vy-7TY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
