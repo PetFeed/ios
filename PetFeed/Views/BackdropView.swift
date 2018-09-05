@@ -59,7 +59,7 @@ class BackdropView: UIView {
                                 + (self.originalFrame.width * CGFloat(1-bottomBar_min_size)
                                 * CGFloat(percent))
 
-            self.parentViewController?.updateFrame(width)
+            //self.parentViewController?.updateFrame(width)
             
         }
     }
