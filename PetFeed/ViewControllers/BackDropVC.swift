@@ -17,6 +17,7 @@ class BackDropVC: UIViewController {
     
     @IBOutlet weak var collectionView: UICollectionView!
     
+    
     var titleText:String = "Hello" {
         didSet {
             collectionView.reloadData()
@@ -44,7 +45,6 @@ class BackDropVC: UIViewController {
     }
     
     func updateFrame(_ width:CGFloat) {
-        embeddedViewWidth.constant = width
         embeddedView.scrollBar.roundCorners([.topLeft,.topRight], radius: 20)
     }
     
@@ -55,7 +55,6 @@ extension BackDropVC:UICollectionViewDelegate,UICollectionViewDataSource,UIColle
 
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! FeedCell
         
         //cell.backgroundColor = self.randomColor()
@@ -67,7 +66,7 @@ extension BackDropVC:UICollectionViewDelegate,UICollectionViewDataSource,UIColle
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 300, height: 400)
+        return CGSize(width: self.view.frame.width-20, height: 400)
     }
     
     

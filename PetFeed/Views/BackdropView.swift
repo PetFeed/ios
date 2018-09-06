@@ -17,7 +17,7 @@ class BackdropView: UIView {
     
     let offset_top_y:CGFloat = 44
     var offset_bottom_y:CGFloat {
-        return scrollBar.frame.height //+(self.parentViewController?.tabBarController?.tabBar.frame.height)!
+        return scrollBar.frame.height + 86 //+(self.parentViewController?.tabBarController?.tabBar.frame.height)!
     }
     
     var tabbar_height: CGFloat {
@@ -48,11 +48,12 @@ class BackdropView: UIView {
             
             //SetOpacity
             self.parentView.backgroundColor = col
-            self.scrollBar.backgroundColor = col2
-            
+            self.opacityView.backgroundColor = col2
+            self.opacityView.layer.opacity = 1-percent
             //print(percent)
-
-            self.parentViewController?.collectionView.layer.opacity = percent
+            
+            //self.parentViewController?.collectionView.layer.opacity = percent
+            //self.scrollBar.layer.opacity = percent
 
             //parentViewController?.updateFrame(percent)
             let width:CGFloat = self.originalFrame.width * bottomBar_min_size
@@ -66,6 +67,7 @@ class BackdropView: UIView {
     
     //눌러서 움직일 수 있는 바
     @IBOutlet var scrollBar:UIView!
+    @IBOutlet var opacityView:UIView!
     
     //기본값
     var originalFrame:CGRect!
