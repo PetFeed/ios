@@ -48,17 +48,19 @@ class BackdropView: UIView {
             
             //SetOpacity
             self.parentView.backgroundColor = col
+            
             self.opacityView.backgroundColor = col2
             self.opacityView.layer.opacity = 1-percent
+            
             //print(percent)
             
-            //self.parentViewController?.collectionView.layer.opacity = percent
+            self.parentViewController?.collectionView.layer.opacity = percent
             //self.scrollBar.layer.opacity = percent
 
             //parentViewController?.updateFrame(percent)
-            let width:CGFloat = self.originalFrame.width * bottomBar_min_size
-                                + (self.originalFrame.width * CGFloat(1-bottomBar_min_size)
-                                * CGFloat(percent))
+//            let width:CGFloat = self.originalFrame.width * bottomBar_min_size
+//                                + (self.originalFrame.width * CGFloat(1-bottomBar_min_size)
+//                                * CGFloat(percent))
 
             //self.parentViewController?.updateFrame(width)
             
