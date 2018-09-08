@@ -97,11 +97,11 @@
 		7802DB022117FE630079C311 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				78151DA62116D1DC007EE2AA /* BackDropVC.swift */,
 				7887431821419110005AECCA /* NotificationVC.swift */,
 				78F3D2E7212C243B0065BD89 /* RegisterVC.swift */,
 				78CE7CD2212C181D00A3CB41 /* LoginVC.swift */,
 				78151DA82116D206007EE2AA /* SearchVC.swift */,
-				78151DA62116D1DC007EE2AA /* BackDropVC.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";

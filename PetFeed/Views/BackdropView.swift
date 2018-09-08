@@ -141,6 +141,14 @@ class BackdropView: UIView {
 
 extension BackdropView {
     func make(parentView:UIView!,dir:direction) {
+        
+        if self.currentDir == dir {
+            return
+        }
+        
+        print("go to \(dir.hashValue)from\(currentDir.hashValue)")
+        
+        
         self.currentDir = dir
         
         var maketo:Float {

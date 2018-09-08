@@ -108,15 +108,19 @@ class BackDropVC: UIViewController {
     @IBAction func tabBarBtnPressed(_ sender: UIButton) {
         tabAction(sender)
         embeddedView.make(parentView: self.view, dir: .down)
+        print("The current direction is.. \(embeddedView.currentDir)")
+        //print("His frame changed to ")
         
         switch currentIndex {
         case 0:
-            remove(asChildViewController: notificationVC)
             add(asChildViewController: searchVC)
+            remove(asChildViewController: notificationVC)
+            
             break;
         case 1:
-            remove(asChildViewController: searchVC)
             add(asChildViewController: notificationVC)
+            remove(asChildViewController: searchVC)
+            
             break;
         default:
             break;
@@ -144,7 +148,7 @@ extension BackDropVC {
     
     private func remove(asChildViewController viewController: UIViewController) {
         // Notify Child View Controller
-        //viewController.willMove(toParentViewController: nil)
+        viewController.willMove(toParentViewController: nil)
         
         // Remove Child View From Superview
         viewController.view.removeFromSuperview()
