@@ -108,7 +108,12 @@ class BackDropVC: UIViewController {
         }
         tabViewControllers = [searchVC,notificationVC,writeVC,marketVC,profileVC]
         
-        add(asChildViewController: searchVC)
+        for i in tabViewControllers {
+            if i != writeVC {
+                add(asChildViewController: i)
+            }
+        }
+        change(toViewController: searchVC)
     }
     
     func tabPressed(_ sender: UIButton) {
@@ -125,11 +130,15 @@ class BackDropVC: UIViewController {
     }
     
     func tabAction(withIndex index:Int) {
-        switch index {
-        case 0:
-            break
-        default:
-            break
+        let willTurnto = tabViewControllers[index]
+        if willTurnto == writeVC {
+            let storyboard: UIStoryboard = UIStoryboard(name: "Tabs", bundle: nil)
+            
+            let vc = storyboard.instantiateViewController(withIdentifier: "WriteVC")as! WriteVC
+            self.present(vc, animated: true, completion: nil)
+            
+        } else {
+            change(toViewController: willTurnto)
         }
     }
     
@@ -153,23 +162,26 @@ extension BackDropVC {
         // Configure Child View
         viewController.view.frame = self.containerView.bounds
         viewController.view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        viewController.view.isHidden = false
+        viewController.view.isHidden = true
         
         // Notify Child View Controller
         viewController.didMove(toParentViewController: self)
     }
     
-    private func change(asChildViewController viewController:UIViewController) {
-        
+    private func change(toViewController vc:UIViewController) {
+        for i in tabViewControllers {
+            remove(with: i)
+        }
+        vc.view.isHidden = false
     }
     
-    private func remove(asChildViewController viewController: UIViewController) {
+    private func remove(with vc:UIViewController) {
         // Notify Child View Controller
-        //viewController.willMove(toParentViewController: nil)
+        vc.willMove(toParentViewController: nil)
         
         // Remove Child View From Superview
         ///viewController.view.removeFromSuperview()
-        viewController.view.isHidden = true
+        vc.view.isHidden = true
         
         // Notify Child View Controller
         //viewController.removeFromParentViewController()
