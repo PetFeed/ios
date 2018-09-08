@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		27E9264B70DB984D028ED7C3 /* Pods_PetFeed.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 024CC2E4B43653836A804B2C /* Pods_PetFeed.framework */; };
 		7802DAFC2117F5D40079C311 /* NanumSquareRoundOTFB.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7802DAF82117F5D30079C311 /* NanumSquareRoundOTFB.otf */; };
 		7802DAFD2117F5D40079C311 /* NanumSquareRoundOTFR.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7802DAF92117F5D40079C311 /* NanumSquareRoundOTFR.otf */; };
 		7802DAFE2117F5D40079C311 /* NanumSquareRoundOTFL.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7802DAFA2117F5D40079C311 /* NanumSquareRoundOTFL.otf */; };
@@ -23,8 +24,8 @@
 		7887431B2143873E005AECCA /* MarketVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7887431A2143873E005AECCA /* MarketVC.swift */; };
 		7887431D21438746005AECCA /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7887431C21438746005AECCA /* ProfileVC.swift */; };
 		7887431F214388B8005AECCA /* WriteVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7887431E214388B8005AECCA /* WriteVC.swift */; };
-		7887432121438E18005AECCA /* ProfileImg.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7887432021438E18005AECCA /* ProfileImg.xib */; };
 		7887432321438E44005AECCA /* profileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7887432221438E44005AECCA /* profileView.swift */; };
+		78874325214394CA005AECCA /* ImageSelectCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78874324214394CA005AECCA /* ImageSelectCell.swift */; };
 		7892222D2118032F00498839 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7892222C2118032F00498839 /* UIView.swift */; };
 		7892222F211803AE00498839 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7892222E211803AE00498839 /* Colors.swift */; };
 		7892BBDD2116C177005213B3 /* direction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7892BBDC2116C177005213B3 /* direction.swift */; };
@@ -42,6 +43,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		024CC2E4B43653836A804B2C /* Pods_PetFeed.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PetFeed.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4430047BF1B05A811165E5E6 /* Pods-PetFeed.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PetFeed.release.xcconfig"; path = "Pods/Target Support Files/Pods-PetFeed/Pods-PetFeed.release.xcconfig"; sourceTree = "<group>"; };
+		6415A035353F9945F8B10A6D /* Pods-PetFeed.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PetFeed.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PetFeed/Pods-PetFeed.debug.xcconfig"; sourceTree = "<group>"; };
 		7802DAF82117F5D30079C311 /* NanumSquareRoundOTFB.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumSquareRoundOTFB.otf; sourceTree = "<group>"; };
 		7802DAF92117F5D40079C311 /* NanumSquareRoundOTFR.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumSquareRoundOTFR.otf; sourceTree = "<group>"; };
 		7802DAFA2117F5D40079C311 /* NanumSquareRoundOTFL.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumSquareRoundOTFL.otf; sourceTree = "<group>"; };
@@ -58,8 +62,8 @@
 		7887431A2143873E005AECCA /* MarketVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketVC.swift; sourceTree = "<group>"; };
 		7887431C21438746005AECCA /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
 		7887431E214388B8005AECCA /* WriteVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteVC.swift; sourceTree = "<group>"; };
-		7887432021438E18005AECCA /* ProfileImg.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileImg.xib; sourceTree = "<group>"; };
 		7887432221438E44005AECCA /* profileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = profileView.swift; sourceTree = "<group>"; };
+		78874324214394CA005AECCA /* ImageSelectCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSelectCell.swift; sourceTree = "<group>"; };
 		7892222C2118032F00498839 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		7892222E211803AE00498839 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		7892BBDC2116C177005213B3 /* direction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = direction.swift; sourceTree = "<group>"; };
@@ -83,12 +87,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				27E9264B70DB984D028ED7C3 /* Pods_PetFeed.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		26CCF1B3FD5180B394F08916 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				024CC2E4B43653836A804B2C /* Pods_PetFeed.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		43A5EF77781796B8DEA04ADA /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				6415A035353F9945F8B10A6D /* Pods-PetFeed.debug.xcconfig */,
+				4430047BF1B05A811165E5E6 /* Pods-PetFeed.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		7802DAF72117F5C90079C311 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
@@ -130,7 +152,6 @@
 				78A0FE8421152AAE0028A6D9 /* Backdrop.storyboard */,
 				7887431621418657005AECCA /* Tabs.storyboard */,
 				78A0FE94211532070028A6D9 /* BackdropView.swift */,
-				7887432021438E18005AECCA /* ProfileImg.xib */,
 				7887432221438E44005AECCA /* profileView.swift */,
 				78F7411121232A5A00972923 /* Cells */,
 			);
@@ -153,6 +174,8 @@
 			children = (
 				78A0FE7F21152AAE0028A6D9 /* PetFeed */,
 				78A0FE7E21152AAE0028A6D9 /* Products */,
+				43A5EF77781796B8DEA04ADA /* Pods */,
+				26CCF1B3FD5180B394F08916 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -185,6 +208,7 @@
 		78F7411121232A5A00972923 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				78874324214394CA005AECCA /* ImageSelectCell.swift */,
 				7802DB002117F7480079C311 /* HashTagCell.swift */,
 				78E61E00211D5D5900BEBE67 /* HashTagCell.xib */,
 				7841B69C21189F9F00E7D121 /* FeedCell.swift */,
@@ -200,9 +224,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 78A0FE8F21152AB00028A6D9 /* Build configuration list for PBXNativeTarget "PetFeed" */;
 			buildPhases = (
+				CBD183E7BE91CCE356C5FA2A /* [CP] Check Pods Manifest.lock */,
 				78A0FE7921152AAE0028A6D9 /* Sources */,
 				78A0FE7A21152AAE0028A6D9 /* Frameworks */,
 				78A0FE7B21152AAE0028A6D9 /* Resources */,
+				5E327C4A7D3F54F695F72BCE /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -260,7 +286,6 @@
 				7802DAFD2117F5D40079C311 /* NanumSquareRoundOTFR.otf in Resources */,
 				78A0FE8821152AB00028A6D9 /* Assets.xcassets in Resources */,
 				7802DAFC2117F5D40079C311 /* NanumSquareRoundOTFB.otf in Resources */,
-				7887432121438E18005AECCA /* ProfileImg.xib in Resources */,
 				78A0FE8621152AAE0028A6D9 /* Backdrop.storyboard in Resources */,
 				78F741132123356700972923 /* profile.jpeg in Resources */,
 				7841B69F21189F9F00E7D121 /* FeedCell.xib in Resources */,
@@ -269,6 +294,53 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		5E327C4A7D3F54F695F72BCE /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-PetFeed/Pods-PetFeed-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Pickle/Pickle.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+				"${BUILT_PRODUCTS_DIR}/libwebp/libwebp.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Pickle.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/libwebp.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PetFeed/Pods-PetFeed-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CBD183E7BE91CCE356C5FA2A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-PetFeed-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		78A0FE7921152AAE0028A6D9 /* Sources */ = {
@@ -287,6 +359,7 @@
 				7841B6A12118A2EB00E7D121 /* Array.swift in Sources */,
 				78151DA72116D1DC007EE2AA /* BackDropVC.swift in Sources */,
 				7887431B2143873E005AECCA /* MarketVC.swift in Sources */,
+				78874325214394CA005AECCA /* ImageSelectCell.swift in Sources */,
 				7802DB072117FFFF0079C311 /* String.swift in Sources */,
 				7892BBDD2116C177005213B3 /* direction.swift in Sources */,
 				7802DB012117F7480079C311 /* HashTagCell.swift in Sources */,
@@ -434,15 +507,13 @@
 		};
 		78A0FE9021152AB00028A6D9 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6415A035353F9945F8B10A6D /* Pods-PetFeed.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = A358VZ5QEA;
 				INFOPLIST_FILE = PetFeed/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = changhyeon.PetFeed;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -452,15 +523,13 @@
 		};
 		78A0FE9121152AB00028A6D9 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4430047BF1B05A811165E5E6 /* Pods-PetFeed.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = A358VZ5QEA;
 				INFOPLIST_FILE = PetFeed/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = changhyeon.PetFeed;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;

@@ -121,11 +121,14 @@ class BackDropVC: UIViewController {
             if (i == sender) {
                 currentIndex = n
             }
-            if (i == sender || i == tabs[2]) {
-                sender.layer.opacity = 1
-            } else {
-                i.layer.opacity = btnMinOpacity
+            if (i != tabs[2]) {
+                if (i == sender ) {
+                    sender.layer.opacity = 1
+                } else {
+                    i.layer.opacity = btnMinOpacity
+                }
             }
+            
         }
     }
     
