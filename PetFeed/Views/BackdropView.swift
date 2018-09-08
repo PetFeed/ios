@@ -47,10 +47,11 @@ class BackdropView: UIView {
 
             
             //SetOpacity
-            self.parentView.backgroundColor = col
+            self.opacityViewOnOutside.backgroundColor = col
             
             self.opacityView.backgroundColor = col2
             self.opacityView.layer.opacity = 1-percent
+            self.opacityViewOnOutside.layer.opacity = percent
             
             //print(percent)
             
@@ -70,6 +71,8 @@ class BackdropView: UIView {
     //눌러서 움직일 수 있는 바
     @IBOutlet var scrollBar:UIView!
     @IBOutlet var opacityView:UIView!
+    
+    @IBOutlet var opacityViewOnOutside:UIView!
     
     //기본값
     var originalFrame:CGRect!

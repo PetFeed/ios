@@ -21,6 +21,10 @@
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fTg-r0-st0">
                                 <rect key="frame" x="0.0" y="44" width="375" height="682"/>
                             </containerView>
+                            <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DTV-wq-wZe" userLabel="Opacity view">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                                <color key="backgroundColor" red="0.2666666667" green="0.1764705882" blue="0.14901960780000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fpd-y5-pEd" customClass="BackdropView" customModule="PetFeed" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="44" width="375" height="682"/>
                                 <subviews>
@@ -88,6 +92,7 @@
                                 <viewLayoutGuide key="safeArea" id="Ryk-hk-1uM"/>
                                 <connections>
                                     <outlet property="opacityView" destination="Hib-y6-tL2" id="or6-xv-PhQ"/>
+                                    <outlet property="opacityViewOnOutside" destination="DTV-wq-wZe" id="p4P-GU-FXu"/>
                                     <outlet property="scrollBar" destination="2cD-p9-ZCe" id="AVg-1M-pgh"/>
                                 </connections>
                             </view>
@@ -171,14 +176,18 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" red="0.26666666666666666" green="0.1764705882352941" blue="0.14901960784313725" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="fpd-y5-pEd" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="3SX-hs-Vhv"/>
                             <constraint firstItem="fpd-y5-pEd" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="6vK-B2-IKJ"/>
                             <constraint firstItem="78Z-nQ-4Ew" firstAttribute="top" secondItem="fpd-y5-pEd" secondAttribute="bottom" id="Aya-Qx-Icg"/>
+                            <constraint firstItem="DTV-wq-wZe" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="C0C-sn-hxU"/>
                             <constraint firstItem="fpd-y5-pEd" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="HiQ-2V-Njq"/>
                             <constraint firstItem="fTg-r0-st0" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="JG3-eb-eX4"/>
+                            <constraint firstItem="DTV-wq-wZe" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="JaJ-0H-9vN"/>
                             <constraint firstItem="fTg-r0-st0" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="L7n-sz-e0M"/>
+                            <constraint firstItem="DTV-wq-wZe" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="Nce-s6-WiO"/>
+                            <constraint firstAttribute="bottom" secondItem="DTV-wq-wZe" secondAttribute="bottom" id="RMN-K9-D87"/>
                             <constraint firstItem="78Z-nQ-4Ew" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="TrH-g6-oGI"/>
                             <constraint firstAttribute="bottom" secondItem="Gau-7X-6fP" secondAttribute="bottom" id="V0j-Fb-yPi"/>
                             <constraint firstItem="78Z-nQ-4Ew" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Vq1-Si-iQN"/>
@@ -196,10 +205,10 @@
                         <outlet property="containerView" destination="fTg-r0-st0" id="wak-DJ-B8D"/>
                         <outlet property="embeddedView" destination="fpd-y5-pEd" id="Bdw-PK-0kl"/>
                         <outlet property="embeddedViewWidth" destination="qrY-xq-Vfr" id="UEQ-vy-7TY"/>
+                        <outlet property="marketBtn" destination="jjr-O6-7uB" id="HCs-fJ-Abv"/>
                         <outlet property="notificationBtn" destination="EPB-vr-Tsa" id="ivy-hF-u40"/>
                         <outlet property="profileBtn" destination="sFn-qq-m4V" id="hoi-D8-yPc"/>
                         <outlet property="searchBtn" destination="5G8-Hy-EZH" id="9dv-Yu-QOa"/>
-                        <outlet property="storeBtn" destination="jjr-O6-7uB" id="HCs-fJ-Abv"/>
                         <outlet property="writeBtn" destination="ZJQ-7N-jFh" id="2MR-It-OUW"/>
                     </connections>
                 </viewController>

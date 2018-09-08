@@ -24,14 +24,9 @@ class BackDropVC: UIViewController {
     
     @IBOutlet weak var writeBtn: UIButton!
     
-    @IBOutlet weak var storeBtn: UIButton!
+    @IBOutlet weak var marketBtn: UIButton!
     
     @IBOutlet weak var profileBtn: UIButton!
-    
-    let btnMinOpacity:Float = 0.3
-    var tabs:[UIButton] = []
-    var currentIndex = 0
-    
     
     var titleText:String = "Hello" {
         didSet {
@@ -41,38 +36,56 @@ class BackDropVC: UIViewController {
         }
     }
     
+    let btnMinOpacity:Float = 0.3
+    var tabs:[UIButton] = []
+    var currentIndex = 0 {
+        didSet {
+            tabAction(withIndex: currentIndex)
+        }
+    }
+    
+    var tabViewControllers:[UIViewController] = []
     
     private lazy var searchVC:SearchVC = {
-        let storyboard: UIStoryboard = UIStoryboard(name: "Search", bundle: nil)
+        let storyboard: UIStoryboard = UIStoryboard(name: "Tabs", bundle: nil)
         
-        let searchVC = storyboard.instantiateInitialViewController() as! SearchVC
-        self.containerView.addSubview(searchVC.view)
-        self.addChildViewController(searchVC)
-        
-        return searchVC
+        let vc = storyboard.instantiateViewController(withIdentifier: "SearchVC") as! SearchVC
+        return vc
     }()
     
     private lazy var notificationVC:NotificationVC = {
-        let storyboard: UIStoryboard = UIStoryboard(name: "Notification", bundle: nil)
+        let storyboard: UIStoryboard = UIStoryboard(name: "Tabs", bundle: nil)
         
-        let notificationVC = storyboard.instantiateInitialViewController() as! NotificationVC
-        self.containerView.addSubview(notificationVC.view)
-        self.addChildViewController(notificationVC)
-        
-        return notificationVC
+        let vc = storyboard.instantiateViewController(withIdentifier: "NotificationVC")as! NotificationVC
+        return vc
     }()
+    
+    private lazy var writeVC:WriteVC = {
+        let storyboard: UIStoryboard = UIStoryboard(name: "Tabs", bundle: nil)
+        
+        let vc = storyboard.instantiateViewController(withIdentifier: "WriteVC")as! WriteVC
+        return vc
+    }()
+    
+    private lazy var marketVC:MarketVC = {
+        let storyboard: UIStoryboard = UIStoryboard(name: "Tabs", bundle: nil)
+        
+        let vc = storyboard.instantiateViewController(withIdentifier: "MarketVC") as! MarketVC
+        return vc
+    }()
+    
+    private lazy var profileVC:ProfileVC = {
+        let storyboard: UIStoryboard = UIStoryboard(name: "Tabs", bundle: nil)
+        
+        let vc = storyboard.instantiateViewController(withIdentifier: "ProfileVC") as! ProfileVC
+        return vc
+    }()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tabs = [searchBtn,notificationBtn,writeBtn,storeBtn,profileBtn]
-        tabs.forEach { (element) in
-            if (element == tabs[2] || element == tabs[currentIndex]) {
-                element.layer.opacity = 1
-            } else {
-                element.layer.opacity = btnMinOpacity
-            }
-        }
+        tabInit()
         
         collectionView.register(UINib(nibName: "FeedCell", bundle: nil), forCellWithReuseIdentifier: "cell")
 
@@ -80,18 +93,25 @@ class BackDropVC: UIViewController {
             flowLayout.estimatedItemSize = CGSize(width: embeddedViewWidth.constant-20, height: 100)
         }
         
-        
-        add(asChildViewController: searchVC)
-        
         embeddedView.parentViewController = self
         embeddedView.originalFrame = self.view.frame
     }
     
-    func updateFrame(_ width:CGFloat) {
-        embeddedView.scrollBar.roundCorners([.topLeft,.topRight], radius: 20)
+    func tabInit() {
+        tabs = [searchBtn,notificationBtn,writeBtn,marketBtn,profileBtn]
+        tabs.forEach { (element) in
+            if (element == tabs[2] || element == tabs[currentIndex]) {
+                element.layer.opacity = 1
+            } else {
+                element.layer.opacity = btnMinOpacity
+            }
+        }
+        tabViewControllers = [searchVC,notificationVC,writeVC,marketVC,profileVC]
+        
+        add(asChildViewController: searchVC)
     }
     
-    func tabAction(_ sender: UIButton) {
+    func tabPressed(_ sender: UIButton) {
         for (n,i) in tabs.enumerated() {
             if (i == sender) {
                 currentIndex = n
@@ -102,12 +122,15 @@ class BackDropVC: UIViewController {
                 i.layer.opacity = btnMinOpacity
             }
         }
+    }
+    
+    func tabAction(withIndex index:Int) {
         
     }
     
     @IBAction func tabBarBtnPressed(_ sender: UIButton) {
-        tabAction(sender)
-        embeddedView.make(parentView: self.view, dir: .down)
+        tabPressed(sender)
+        
         print("The current direction is.. \(embeddedView.currentDir)")
         //print("His frame changed to ")
         
@@ -125,6 +148,8 @@ class BackDropVC: UIViewController {
         default:
             break;
         }
+        
+        embeddedView.make(parentView: self.view, dir: .down)
     }
     
     
@@ -139,22 +164,28 @@ extension BackDropVC {
         self.containerView.addSubview(viewController.view)
         
         // Configure Child View
-        //viewController.view.frame = view.bounds
-        //viewController.view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        viewController.view.frame = self.containerView.bounds
+        viewController.view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        viewController.view.isHidden = false
         
         // Notify Child View Controller
-        //viewController.didMove(toParentViewController: self)
+        viewController.didMove(toParentViewController: self)
+    }
+    
+    private func change(asChildViewController viewController:UIViewController) {
+        
     }
     
     private func remove(asChildViewController viewController: UIViewController) {
         // Notify Child View Controller
-        viewController.willMove(toParentViewController: nil)
+        //viewController.willMove(toParentViewController: nil)
         
         // Remove Child View From Superview
-        viewController.view.removeFromSuperview()
+        ///viewController.view.removeFromSuperview()
+        viewController.view.isHidden = true
         
         // Notify Child View Controller
-        viewController.removeFromParentViewController()
+        //viewController.removeFromParentViewController()
     }
 }
 
