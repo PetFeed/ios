@@ -125,29 +125,16 @@ class BackDropVC: UIViewController {
     }
     
     func tabAction(withIndex index:Int) {
-        
+        switch index {
+        case 0:
+            break
+        default:
+            break
+        }
     }
     
     @IBAction func tabBarBtnPressed(_ sender: UIButton) {
         tabPressed(sender)
-        
-        print("The current direction is.. \(embeddedView.currentDir)")
-        //print("His frame changed to ")
-        
-        switch currentIndex {
-        case 0:
-            add(asChildViewController: searchVC)
-            remove(asChildViewController: notificationVC)
-            
-            break;
-        case 1:
-            add(asChildViewController: notificationVC)
-            remove(asChildViewController: searchVC)
-            
-            break;
-        default:
-            break;
-        }
         
         embeddedView.make(parentView: self.view, dir: .down)
     }
