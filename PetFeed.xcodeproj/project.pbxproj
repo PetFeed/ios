@@ -34,6 +34,8 @@
 		78A0FE8821152AB00028A6D9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 78A0FE8721152AB00028A6D9 /* Assets.xcassets */; };
 		78A0FE8B21152AB00028A6D9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 78A0FE8921152AB00028A6D9 /* LaunchScreen.storyboard */; };
 		78A0FE95211532070028A6D9 /* BackdropView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78A0FE94211532070028A6D9 /* BackdropView.swift */; };
+		78C50587214525CC00BB97A3 /* NotificationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C50585214525CC00BB97A3 /* NotificationCell.swift */; };
+		78C50588214525CC00BB97A3 /* NotificationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 78C50586214525CC00BB97A3 /* NotificationCell.xib */; };
 		78CE7CD1212C15A900A3CB41 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 78CE7CD0212C15A900A3CB41 /* Login.storyboard */; };
 		78CE7CD3212C181D00A3CB41 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78CE7CD2212C181D00A3CB41 /* LoginVC.swift */; };
 		78E61E01211D5D5900BEBE67 /* HashTagCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 78E61E00211D5D5900BEBE67 /* HashTagCell.xib */; };
@@ -74,6 +76,8 @@
 		78A0FE8A21152AB00028A6D9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		78A0FE8C21152AB00028A6D9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		78A0FE94211532070028A6D9 /* BackdropView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackdropView.swift; sourceTree = "<group>"; };
+		78C50585214525CC00BB97A3 /* NotificationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationCell.swift; sourceTree = "<group>"; };
+		78C50586214525CC00BB97A3 /* NotificationCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NotificationCell.xib; sourceTree = "<group>"; };
 		78CE7CD0212C15A900A3CB41 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		78CE7CD2212C181D00A3CB41 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoginVC.swift; path = PetFeed/ViewControllers/LoginVC.swift; sourceTree = SOURCE_ROOT; };
 		78E61E00211D5D5900BEBE67 /* HashTagCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HashTagCell.xib; sourceTree = "<group>"; };
@@ -213,6 +217,8 @@
 				78E61E00211D5D5900BEBE67 /* HashTagCell.xib */,
 				7841B69C21189F9F00E7D121 /* FeedCell.swift */,
 				7841B69D21189F9F00E7D121 /* FeedCell.xib */,
+				78C50585214525CC00BB97A3 /* NotificationCell.swift */,
+				78C50586214525CC00BB97A3 /* NotificationCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -281,6 +287,7 @@
 				78CE7CD1212C15A900A3CB41 /* Login.storyboard in Resources */,
 				7802DAFE2117F5D40079C311 /* NanumSquareRoundOTFL.otf in Resources */,
 				78A0FE8B21152AB00028A6D9 /* LaunchScreen.storyboard in Resources */,
+				78C50588214525CC00BB97A3 /* NotificationCell.xib in Resources */,
 				78F741152123357000972923 /* content.jpeg in Resources */,
 				78E61E01211D5D5900BEBE67 /* HashTagCell.xib in Resources */,
 				7802DAFD2117F5D40079C311 /* NanumSquareRoundOTFR.otf in Resources */,
@@ -355,6 +362,7 @@
 				78151DA92116D206007EE2AA /* SearchVC.swift in Sources */,
 				78A0FE95211532070028A6D9 /* BackdropView.swift in Sources */,
 				78A0FE8121152AAE0028A6D9 /* AppDelegate.swift in Sources */,
+				78C50587214525CC00BB97A3 /* NotificationCell.swift in Sources */,
 				7887432321438E44005AECCA /* profileView.swift in Sources */,
 				7841B6A12118A2EB00E7D121 /* Array.swift in Sources */,
 				78151DA72116D1DC007EE2AA /* BackDropVC.swift in Sources */,
@@ -513,7 +521,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = A358VZ5QEA;
 				INFOPLIST_FILE = PetFeed/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = changhyeon.PetFeed;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -529,7 +540,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = A358VZ5QEA;
 				INFOPLIST_FILE = PetFeed/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = changhyeon.PetFeed;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;

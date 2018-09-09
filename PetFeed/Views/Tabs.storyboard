@@ -19,28 +19,33 @@
     </customFonts>
     <scenes>
         <!--NotificationVC-->
-        <scene sceneID="blw-ZQ-y0x">
+        <scene sceneID="WNO-nd-Wkr">
             <objects>
-                <viewController storyboardIdentifier="NotificationVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="SRi-qU-gEc" customClass="NotificationVC" customModule="PetFeed" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="R3n-e3-89I">
+                <tableViewController storyboardIdentifier="NotificationVC" id="fo3-nn-x3g" customClass="NotificationVC" customModule="PetFeed" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="72" estimatedRowHeight="-1" sectionHeaderHeight="50" sectionFooterHeight="28" id="fWM-gE-mQN">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Alarm" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u9M-2D-m1Q">
-                                <rect key="frame" x="166" y="323" width="45" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="1xP-Mr-VJg"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dku-in-P80" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                        <sections>
+                            <tableViewSection headerTitle="새 알림" id="DG0-ty-yXr">
+                                <cells/>
+                            </tableViewSection>
+                            <tableViewSection headerTitle="이전 알림" id="mhe-h3-hAd">
+                                <cells/>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="fo3-nn-x3g" id="Hk9-9p-Ubr"/>
+                            <outlet property="delegate" destination="fo3-nn-x3g" id="4iU-Ww-xz6"/>
+                        </connections>
+                    </tableView>
+                    <connections>
+                        <outlet property="myTableView" destination="fWM-gE-mQN" id="4av-AF-RKf"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MPz-7A-kKp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="300" y="86"/>
+            <point key="canvasLocation" x="336" y="86"/>
         </scene>
         <!--WriteVC-->
         <scene sceneID="0mb-xM-jl1">
