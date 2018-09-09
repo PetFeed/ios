@@ -25,20 +25,20 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="gTV-IL-0wX" customClass="FeedCell" customModule="PetFeed" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="393" height="618"/>
+            <rect key="frame" x="0.0" y="0.0" width="393" height="489"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="393" height="618"/>
+                <rect key="frame" x="0.0" y="0.0" width="393" height="489"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="pXt-Mr-Utn">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="530"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="425"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="NOD-eU-t7Z">
-                                <rect key="frame" x="0.0" y="0.0" width="393" height="91.5"/>
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="78.5"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="4JT-02-aJZ" userLabel="profileImage" customClass="profileView" customModule="PetFeed" customModuleProvider="target">
-                                        <rect key="frame" x="16" y="26.5" width="42" height="42.5"/>
+                                        <rect key="frame" x="16" y="20" width="42" height="42.5"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="42" id="Hfp-gF-9be"/>
                                             <constraint firstAttribute="width" secondItem="4JT-02-aJZ" secondAttribute="height" multiplier="1:1" id="odf-dQ-5bb"/>
@@ -46,7 +46,7 @@
                                         </constraints>
                                     </imageView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="txo-ra-fYT">
-                                        <rect key="frame" x="70" y="30" width="271" height="36"/>
+                                        <rect key="frame" x="70" y="23.5" width="271" height="36"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이창현" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7at-wJ-MeO" userLabel="name">
                                                 <rect key="frame" x="0.0" y="0.0" width="271" height="18"/>
@@ -63,7 +63,7 @@
                                         </subviews>
                                     </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="STM-5i-txL">
-                                        <rect key="frame" x="353" y="35.5" width="24" height="24.5"/>
+                                        <rect key="frame" x="353" y="29" width="24" height="24.5"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="24" id="CqG-1g-F9h"/>
                                             <constraint firstAttribute="height" constant="24" id="Trd-7z-wjy"/>
@@ -76,7 +76,7 @@
                                 <edgeInsets key="layoutMargins" top="0.0" left="16" bottom="16" right="16"/>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Dq-ic-8cz">
-                                <rect key="frame" x="0.0" y="99.5" width="393" height="215.5"/>
+                                <rect key="frame" x="0.0" y="86.5" width="393" height="99.5"/>
                                 <attributedString key="attributedText">
                                     <fragment content="본문~~본문~~본문~~본문~~본문~~본문~~본문~~본문~~본문~~본문~~본문~~본문~~본문~~">
                                         <attributes>
@@ -88,13 +88,13 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="content.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="mXe-6j-nIo">
-                                <rect key="frame" x="0.0" y="323" width="393" height="195"/>
+                                <rect key="frame" x="0.0" y="194" width="393" height="195"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="195" id="zEl-hP-MdT"/>
                                 </constraints>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="mDg-hp-z92">
-                                <rect key="frame" x="0.0" y="526" width="393" height="36"/>
+                                <rect key="frame" x="0.0" y="397" width="393" height="36"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Szs-4e-Ob9">
                                         <rect key="frame" x="16" y="6" width="24" height="24"/>
@@ -127,11 +127,11 @@
                                 </subviews>
                                 <edgeInsets key="layoutMargins" top="6" left="16" bottom="6" right="0.0"/>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="722-YV-K3d">
-                                <rect key="frame" x="0.0" y="570" width="393" height="48"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="722-YV-K3d">
+                                <rect key="frame" x="0.0" y="441" width="393" height="48"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="댓글을 입력해보세요." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="t2x-f0-tYX">
-                                        <rect key="frame" x="16" y="6" width="393" height="36"/>
+                                        <rect key="frame" x="16" y="6" width="377" height="36"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="36" id="dqA-Di-ABV"/>
                                         </constraints>
@@ -143,24 +143,29 @@
                                 <edgeInsets key="layoutMargins" top="6" left="16" bottom="6" right="0.0"/>
                             </stackView>
                         </subviews>
+                        <constraints>
+                            <constraint firstItem="722-YV-K3d" firstAttribute="leading" secondItem="pXt-Mr-Utn" secondAttribute="leading" id="JPq-wt-5rA"/>
+                            <constraint firstAttribute="trailing" secondItem="722-YV-K3d" secondAttribute="trailing" id="eOg-oT-bKL"/>
+                            <constraint firstAttribute="bottom" secondItem="722-YV-K3d" secondAttribute="bottom" id="fr9-ny-WkS"/>
+                        </constraints>
                     </stackView>
                 </subviews>
             </view>
             <constraints>
-                <constraint firstAttribute="bottom" secondItem="pXt-Mr-Utn" secondAttribute="bottom" id="2Yn-VE-1jL"/>
                 <constraint firstItem="pXt-Mr-Utn" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="K5F-3P-OxY"/>
                 <constraint firstItem="pXt-Mr-Utn" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="c5h-HR-1pV"/>
                 <constraint firstAttribute="trailing" secondItem="pXt-Mr-Utn" secondAttribute="trailing" id="dcG-bo-5sU"/>
+                <constraint firstAttribute="bottom" secondItem="pXt-Mr-Utn" secondAttribute="bottom" id="kXQ-rk-Xmc"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
-            <size key="customSize" width="655" height="438"/>
+            <size key="customSize" width="655" height="309"/>
             <connections>
                 <outlet property="dateLabel" destination="qc0-7k-RZg" id="HH1-oz-m3A"/>
                 <outlet property="imageView" destination="mXe-6j-nIo" id="Raq-fg-80x"/>
                 <outlet property="nameLabel" destination="7at-wJ-MeO" id="yOq-AC-n7U"/>
                 <outlet property="profileImageView" destination="4JT-02-aJZ" id="4uY-na-CFN"/>
             </connections>
-            <point key="canvasLocation" x="-270.5" y="84"/>
+            <point key="canvasLocation" x="-270.5" y="19.5"/>
         </collectionViewCell>
     </objects>
     <resources>

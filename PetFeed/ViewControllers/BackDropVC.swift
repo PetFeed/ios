@@ -90,7 +90,7 @@ class BackDropVC: UIViewController {
         collectionView.register(UINib(nibName: "FeedCell", bundle: nil), forCellWithReuseIdentifier: "cell")
 
         if let flowLayout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
-            flowLayout.estimatedItemSize = CGSize(width: embeddedViewWidth.constant-20, height: 100)
+            flowLayout.estimatedItemSize = CGSize(width: embeddedView.frame.width-20, height: 500)
         }
         
         embeddedView.parentViewController = self
@@ -203,10 +203,6 @@ extension BackDropVC:UICollectionViewDelegate,UICollectionViewDataSource,UIColle
         cell.profileImage = #imageLiteral(resourceName: "profile.jpeg")
         
         return cell
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: self.view.frame.width-20, height: 400)
     }
     
     
