@@ -8,7 +8,7 @@
 
 import UIKit
 
-class profileView: UIImageView {
+class profileImageView: UIImageView {
     
     override func awakeFromNib() {
         self.layer.cornerRadius = self.frame.size.width / 2;

@@ -12,7 +12,7 @@ class NotificationCell: UITableViewCell {
 
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var profileImageView: profileView!
+    @IBOutlet weak var profileImageView: profileImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
