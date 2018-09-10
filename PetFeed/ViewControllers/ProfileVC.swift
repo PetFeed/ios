@@ -11,11 +11,14 @@ import UIKit
 class ProfileVC: UIViewController {
 
     @IBOutlet weak var collectionView: UICollectionView!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
         collectionView.register(UINib(nibName: "FeedCell", bundle: nil), forCellWithReuseIdentifier: "cell")
+        
         print("I got it baby")
+        
         if let flowLayout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
             flowLayout.estimatedItemSize = CGSize(width: view.frame.width-20, height: 500)
         }
