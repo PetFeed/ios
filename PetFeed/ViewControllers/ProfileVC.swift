@@ -16,7 +16,22 @@ class ProfileVC: UIViewController {
         
         
         collectionView.register(UINib(nibName: "FeedCell", bundle: nil), forCellWithReuseIdentifier: "cell")
+    
+        let headerHeight:CGFloat = 195
+        let headerView = UIView(frame: CGRect(x: 0,
+                                              y: -headerHeight,
+                                              width: collectionView.frame.size.width,
+                                              height: headerHeight))
         
+        let profile = profileImageView(frame: CGRect(x: 24, y: 16, width: 72, height: 72))
+        profile.image = #imageLiteral(resourceName: "content.jpeg")
+        profile.layer.cornerRadius = profile.frame.size.width / 2;
+        profile.clipsToBounds = true;
+        headerView.addSubview(profile)
+        collectionView.addSubview(headerView)
+        collectionView.contentInset.top = headerHeight
+        
+
         print("I got it baby")
         
         if let flowLayout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
