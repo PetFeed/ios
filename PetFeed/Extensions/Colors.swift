@@ -27,9 +27,8 @@ extension UIColor {
         }
         self.init(red: CGFloat(r) / 255, green: CGFloat(g) / 255, blue: CGFloat(b) / 255, alpha: CGFloat(a) / 255)
     }
-}
-
-extension UIColor {
+    
+    
     func toColor(_ color: UIColor, percentage: CGFloat) -> UIColor {
         let percentage = max(min(percentage, 100), 0) / 100
         switch percentage {
@@ -75,5 +74,7 @@ extension UIColor {
     @nonobjc class var grapefruit: UIColor {
         return UIColor(red: 1.0, green: 85.0 / 255.0, blue: 85.0 / 255.0, alpha: 1.0)
     }
+    
+    
     
 }
