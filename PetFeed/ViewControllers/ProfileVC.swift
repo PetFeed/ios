@@ -105,9 +105,15 @@ extension ProfileVC: UICollectionViewDelegate, UICollectionViewDataSource {
         cell.name = "제목이다 임마"
         cell.date = Date()
         cell.profileImage = #imageLiteral(resourceName: "profile.jpeg")
+        
+        //cell.commentButton.addTarget(self, action: #selector(ProfileVC.commentButton(cell)), for: .touchUpInside)
         return cell
     }
-
+    
+//    @objc func commentButton(_ sender: FeedCell) {
+//        let vc = UIStoryboard(name: "BackDrop", bundle: nil).instantiateViewController(withIdentifier: "DetailVC") as! DetailVC
+//        present(vc, animated: true, completion: nil)
+//    }
 
 
 

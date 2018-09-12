@@ -43,12 +43,17 @@ class FeedCell: UICollectionViewCell {
         }
     }
     
+    @IBOutlet weak var commentButton: UIButton!
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        
-        
-        // Initialization code
+    }
+    
+    var ButtonHandler:(()-> Void)!
+
+    @IBAction func commentButtonPressed(_ sender: Any) {
+        self.ButtonHandler()
     }
     
     override func preferredLayoutAttributesFitting(_ layoutAttributes: UICollectionViewLayoutAttributes) -> UICollectionViewLayoutAttributes {

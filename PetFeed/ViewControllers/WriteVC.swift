@@ -22,6 +22,9 @@ class WriteVC: UIViewController {
         super.viewDidLoad()
         
         var parameters = Pickle.Parameters()
+        parameters.navigationBarBackgroundColor = UIColor.camoGreen
+        parameters.navigationBarTintColor = UIColor.white
+        parameters.navigationBarTitleTintColor = UIColor.white
         //parameters.allowedSelections = .limit(to: 1)
         
         picker = ImagePickerController(
