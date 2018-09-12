@@ -69,6 +69,5 @@ extension SearchVC: UICollectionViewDataSource,UICollectionViewDelegate,UICollec
             backdrop.titleText = items[indexPath.row]
             backdrop.embeddedView.make(parentView: backdrop.view, dir: direction.up)
         }
-        
     }
 }

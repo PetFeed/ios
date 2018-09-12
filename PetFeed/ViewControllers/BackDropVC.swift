@@ -86,7 +86,7 @@ class BackDropVC: UIViewController {
         super.viewDidLoad()
         
         tabInit()
-        
+
         collectionView.register(UINib(nibName: "FeedCell", bundle: nil), forCellWithReuseIdentifier: "cell")
 
         if let flowLayout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
@@ -96,7 +96,9 @@ class BackDropVC: UIViewController {
         embeddedView.parentViewController = self
         embeddedView.originalFrame = self.view.frame
     }
-    
+    override func viewDidAppear(_ animated: Bool) {
+        self.navigationController?.isNavigationBarHidden = true
+    }
     func tabInit() {
         tabs = [searchBtn,notificationBtn,writeBtn,marketBtn,profileBtn]
         tabs.forEach { (element) in
@@ -204,10 +206,7 @@ extension BackDropVC:UICollectionViewDelegate,UICollectionViewDataSource,UIColle
         
         cell.ButtonHandler = {()->Void in
             let vc = UIStoryboard(name: "Backdrop", bundle: nil).instantiateViewController(withIdentifier: "DetailVC") as! DetailVC
-            
-            self.present(vc, animated: true, completion: nil)
-            
-            print("HEllo")
+            self.navigationController?.pushViewController(vc, animated: true)
         }
         
         return cell

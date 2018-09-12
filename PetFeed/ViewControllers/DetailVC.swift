@@ -12,10 +12,24 @@ class DetailVC: UIViewController,UITableViewDataSource,UITableViewDelegate {
     
     @IBOutlet weak var tableView: UITableView!
     
+    
+    
+    @IBOutlet weak var detailLabel: UILabel!
+    
+    @IBOutlet weak var profileImageView: profileImageView!
+    
+    @IBOutlet weak var nameLabel: UILabel!
+    
+    @IBOutlet weak var dateLabel: UILabel!
+    
+    @IBOutlet weak var contentView: UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        //self.navigationController?.isNavigationBarHidden = false
     }
 
     override func didReceiveMemoryWarning() {
@@ -24,7 +38,6 @@ class DetailVC: UIViewController,UITableViewDataSource,UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
         return 5
         
     }
