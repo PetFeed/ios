@@ -13,9 +13,6 @@
         <array key="NanumSquareRoundOTFEB.otf">
             <string>NanumSquareRoundOTFEB</string>
         </array>
-        <array key="NanumSquareRoundOTFR.otf">
-            <string>NanumSquareRoundOTFR</string>
-        </array>
     </customFonts>
     <scenes>
         <!--NotificationVC-->
@@ -275,65 +272,38 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="tJy-dc-OGC" userLabel="Ranking">
-                                <rect key="frame" x="16" y="139" width="359" height="148"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="1x0-qj-Sp3">
-                                    <size key="itemSize" width="0.0" height="0.0"/>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="EA4-6Q-rv8">
+                                <rect key="frame" x="0.0" y="44" width="375" height="734"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="xZt-O6-nRb">
+                                    <size key="itemSize" width="50" height="50"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells/>
                                 <connections>
-                                    <outlet property="dataSource" destination="nCw-gc-nFZ" id="z9j-71-9dc"/>
-                                    <outlet property="delegate" destination="nCw-gc-nFZ" id="w9J-S2-cYR"/>
+                                    <outlet property="dataSource" destination="nCw-gc-nFZ" id="t7d-XE-Skj"/>
+                                    <outlet property="delegate" destination="nCw-gc-nFZ" id="4bH-RW-z8B"/>
                                 </connections>
                             </collectionView>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="사람, 해시태그, 또는 사진을 검색해보세요." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YzC-Fh-5q6">
-                                <rect key="frame" x="16" y="66" width="343" height="40"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="Q0N-AB-x0p"/>
-                                </constraints>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" name="NanumSquareRoundOTFR" family="NanumSquareRoundOTF" pointSize="17"/>
-                                <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
-                                <connections>
-                                    <outlet property="delegate" destination="nCw-gc-nFZ" id="ifE-et-wFi"/>
-                                </connections>
-                            </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="트렌드 해시태그" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bFa-tM-LJ2">
-                                <rect key="frame" x="16" y="107" width="159" height="27"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="NanumSquareRoundOTFEB" family="NanumSquareRoundOTF" pointSize="24"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="실시간 인기 피드" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JUI-iP-2em">
-                                <rect key="frame" x="16" y="464" width="165" height="27"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="NanumSquareRoundOTFEB" family="NanumSquareRoundOTF" pointSize="24"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="YzC-Fh-5q6" firstAttribute="leading" secondItem="T1c-64-CG9" secondAttribute="leading" constant="16" id="b9m-PJ-lXS"/>
-                            <constraint firstItem="T1c-64-CG9" firstAttribute="trailing" secondItem="YzC-Fh-5q6" secondAttribute="trailing" constant="16" id="e41-Ca-ouC"/>
-                            <constraint firstItem="YzC-Fh-5q6" firstAttribute="top" secondItem="T1c-64-CG9" secondAttribute="top" constant="22" id="zue-t3-9cf"/>
+                            <constraint firstItem="T1c-64-CG9" firstAttribute="bottom" secondItem="EA4-6Q-rv8" secondAttribute="bottom" id="7PX-wS-7Rh"/>
+                            <constraint firstItem="EA4-6Q-rv8" firstAttribute="trailing" secondItem="T1c-64-CG9" secondAttribute="trailing" id="EoZ-6Q-gys"/>
+                            <constraint firstItem="EA4-6Q-rv8" firstAttribute="top" secondItem="T1c-64-CG9" secondAttribute="top" id="VZy-Im-C9b"/>
+                            <constraint firstItem="EA4-6Q-rv8" firstAttribute="leading" secondItem="T1c-64-CG9" secondAttribute="leading" id="mET-NX-MqB"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="T1c-64-CG9"/>
                     </view>
                     <connections>
-                        <outlet property="collectionView" destination="tJy-dc-OGC" id="CWo-R4-OHx"/>
-                        <outlet property="searchField" destination="YzC-Fh-5q6" id="V25-hJ-gSY"/>
+                        <outlet property="collectionView" destination="EA4-6Q-rv8" id="iZE-Tn-dvg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FVg-g5-6KJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-367" y="86"/>
+            <point key="canvasLocation" x="-367.19999999999999" y="85.714285714285722"/>
         </scene>
     </scenes>
     <resources>

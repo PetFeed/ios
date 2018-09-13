@@ -62,6 +62,25 @@ class LoginVC: UIViewController {
     }
 
     @IBAction func loginButtonPressed(_ sender: UIButton) {
-        performSegue(withIdentifier: "logined", sender: self)
+        guard let id = idField.text,!id.isEmpty else {
+            show_alert(with: "아이디를 입력해주세요.")
+            return
+        }
+        guard let password = passwordField.text,!password.isEmpty else {
+            show_alert(with: "비밀번호를 입력해주세요.")
+            return
+        }
+        
+        API.Auth.login(id: id, password: password) { (json) in
+            print(json.description)
+            if (json["success"].boolValue) {
+                API.currentToken = json["token"].stringValue
+                self.performSegue(withIdentifier: "logined", sender: self)
+            } else {
+                self.show_alert(with: json["message"].stringValue)
+            }
+        }
+        
+        
     }
 }
