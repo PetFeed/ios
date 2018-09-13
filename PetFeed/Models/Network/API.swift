@@ -9,7 +9,7 @@
 import Foundation
 
 class API {
-    static var base_url = "api.petfeed.app"
+    static var base_url = "https://api.petfeed.app"
     static var Auth = AuthAPI()
     static var currentUser:User? = nil
     static var currentToken:String = ""

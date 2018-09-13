@@ -72,7 +72,6 @@ class LoginVC: UIViewController {
         }
         
         API.Auth.login(id: id, password: password) { (json) in
-            print(json.description)
             if (json["success"].boolValue) {
                 API.currentToken = json["token"].stringValue
                 self.performSegue(withIdentifier: "logined", sender: self)
