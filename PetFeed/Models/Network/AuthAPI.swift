@@ -13,26 +13,6 @@ import SwiftyJSON
 class AuthAPI {
     
     func login( id: String, password: String,completion:@escaping (JSON)->Void) {
-//        var request = URLRequest(url: URL(string: "api.petfeed.app/auth/login")!)
-//        request.httpMethod = HTTPMethod.post.rawValue
-//        request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
-//
-//        let jsonObject = ["user_id":id,"user_pw":password]
-//        if let serialize = try? JSONSerialization.data(withJSONObject: jsonObject, options: .prettyPrinted) {
-//            request.httpBody = serialize
-//        }
-//
-//        Alamofire.request(request).responseJSON { (response) in
-//            switch response.result {
-//            case .success(_):
-//                if let result = response.result.value {
-//                    completion(JSON(result))
-//                }
-//
-//            case .failure(_):
-//                print("Error")
-//            }
-//        }
         
         let headers: HTTPHeaders = [
             "Content-Type": "application/x-www-form-urlencoded"
