@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class ProfileVC: UIViewController {
     class InfoNumberText {
@@ -56,28 +57,28 @@ class ProfileVC: UIViewController {
                                               height: headerHeight))
         
         let profile = profileImageView(frame: CGRect(x: 16, y: 24, width: 72, height: 72))
-        profile.image = #imageLiteral(resourceName: "content.jpeg")
+        profile.sd_setImage(with: URL(string: API.base_url+API.currentUser.profile), placeholderImage: #imageLiteral(resourceName: "profile.jpeg"))
         profile.layer.cornerRadius = profile.frame.size.width / 2;
         profile.clipsToBounds = true;
         headerView.addSubview(profile)
         
         //let follower_num = UILabel(frame: CGRect(x: headerView.frame.width-61, y: 38, width: 45+15+10, height: 26))
        
-        let follower_num = InfoNumberText(frame: CGRect(x: headerView.frame.width-61, y: 38, width: 45+15+10, height: 26), number_text: Double(333).kmFormatted, description_text: "팔로워")
+        let follower_num = InfoNumberText(frame: CGRect(x: headerView.frame.width-61, y: 38, width: 45+15+10, height: 26), number_text: Double(API.currentUser.followers.count).kmFormatted, description_text: "팔로워")
         headerView.addSubview(follower_num.number)
         headerView.addSubview(follower_num.description)
         
-        let following_num = InfoNumberText(frame: CGRect(x: headerView.frame.width-138, y: 38, width: 45+15+10, height: 26), number_text: Double(234).kmFormatted, description_text: "팔로잉")
+        let following_num = InfoNumberText(frame: CGRect(x: headerView.frame.width-138, y: 38, width: 45+15+10, height: 26), number_text: Double(API.currentUser.following.count).kmFormatted, description_text: "팔로잉")
         headerView.addSubview(following_num.number)
         headerView.addSubview(following_num.description)
         
-        let feed_num = InfoNumberText(frame: CGRect(x: headerView.frame.width-215, y: 38, width: 45+15+10, height: 26), number_text: Double(15).kmFormatted, description_text: "피드의 수")
+        let feed_num = InfoNumberText(frame: CGRect(x: headerView.frame.width-215, y: 38, width: 45+15+10, height: 26), number_text: Double(0).kmFormatted, description_text: "피드의 수")
         headerView.addSubview(feed_num.number)
         headerView.addSubview(feed_num.description)
         
         let name_label = UILabel(frame: CGRect(x: 16, y: profile.frame.origin.y+profile.frame.height+24, width: 200, height: 26))
         name_label.font = UIFont(name: "NanumSquareRoundOTFEB", size: 24)
-        name_label.text = "창현"
+        name_label.text = API.currentUser.nickname
         headerView.addSubview(name_label)
         
         let description_label = UILabel(frame: CGRect(x: 16, y: profile.frame.origin.y+profile.frame.height+24+4+26, width: 200, height: 13))

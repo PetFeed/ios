@@ -34,6 +34,8 @@ struct User {
     var following = [""]
     var followers = [""]
     
+    
+    
     var cards = [""]
     
     var rank: String
@@ -43,7 +45,7 @@ struct User {
 }
 
 extension User {
-    static func transformUser(temp:JSON,token:String) -> User? {
+    static func transformUser(withJSON temp:JSON) -> User? {
         let json = temp["user"]
         
         let user = User(nickname: json["nickname"].stringValue,
@@ -57,3 +59,5 @@ extension User {
         return user
     }
 }
+
+

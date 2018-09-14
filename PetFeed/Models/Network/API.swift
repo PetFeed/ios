@@ -7,10 +7,20 @@
 //
 
 import Foundation
+import SwiftyJSON
 
 class API {
     static var base_url = "https://api.petfeed.app"
     static var Auth = AuthAPI()
-    static var currentUser:User? = nil
+    static var currentUser:User! = nil
     static var currentToken:String = ""
+    
+    static func setUser(withJSON json:JSON) {
+        if (!API.currentToken.isEmpty) {
+            if (json["success"].boolValue) {
+                API.currentUser = User.transformUser(withJSON: json)
+            }
+        }
+        
+    }
 }

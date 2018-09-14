@@ -23,12 +23,21 @@ class AuthAPI {
         ]
         Alamofire.request("\(API.base_url)/auth/login",method:.post,parameters:parameters,encoding:URLEncoding.httpBody,headers:headers)
             .responseJSON(completionHandler: { (response) in
-
                 //1. JSON 변환
                 if let value = response.result.value,response.result.isSuccess {
                     completion(JSON(value))
+                    
                 }
             })
+    }
+    
+    func fetch_user(withToken token:String,completion:@escaping (JSON)->Void) {
+        Alamofire.request(API.base_url+"/user/", method: .get, headers: ["x-access-token":token]).responseJSON { (response) in
+            if let value = response.result.value,response.result.isSuccess {
+                completion(JSON(value))
+            }
+        }
+        
     }
     
 }
