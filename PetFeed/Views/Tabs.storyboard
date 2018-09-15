@@ -13,6 +13,9 @@
         <array key="NanumSquareRoundOTFEB.otf">
             <string>NanumSquareRoundOTFEB</string>
         </array>
+        <array key="NanumSquareRoundOTFR.otf">
+            <string>NanumSquareRoundOTFR</string>
+        </array>
     </customFonts>
     <scenes>
         <!--NotificationVC-->
@@ -276,7 +279,7 @@
                                 <rect key="frame" x="0.0" y="44" width="375" height="734"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <view key="tableHeaderView" contentMode="scaleToFill" id="WMX-cV-1Nw">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="500"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="520"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
                                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="사람, 해시태그, 또는 사진을 검색해보세요." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Euu-lw-TN0">
@@ -289,66 +292,169 @@
                                             <textInputTraits key="textInputTraits"/>
                                         </textField>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="트렌드 해시태그" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gj2-PL-8p3">
-                                            <rect key="frame" x="16" y="100" width="159" height="27"/>
+                                            <rect key="frame" x="16" y="100" width="159" height="26.666666666666671"/>
                                             <fontDescription key="fontDescription" name="NanumSquareRoundOTFEB" family="NanumSquareRoundOTF" pointSize="24"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Odo-Jt-CVU">
-                                            <rect key="frame" x="16" y="135" width="359" height="146"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" tag="1" contentMode="scaleToFill" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Odo-Jt-CVU">
+                                            <rect key="frame" x="16" y="142.66666666666666" width="359" height="145.99999999999997"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="146" id="gxp-KY-wFI"/>
+                                            </constraints>
                                             <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Xnd-yw-rOt">
-                                                <size key="itemSize" width="50" height="50"/>
+                                                <size key="itemSize" width="128" height="144"/>
                                                 <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                                 <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                                 <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                             </collectionViewFlowLayout>
                                             <cells>
                                                 <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="Br7-5D-UR0">
-                                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                    <rect key="frame" x="0.0" y="1" width="128" height="144"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="128" height="144"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                     </view>
                                                 </collectionViewCell>
                                             </cells>
+                                            <connections>
+                                                <outlet property="dataSource" destination="nCw-gc-nFZ" id="rrZ-zZ-EX3"/>
+                                                <outlet property="delegate" destination="nCw-gc-nFZ" id="EVb-y3-epg"/>
+                                            </connections>
                                         </collectionView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wNa-dG-REo">
-                                            <rect key="frame" x="16" y="289" width="42" height="21"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ilp-kz-CFt">
-                                            <rect key="frame" x="74" y="278" width="42" height="21"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ngy-th-Ouk">
-                                            <rect key="frame" x="74" y="307" width="42" height="21"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="fvB-mm-0cb">
+                                            <rect key="frame" x="0.0" y="304.66666666666669" width="375" height="54"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wNa-dG-REo">
+                                                    <rect key="frame" x="15.999999999999996" y="12" width="33.666666666666657" height="30"/>
+                                                    <fontDescription key="fontDescription" name="NanumSquareRoundOTFEB" family="NanumSquareRoundOTF" pointSize="16"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="8So-Ut-eMy">
+                                                    <rect key="frame" x="49.666666666666657" y="12" width="325.33333333333337" height="30"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="#시베리안 허스키" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ilp-kz-CFt">
+                                                            <rect key="frame" x="0.0" y="0.0" width="325.33333333333331" height="15"/>
+                                                            <fontDescription key="fontDescription" name="NanumSquareRoundOTFR" family="NanumSquareRoundOTF" pointSize="14"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="새 게시글 42개" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ngy-th-Ouk">
+                                                            <rect key="frame" x="0.0" y="15" width="325.33333333333331" height="15"/>
+                                                            <fontDescription key="fontDescription" name="NanumSquareRoundOTFR" family="NanumSquareRoundOTF" pointSize="10"/>
+                                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="displayP3"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="54" id="aFN-ZK-yAg"/>
+                                            </constraints>
+                                            <edgeInsets key="layoutMargins" top="12" left="16" bottom="12" right="0.0"/>
+                                        </stackView>
+                                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="vIQ-9e-BZy">
+                                            <rect key="frame" x="0.0" y="358.66666666666669" width="375" height="54"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dx9-Kc-JEF">
+                                                    <rect key="frame" x="15.999999999999996" y="12" width="33.666666666666657" height="30"/>
+                                                    <fontDescription key="fontDescription" name="NanumSquareRoundOTFEB" family="NanumSquareRoundOTF" pointSize="16"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="gz2-Dc-aGf">
+                                                    <rect key="frame" x="49.666666666666657" y="12" width="325.33333333333337" height="30"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="#시베리안 허스키" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rL6-vh-Rqd">
+                                                            <rect key="frame" x="0.0" y="0.0" width="325.33333333333331" height="15"/>
+                                                            <fontDescription key="fontDescription" name="NanumSquareRoundOTFR" family="NanumSquareRoundOTF" pointSize="14"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="새 게시글 42개" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SQx-1b-rBX">
+                                                            <rect key="frame" x="0.0" y="15" width="325.33333333333331" height="15"/>
+                                                            <fontDescription key="fontDescription" name="NanumSquareRoundOTFR" family="NanumSquareRoundOTF" pointSize="10"/>
+                                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="displayP3"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="54" id="Ipv-VW-XL6"/>
+                                                <constraint firstAttribute="height" constant="54" id="ZJD-o2-4Rd"/>
+                                            </constraints>
+                                            <edgeInsets key="layoutMargins" top="12" left="16" bottom="12" right="0.0"/>
+                                        </stackView>
+                                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="vXm-AL-XTc">
+                                            <rect key="frame" x="0.0" y="412.66666666666669" width="375" height="54"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AlG-DS-3fq">
+                                                    <rect key="frame" x="15.999999999999996" y="12" width="33.666666666666657" height="30"/>
+                                                    <fontDescription key="fontDescription" name="NanumSquareRoundOTFEB" family="NanumSquareRoundOTF" pointSize="16"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="w7m-4m-g5i">
+                                                    <rect key="frame" x="49.666666666666657" y="12" width="325.33333333333337" height="30"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="#시베리안 허스키" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cg2-Fn-WYT">
+                                                            <rect key="frame" x="0.0" y="0.0" width="325.33333333333331" height="15"/>
+                                                            <fontDescription key="fontDescription" name="NanumSquareRoundOTFR" family="NanumSquareRoundOTF" pointSize="14"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="새 게시글 42개" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rbc-v1-gfJ">
+                                                            <rect key="frame" x="0.0" y="15" width="325.33333333333331" height="15"/>
+                                                            <fontDescription key="fontDescription" name="NanumSquareRoundOTFR" family="NanumSquareRoundOTF" pointSize="10"/>
+                                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="displayP3"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="54" id="nhm-7J-pZ8"/>
+                                                <constraint firstAttribute="height" constant="54" id="qx4-SF-8IY"/>
+                                            </constraints>
+                                            <edgeInsets key="layoutMargins" top="12" left="16" bottom="12" right="0.0"/>
+                                        </stackView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="실시간 인기 피드" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e4H-Dj-XE3">
+                                            <rect key="frame" x="16" y="490.66666666666669" width="165" height="26.666666666666686"/>
+                                            <fontDescription key="fontDescription" name="NanumSquareRoundOTFEB" family="NanumSquareRoundOTF" pointSize="24"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="Odo-Jt-CVU" secondAttribute="trailing" id="3cM-eY-HQd"/>
                                         <constraint firstItem="Gj2-PL-8p3" firstAttribute="top" secondItem="Euu-lw-TN0" secondAttribute="bottom" constant="32" id="4m2-Qg-MF9"/>
+                                        <constraint firstAttribute="trailing" secondItem="vIQ-9e-BZy" secondAttribute="trailing" id="CAQ-FM-rIz"/>
                                         <constraint firstItem="Euu-lw-TN0" firstAttribute="top" secondItem="WMX-cV-1Nw" secondAttribute="top" constant="16" id="Eto-Io-OMM"/>
+                                        <constraint firstAttribute="trailing" secondItem="vXm-AL-XTc" secondAttribute="trailing" id="GgE-GV-MLe"/>
                                         <constraint firstItem="Euu-lw-TN0" firstAttribute="leading" secondItem="WMX-cV-1Nw" secondAttribute="leading" constant="16" id="JfH-6d-gae"/>
+                                        <constraint firstItem="fvB-mm-0cb" firstAttribute="top" secondItem="Odo-Jt-CVU" secondAttribute="bottom" constant="16" id="KhI-In-Ls9"/>
+                                        <constraint firstItem="e4H-Dj-XE3" firstAttribute="top" secondItem="vXm-AL-XTc" secondAttribute="bottom" constant="24" id="QJV-8C-jOQ"/>
                                         <constraint firstItem="Gj2-PL-8p3" firstAttribute="leading" secondItem="WMX-cV-1Nw" secondAttribute="leading" constant="16" id="SJ9-n9-d6P"/>
+                                        <constraint firstItem="vXm-AL-XTc" firstAttribute="leading" secondItem="WMX-cV-1Nw" secondAttribute="leading" id="SSL-Cv-H17"/>
+                                        <constraint firstItem="vIQ-9e-BZy" firstAttribute="top" secondItem="fvB-mm-0cb" secondAttribute="bottom" id="Sij-hq-V7K"/>
+                                        <constraint firstItem="Odo-Jt-CVU" firstAttribute="leading" secondItem="WMX-cV-1Nw" secondAttribute="leading" constant="16" id="awD-hw-pFB"/>
                                         <constraint firstAttribute="trailing" secondItem="Euu-lw-TN0" secondAttribute="trailing" constant="16" id="bLL-gJ-5SU"/>
+                                        <constraint firstItem="fvB-mm-0cb" firstAttribute="leading" secondItem="WMX-cV-1Nw" secondAttribute="leading" id="fnC-uj-tae"/>
+                                        <constraint firstItem="Odo-Jt-CVU" firstAttribute="top" secondItem="Gj2-PL-8p3" secondAttribute="bottom" constant="16" id="lf4-uY-egb"/>
+                                        <constraint firstAttribute="trailing" secondItem="fvB-mm-0cb" secondAttribute="trailing" id="o8I-X9-wRG"/>
+                                        <constraint firstItem="e4H-Dj-XE3" firstAttribute="leading" secondItem="WMX-cV-1Nw" secondAttribute="leading" constant="16" id="wbe-qk-1KX"/>
+                                        <constraint firstItem="vIQ-9e-BZy" firstAttribute="leading" secondItem="WMX-cV-1Nw" secondAttribute="leading" id="xcB-pm-rdd"/>
+                                        <constraint firstItem="vXm-AL-XTc" firstAttribute="top" secondItem="vIQ-9e-BZy" secondAttribute="bottom" id="yPg-W0-GEh"/>
                                     </constraints>
                                 </view>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="pjS-jR-FMS" customClass="CollectionCell" customModule="PetFeed" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="528" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="548" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="pjS-jR-FMS" id="Kv9-yI-u7B">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.666666666666664"/>
@@ -403,6 +509,8 @@
                         <viewLayoutGuide key="safeArea" id="T1c-64-CG9"/>
                     </view>
                     <connections>
+                        <outlet property="rankingCollectionView" destination="Odo-Jt-CVU" id="WTb-2k-K6a"/>
+                        <outlet property="searchField" destination="Euu-lw-TN0" id="wIo-GS-8mc"/>
                         <outlet property="tableView" destination="BvH-5m-wH4" id="NfI-C0-FYy"/>
                     </connections>
                 </viewController>
