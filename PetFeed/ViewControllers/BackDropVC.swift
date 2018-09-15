@@ -86,8 +86,6 @@ class BackDropVC: UIViewController {
         super.viewDidLoad()
         
         tabInit()
-        
-        print(API.currentToken)
 
         collectionView.register(UINib(nibName: "FeedCell", bundle: nil), forCellWithReuseIdentifier: "cell")
 

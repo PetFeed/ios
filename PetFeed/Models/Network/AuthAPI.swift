@@ -37,7 +37,24 @@ class AuthAPI {
                 completion(JSON(value))
             }
         }
-        
+    }
+    
+    func register( id: String, password: String, nickname: String = "",completion:@escaping (JSON)->Void) {
+        let headers: HTTPHeaders = [
+            "Content-Type": "application/x-www-form-urlencoded"
+        ]
+        let parameters = [
+            "user_id": id,
+            "user_pw": password,
+            "nickname": nickname
+        ]
+        Alamofire.request("\(API.base_url)/auth/register",method:.post,parameters:parameters,encoding:URLEncoding.httpBody,headers:headers)
+            .responseJSON(completionHandler: { (response) in
+                //1. JSON 변환
+                if let value = response.result.value,response.result.isSuccess {
+                    completion(JSON(value))
+                }
+            })
     }
     
 }

@@ -8,79 +8,36 @@
 
 import UIKit
 
-class SearchVC: UIViewController,UITextViewDelegate,UICollectionViewDataSource,UICollectionViewDelegate {
+class SearchVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
+    @IBOutlet weak var tableView: UITableView!
     
-    @IBOutlet weak var collectionView: UICollectionView!
-    
-    let items = ["샤트룩스","골든 리트리버","코카투","치와와","말티즈","미니어쳐 핀셔","파피용","포메라니안","푸들","시추"]
-    
-    //var rankingCollectionView: UICollectionView!
+    var height = 0;
+    //self.myCollectionView.collectionViewLayout.collectionViewContentSize.height
     
     override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        self.view.backgroundColor = UIColor.clear
-        
-        //collectionView.register(UINib(nibName: "HashTagCell", bundle: nil), forCellWithReuseIdentifier: "cell")
-        
-
-        collectionView.register(UINib(nibName: "FeedCell", bundle: nil), forCellWithReuseIdentifier: "cell")
-        
-        makeHeader()
-        
-        
-        if let flowLayout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
-            flowLayout.estimatedItemSize = CGSize(width: view.frame.width-20, height: 500)
+        tableView.estimatedRowHeight = UITableViewAutomaticDimension;
+        tableView.rowHeight = UITableViewAutomaticDimension
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        return tableView.dequeueReusableCell(withIdentifier: "cell")!
+    }
+    
+    
+    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 80
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if indexPath.row == 0 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! CollectionCell
+            return cell.collectionView.collectionViewLayout.collectionViewContentSize.height
+        } else {
+            return UITableViewAutomaticDimension
         }
-    }
-    func makeHeader() {
-        
-        let headerHeight:CGFloat = 531
-        var cWidth:CGFloat { return collectionView.frame.width }
-        var cHeight:CGFloat { return collectionView.frame.height }
-        
-        let headerView = UIView(frame: CGRect(x: 0,
-                                              y: -headerHeight,
-                                              width: cWidth,
-                                              height: headerHeight))
-        
-        let searchField = UITextField(frame: CGRect(x: 16, y: 16, width: cWidth-16, height: 52))
-        searchField.backgroundColor = UIColor.brown
-        searchField.layoutIfNeeded()
-//        searchField.layer.shadowOffset = CGSize(width: 5, height: 5)
-//        searchField.layer.shadowColor = UIColor.gray.cgColor
-//        searchField.layer.shadowOpacity = 0.5
-//        searchField.layer.shadowRadius = 1.4
-        headerView.addSubview(searchField)
-        
-        let title_text1 = UILabel(frame: CGRect(x: 16, y: getYFrom(frame: searchField.frame, offset: 32), width: 159, height: 26))
-        title_text1.text = "트렌드 해시태그"
-        title_text1.font = UIFont(name: "NanumSquareRoundOTFEB", size: 24)
-        headerView.addSubview(title_text1)
-        
-//        rankingCollectionView = UICollectionView(frame: CGRect(x: 16, y: getYFrom(frame: title_text1.frame, offset: 16), width: cWidth-16, height: 144))
-//        rankingCollectionView.delegate = self
-//        rankingCollectionView.dataSource = self
-//        rankingCollectionView.register(UINib(nibName: "HashTagCell", bundle: nil), forCellWithReuseIdentifier: "cell")
-//
-//        headerView.addSubview(rankingCollectionView)
-        
-        
-        collectionView.addSubview(headerView)
-        collectionView.contentInset.top = headerHeight
-        
-        
-    }
-    
-    func getYFrom(frame:CGRect,offset:CGFloat) -> CGFloat {
-        return frame.origin.y+frame.height+offset
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 2;
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        return collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath)
     }
 }

@@ -51,6 +51,8 @@ class BackdropView: UIView {
             
             self.opacityView.backgroundColor = col2
             self.opacityView.layer.opacity = 1-percent
+            
+            //self.scrollBar.layer.opacity = percent
             self.opacityViewOnOutside.layer.opacity = percent
             
             //print(percent)
