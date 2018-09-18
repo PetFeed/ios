@@ -12,20 +12,13 @@ class DetailVC: UIViewController,UITableViewDataSource,UITableViewDelegate {
     
     @IBOutlet weak var tableView: UITableView!
     
-    
-    
-    @IBOutlet weak var detailLabel: UILabel!
-    
-    @IBOutlet weak var profileImageView: profileImageView!
-    
-    @IBOutlet weak var nameLabel: UILabel!
-    
-    @IBOutlet weak var dateLabel: UILabel!
-    
-    @IBOutlet weak var contentView: UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.estimatedRowHeight = 44
+        
+        tableView.register(UINib(nibName: "CommentCell", bundle: nil), forCellReuseIdentifier: "cell")
+
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -39,14 +32,20 @@ class DetailVC: UIViewController,UITableViewDataSource,UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 5
-        
     }
     
     
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        return UITableViewCell()
+        if indexPath.row == 0 { //header
+            let cell = tableView.dequeueReusableCell(withIdentifier: "header")
+            return cell!
+        } else {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! CommentCell
+            cell.initialize(profile: #imageLiteral(resourceName: "content.jpeg"), name: "이창현", content: "천재", date: "1분 전")
+            return cell
+        }
+       
         
     }
 }

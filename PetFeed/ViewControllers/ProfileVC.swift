@@ -90,6 +90,12 @@ class ProfileVC: UIViewController {
             
             collectionView.addSubview(headerView)
             collectionView.contentInset.top = headerHeight
+            
+            collectionView.reloadData()
+        } else {
+            DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1), execute: {
+                self.makeHeader()
+            })
         }
         
         
@@ -109,6 +115,10 @@ extension ProfileVC: UICollectionViewDelegate, UICollectionViewDataSource {
         cell.date = Date()
         cell.profileImage = #imageLiteral(resourceName: "profile.jpeg")
         
+        cell.ButtonHandler = {
+            let vc = UIStoryboard(name: "Backdrop", bundle: nil).instantiateViewController(withIdentifier: "DetailVC") as! DetailVC
+            self.present(vc, animated: true, completion: nil)
+        }
         //cell.commentButton.addTarget(self, action: #selector(ProfileVC.commentButton(cell)), for: .touchUpInside)
         return cell
     }
