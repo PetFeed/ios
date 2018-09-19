@@ -14,6 +14,11 @@ class FeedCell: UICollectionViewCell {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
     
+    @IBOutlet weak var contentLabel: UILabel!
+    
+    @IBOutlet weak var loveLabel: UILabel!
+    @IBOutlet weak var commentLabel: UILabel!
+    
     @IBOutlet weak var imageView: UIImageView!
     var profileImage:UIImage! {
         didSet {
@@ -39,7 +44,24 @@ class FeedCell: UICollectionViewCell {
     
     var image:UIImage! {
         didSet {
-            imageView.image = #imageLiteral(resourceName: "profile.jpg")
+            imageView.image = image
+        }
+    }
+    
+    var content:String = "nil" {
+        didSet {
+            contentLabel.text = content
+        }
+    }
+    
+    var love:Int = 0 {
+        didSet {
+            loveLabel.text = "+\(love)"
+        }
+    }
+    var comment:Int = 0 {
+        didSet {
+            commentLabel.text = "+\(comment)"
         }
     }
     

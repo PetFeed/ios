@@ -31,9 +31,16 @@ class ProfileVC: UIViewController {
     
 
     @IBOutlet weak var collectionView: UICollectionView!
+    
+    
+    var items:[Board] = []
+    private var refreshControl = UIRefreshControl()
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        collectionView.refreshControl = refreshControl
+        refreshControl.addTarget(self, action: #selector(refresh), for: .valueChanged)
         
         collectionView.register(UINib(nibName: "FeedCell", bundle: nil), forCellWithReuseIdentifier: "cell")
     
@@ -46,10 +53,28 @@ class ProfileVC: UIViewController {
         //collectionView.reloadData()
     }
     
+    @objc func refresh() {
+        self.items.removeAll()
+        API.Board.get_board(withToken: API.currentToken) { (json) in
+            json["data"].arrayValue.map{ i in
+                if let d = Board.transformUser(withJSON: i) {
+                    self.append(with: d)
+                }
+            }
+            self.collectionView.reloadData()
+            
+        }
+        self.refreshControl.endRefreshing()
+        
+    }
     
+    func append(with item:Board) {
+        self.items.append(item)
+    }
 
     func makeHeader() {
-        if let currentUser = API.currentUser {
+        if API.currentUser != nil {
+            
             let headerHeight:CGFloat = 195
             let headerView = UIView(frame: CGRect(x: 0,
                                                   y: -headerHeight,
@@ -111,9 +136,14 @@ extension ProfileVC: UICollectionViewDelegate, UICollectionViewDataSource {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! FeedCell
 
         //cell.backgroundColor = self.randomColor()
-        cell.name = "제목이다 임마"
+        cell.name = items[indexPath.row].writer
         cell.date = Date()
         cell.profileImage = #imageLiteral(resourceName: "profile.jpeg")
+        cell.content = items[indexPath.row].contents
+        cell.love = items[indexPath.row].likes.count
+        cell.comment = items[indexPath.row].comments.count
+        
+        
         
         cell.ButtonHandler = {
             let vc = UIStoryboard(name: "Backdrop", bundle: nil).instantiateViewController(withIdentifier: "DetailVC") as! DetailVC
@@ -126,7 +156,7 @@ extension ProfileVC: UICollectionViewDelegate, UICollectionViewDataSource {
 
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 3
+        return items.count
     }
 
     

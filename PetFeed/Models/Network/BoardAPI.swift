@@ -14,6 +14,14 @@ import Alamofire
 
 
 class BoardAPI {
+    func get_board(withToken token:String,completion:@escaping (JSON)->Void) {
+        Alamofire.request(API.base_url+"/user/boards", method: .get, headers: ["x-access-token":token]).responseJSON { (response) in
+            if let value = response.result.value,response.result.isSuccess {
+                completion(JSON(value))
+            }
+        }
+    }
+    
     func post_board(withToken token:String,content: String, pictures: [PHAsset],completion:@escaping (JSON)->Void) {
         
         var images:[UIImage] = []

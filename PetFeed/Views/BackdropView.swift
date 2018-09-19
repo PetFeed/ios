@@ -15,9 +15,11 @@ class BackdropView: UIView {
     let opacity_min:Float = 0
     let opacity_max:Float = 1
     
+    
     let offset_top_y:CGFloat = 44
     var offset_bottom_y:CGFloat {
-        return scrollBar.frame.height + 52 //+(self.parentViewController?.tabBarController?.tabBar.frame.height)!
+        //TODO: 34 needs to be add only on iphone x
+        return scrollBar.frame.height + 52 + 34 //+(self.parentViewController?.tabBarController?.tabBar.frame.height)!
     }
     
     var tabbar_height: CGFloat {
@@ -80,8 +82,6 @@ class BackdropView: UIView {
     var originalFrame:CGRect!
     
     override func awakeFromNib() {
-        
-        
         self.layer.shadowColor = UIColor.gray.cgColor
         self.layer.shadowOffset = CGSize(width: 0, height: -5)
         self.layer.shadowRadius = 1.4

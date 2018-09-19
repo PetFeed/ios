@@ -54,8 +54,12 @@ class WriteVC: UIViewController {
     
 
     @IBAction func confirmBtnPressed(_ sender: UIButton) {
+        guard let text = textView.text,!text.isEmpty else {
+            show_alert(with: "글을 입력해주세요.")
+            return
+        }
+        
         API.Board.post_board(withToken: API.currentToken, content: textView.text, pictures: items) { (json) in
-            print(json.description)
             self.dismiss(animated: true, completion: nil)
         }
         

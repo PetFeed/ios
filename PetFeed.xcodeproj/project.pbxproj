@@ -20,6 +20,7 @@
 		7841B69F21189F9F00E7D121 /* FeedCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7841B69D21189F9F00E7D121 /* FeedCell.xib */; };
 		7841B6A12118A2EB00E7D121 /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7841B6A02118A2EB00E7D121 /* Array.swift */; };
 		78516B472147D92D002A3A13 /* Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78516B462147D92D002A3A13 /* Double.swift */; };
+		78583121215253C300DA67E7 /* Board.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78583120215253C300DA67E7 /* Board.swift */; };
 		78669CFF21488BAF00AC61BC /* DetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78669CFE21488BAF00AC61BC /* DetailVC.swift */; };
 		78801C76214FCC1000EA7B5F /* CommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78801C74214FCC1000EA7B5F /* CommentCell.swift */; };
 		78801C77214FCC1000EA7B5F /* CommentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 78801C75214FCC1000EA7B5F /* CommentCell.xib */; };
@@ -70,6 +71,7 @@
 		7841B69D21189F9F00E7D121 /* FeedCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeedCell.xib; sourceTree = "<group>"; };
 		7841B6A02118A2EB00E7D121 /* Array.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Array.swift; sourceTree = "<group>"; };
 		78516B462147D92D002A3A13 /* Double.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Double.swift; sourceTree = "<group>"; };
+		78583120215253C300DA67E7 /* Board.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Board.swift; sourceTree = "<group>"; };
 		78669CFE21488BAF00AC61BC /* DetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailVC.swift; sourceTree = "<group>"; };
 		78801C74214FCC1000EA7B5F /* CommentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentCell.swift; sourceTree = "<group>"; };
 		78801C75214FCC1000EA7B5F /* CommentCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommentCell.xib; sourceTree = "<group>"; };
@@ -239,6 +241,7 @@
 				78CD4D82214AA4F8004E903C /* API.swift */,
 				78CD4D86214AA60C004E903C /* User.swift */,
 				78CD4D84214AA503004E903C /* AuthAPI.swift */,
+				78583120215253C300DA67E7 /* Board.swift */,
 				78BFF3572151FD5B0053E971 /* BoardAPI.swift */,
 			);
 			path = Network;
@@ -418,6 +421,7 @@
 				7802DB072117FFFF0079C311 /* String.swift in Sources */,
 				7892BBDD2116C177005213B3 /* direction.swift in Sources */,
 				7802DB012117F7480079C311 /* HashTagCell.swift in Sources */,
+				78583121215253C300DA67E7 /* Board.swift in Sources */,
 				78F3D2E8212C243B0065BD89 /* RegisterVC.swift in Sources */,
 				7887431921419110005AECCA /* NotificationVC.swift in Sources */,
 				7887431F214388B8005AECCA /* WriteVC.swift in Sources */,
