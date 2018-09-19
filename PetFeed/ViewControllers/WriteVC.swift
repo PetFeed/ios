@@ -15,11 +15,21 @@ class WriteVC: UIViewController {
     var items: [PHAsset] = []
     
     var picker = ImagePickerController()
-
+    
+    
+    @IBOutlet weak var textView: UITextView!
+    
+    
     @IBOutlet weak var collectionView: UICollectionView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        textView.delegate = self
+        textView.text = "해시태그와 함께 사진, 동영상에 대해 설명해주세요. (250자)"
+        textView.textColor = UIColor(red: 151/255, green: 151/255, blue: 151/255, alpha: 1.0)
+        textView.font = UIFont(name: "NanumSquareRoundOTFRj", size: 12.0)
+        textView.returnKeyType = .done
         
         var parameters = Pickle.Parameters()
         parameters.navigationBarBackgroundColor = UIColor.camoGreen
@@ -134,4 +144,26 @@ extension WriteVC: ImagePickerControllerDelegate {
         return thumbnail
     }
     
+}
+
+extension WriteVC: UITextViewDelegate {
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        if textView.text == "해시태그와 함께 사진, 동영상에 대해 설명해주세요. (250자)" {
+            textView.text = ""
+            textView.textColor = UIColor.black
+        }
+    }
+    
+    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+        if text == "\n" {
+            textView.resignFirstResponder()
+        }
+        return true
+    }
+    
+    func textViewDidEndEditing(_ textView: UITextView) {
+        if textView.text == "" {
+            textView.text = "해시태그와 함께 사진, 동영상에 대해 설명해주세요. (250자)"
+            textView.textColor = UIColor(red: 151/255, green: 151/255, blue: 151/255, alpha: 1.0)        }
+    }
 }

@@ -17,7 +17,7 @@ class BackdropView: UIView {
     
     let offset_top_y:CGFloat = 44
     var offset_bottom_y:CGFloat {
-        return scrollBar.frame.height + 86 //+(self.parentViewController?.tabBarController?.tabBar.frame.height)!
+        return scrollBar.frame.height + 52 //+(self.parentViewController?.tabBarController?.tabBar.frame.height)!
     }
     
     var tabbar_height: CGFloat {
@@ -146,8 +146,6 @@ class BackdropView: UIView {
 
 extension BackdropView {
     func make(parentView:UIView!,dir:direction) {
-        
-        print("go to \(dir.hashValue)from\(currentDir.hashValue)")
         
         
         self.currentDir = dir

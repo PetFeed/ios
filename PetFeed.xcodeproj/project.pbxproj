@@ -174,8 +174,6 @@
 			children = (
 				78CE7CD0212C15A900A3CB41 /* Login.storyboard */,
 				78A0FE8421152AAE0028A6D9 /* Backdrop.storyboard */,
-				78801C74214FCC1000EA7B5F /* CommentCell.swift */,
-				78801C75214FCC1000EA7B5F /* CommentCell.xib */,
 				7887431621418657005AECCA /* Tabs.storyboard */,
 				78A0FE94211532070028A6D9 /* BackdropView.swift */,
 				7887432221438E44005AECCA /* profileImageView.swift */,
@@ -254,6 +252,8 @@
 				7841B69D21189F9F00E7D121 /* FeedCell.xib */,
 				78C50585214525CC00BB97A3 /* NotificationCell.swift */,
 				78C50586214525CC00BB97A3 /* NotificationCell.xib */,
+				78801C74214FCC1000EA7B5F /* CommentCell.swift */,
+				78801C75214FCC1000EA7B5F /* CommentCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";

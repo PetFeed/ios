@@ -34,7 +34,7 @@ struct User {
     var following = [""]
     var followers = [""]
     
-    
+    var id: String
     
     var cards = [""]
     
@@ -52,6 +52,7 @@ extension User {
                         password: json["user_pw"].stringValue,
                         following: json["following"].arrayValue.map{$0.stringValue},
                         followers: json["following"].arrayValue.map{$0.stringValue},
+                        id: json["_id"].stringValue,
                         cards: json["cards"].arrayValue.map{$0.stringValue},
                         rank: json["rank"].stringValue,
                         profile: json["profile"].stringValue)

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -76,7 +76,7 @@
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Vaw-kP-VvU">
-                                <rect key="frame" x="24" y="159" width="327" height="42"/>
+                                <rect key="frame" x="24" y="158.66666666666666" width="327" height="42"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="content.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="ucF-k0-EnE" customClass="profileImageView" customModule="PetFeed" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="42" height="42"/>
@@ -94,7 +94,7 @@
                                 </subviews>
                             </stackView>
                             <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lng-ps-RNz">
-                                <rect key="frame" x="24" y="217" width="327" height="1"/>
+                                <rect key="frame" x="24" y="216.66666666666666" width="327" height="1"/>
                                 <color key="backgroundColor" red="0.81568627450980391" green="0.81568627450980391" blue="0.81568627450980391" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="rAt-ls-dZq"/>
@@ -173,6 +173,12 @@
                                     <outlet property="delegate" destination="W1Z-yL-e6V" id="KiY-cS-M19"/>
                                 </connections>
                             </collectionView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="해시태그와 함께 사진, 동영상에 대해 설명해주세요. (250자)" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="JVC-HW-kVr">
+                                <rect key="frame" x="24" y="233.66666666666666" width="327" height="416.33333333333337"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -182,9 +188,13 @@
                             <constraint firstItem="cyJ-3g-EeT" firstAttribute="trailing" secondItem="Vaw-kP-VvU" secondAttribute="trailing" constant="24" id="Bpk-x5-WSh"/>
                             <constraint firstItem="Vaw-kP-VvU" firstAttribute="top" secondItem="ILj-aM-mz1" secondAttribute="bottom" constant="24" id="C8T-fQ-9aT"/>
                             <constraint firstAttribute="trailing" secondItem="lng-ps-RNz" secondAttribute="trailing" constant="24" id="GI3-f5-WaV"/>
+                            <constraint firstItem="JVC-HW-kVr" firstAttribute="leading" secondItem="cyJ-3g-EeT" secondAttribute="leading" constant="24" id="HKr-WD-6xi"/>
                             <constraint firstItem="lng-ps-RNz" firstAttribute="top" secondItem="Vaw-kP-VvU" secondAttribute="bottom" constant="16" id="IkL-Md-OWF"/>
                             <constraint firstItem="wN8-8C-i45" firstAttribute="top" secondItem="cyJ-3g-EeT" secondAttribute="top" constant="21" id="Kg8-c6-ePB"/>
+                            <constraint firstItem="cyJ-3g-EeT" firstAttribute="trailing" secondItem="JVC-HW-kVr" secondAttribute="trailing" constant="24" id="NYV-Sk-wDh"/>
                             <constraint firstItem="YKR-RC-Coq" firstAttribute="leading" secondItem="cyJ-3g-EeT" secondAttribute="leading" constant="24" id="bLG-9s-nmW"/>
+                            <constraint firstItem="JVC-HW-kVr" firstAttribute="top" secondItem="lng-ps-RNz" secondAttribute="bottom" constant="16" id="c7x-Vy-6Mo"/>
+                            <constraint firstItem="YKR-RC-Coq" firstAttribute="top" secondItem="JVC-HW-kVr" secondAttribute="bottom" constant="16" id="eJJ-29-tbs"/>
                             <constraint firstItem="pGo-rd-TuP" firstAttribute="leading" secondItem="cyJ-3g-EeT" secondAttribute="leading" constant="16" id="g2r-Nv-NCc"/>
                             <constraint firstItem="Vaw-kP-VvU" firstAttribute="leading" secondItem="cyJ-3g-EeT" secondAttribute="leading" constant="24" id="jMy-MZ-eut"/>
                             <constraint firstItem="cyJ-3g-EeT" firstAttribute="trailing" secondItem="wN8-8C-i45" secondAttribute="trailing" constant="16" id="jbc-fY-pZf"/>
@@ -196,6 +206,7 @@
                     </view>
                     <connections>
                         <outlet property="collectionView" destination="YKR-RC-Coq" id="RFV-SN-Uo4"/>
+                        <outlet property="textView" destination="JVC-HW-kVr" id="gcu-3y-yq2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wgd-Zn-MTs" userLabel="First Responder" sceneMemberID="firstResponder"/>

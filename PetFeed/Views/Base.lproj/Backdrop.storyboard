@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -44,10 +43,10 @@
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="682"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2cD-p9-ZCe" userLabel="move">
-                                                <rect key="frame" x="0.0" y="0.0" width="375" height="26"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="36"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hIB-pd-bNY">
-                                                        <rect key="frame" x="151.66666666666666" y="10" width="72" height="6"/>
+                                                        <rect key="frame" x="151.66666666666666" y="15" width="72" height="6"/>
                                                         <color key="backgroundColor" red="0.26666666666666666" green="0.1764705882352941" blue="0.14901960784313725" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="6" id="PbA-4x-ahy"/>
@@ -57,13 +56,13 @@
                                                 </subviews>
                                                 <constraints>
                                                     <constraint firstItem="hIB-pd-bNY" firstAttribute="centerX" secondItem="2cD-p9-ZCe" secondAttribute="centerX" id="Ae0-TT-5Aq"/>
-                                                    <constraint firstAttribute="height" constant="26" id="ncL-X6-dSK"/>
+                                                    <constraint firstAttribute="height" constant="36" id="ncL-X6-dSK"/>
                                                     <constraint firstAttribute="width" constant="375" id="qrY-xq-Vfr"/>
                                                     <constraint firstItem="hIB-pd-bNY" firstAttribute="centerY" secondItem="2cD-p9-ZCe" secondAttribute="centerY" id="wnQ-tb-026"/>
                                                 </constraints>
                                             </view>
                                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="tb8-al-ZYP">
-                                                <rect key="frame" x="0.0" y="26" width="375" height="656"/>
+                                                <rect key="frame" x="0.0" y="36" width="375" height="646"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="N45-QS-cUk">
                                                     <size key="itemSize" width="0.0" height="0.0"/>
@@ -112,7 +111,7 @@
                                 <rect key="frame" x="0.0" y="726" width="375" height="52"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5G8-Hy-EZH">
-                                        <rect key="frame" x="25" y="14" width="24" height="24"/>
+                                        <rect key="frame" x="25.666666666666671" y="14" width="24" height="24"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="24" id="uGM-oz-Lh4"/>
                                         </constraints>
@@ -256,7 +255,7 @@
                                                             <rect key="frame" x="0.0" y="0.0" width="375" height="81.333333333333329"/>
                                                             <subviews>
                                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="rj1-gT-YAf" userLabel="profileImage" customClass="profileImageView" customModule="PetFeed" customModuleProvider="target">
-                                                                    <rect key="frame" x="16" y="11.333333333333332" width="42" height="42.666666666666671"/>
+                                                                    <rect key="frame" x="16" y="11.666666666666664" width="42" height="42"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" secondItem="rj1-gT-YAf" secondAttribute="height" multiplier="1:1" id="8KJ-Bh-jDb"/>
                                                                         <constraint firstAttribute="height" constant="42" id="R2y-ZP-oRd"/>
@@ -281,7 +280,7 @@
                                                                     </subviews>
                                                                 </stackView>
                                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8da-gI-aQQ">
-                                                                    <rect key="frame" x="335" y="20.333333333333329" width="24" height="24.666666666666671"/>
+                                                                    <rect key="frame" x="335" y="20.666666666666671" width="24" height="24"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" constant="24" id="jXa-Sg-bEE"/>
                                                                         <constraint firstAttribute="height" constant="24" id="rA6-7r-bhq"/>
