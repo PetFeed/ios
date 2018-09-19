@@ -38,6 +38,7 @@
 		78A0FE8821152AB00028A6D9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 78A0FE8721152AB00028A6D9 /* Assets.xcassets */; };
 		78A0FE8B21152AB00028A6D9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 78A0FE8921152AB00028A6D9 /* LaunchScreen.storyboard */; };
 		78A0FE95211532070028A6D9 /* BackdropView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78A0FE94211532070028A6D9 /* BackdropView.swift */; };
+		78BFF3582151FD5B0053E971 /* BoardAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BFF3572151FD5B0053E971 /* BoardAPI.swift */; };
 		78C50587214525CC00BB97A3 /* NotificationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C50585214525CC00BB97A3 /* NotificationCell.swift */; };
 		78C50588214525CC00BB97A3 /* NotificationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 78C50586214525CC00BB97A3 /* NotificationCell.xib */; };
 		78CAACC5214BD80100E77CD1 /* CollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78CAACC4214BD80100E77CD1 /* CollectionCell.swift */; };
@@ -89,6 +90,7 @@
 		78A0FE8A21152AB00028A6D9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		78A0FE8C21152AB00028A6D9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		78A0FE94211532070028A6D9 /* BackdropView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackdropView.swift; sourceTree = "<group>"; };
+		78BFF3572151FD5B0053E971 /* BoardAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardAPI.swift; sourceTree = "<group>"; };
 		78C50585214525CC00BB97A3 /* NotificationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationCell.swift; sourceTree = "<group>"; };
 		78C50586214525CC00BB97A3 /* NotificationCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NotificationCell.xib; sourceTree = "<group>"; };
 		78CAACC4214BD80100E77CD1 /* CollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionCell.swift; sourceTree = "<group>"; };
@@ -237,6 +239,7 @@
 				78CD4D82214AA4F8004E903C /* API.swift */,
 				78CD4D86214AA60C004E903C /* User.swift */,
 				78CD4D84214AA503004E903C /* AuthAPI.swift */,
+				78BFF3572151FD5B0053E971 /* BoardAPI.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -410,6 +413,7 @@
 				78669CFF21488BAF00AC61BC /* DetailVC.swift in Sources */,
 				78516B472147D92D002A3A13 /* Double.swift in Sources */,
 				78CD4D83214AA4F8004E903C /* API.swift in Sources */,
+				78BFF3582151FD5B0053E971 /* BoardAPI.swift in Sources */,
 				78874325214394CA005AECCA /* ImageSelectCell.swift in Sources */,
 				7802DB072117FFFF0079C311 /* String.swift in Sources */,
 				7892BBDD2116C177005213B3 /* direction.swift in Sources */,

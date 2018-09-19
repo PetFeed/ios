@@ -117,17 +117,12 @@ extension ProfileVC: UICollectionViewDelegate, UICollectionViewDataSource {
         
         cell.ButtonHandler = {
             let vc = UIStoryboard(name: "Backdrop", bundle: nil).instantiateViewController(withIdentifier: "DetailVC") as! DetailVC
-            self.present(vc, animated: true, completion: nil)
+            super.navigationController?.pushViewController(vc, animated: true)
         }
         //cell.commentButton.addTarget(self, action: #selector(ProfileVC.commentButton(cell)), for: .touchUpInside)
         return cell
     }
     
-//    @objc func commentButton(_ sender: FeedCell) {
-//        let vc = UIStoryboard(name: "BackDrop", bundle: nil).instantiateViewController(withIdentifier: "DetailVC") as! DetailVC
-//        present(vc, animated: true, completion: nil)
-//    }
-
 
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

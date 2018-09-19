@@ -54,7 +54,11 @@ class WriteVC: UIViewController {
     
 
     @IBAction func confirmBtnPressed(_ sender: UIButton) {
-        dismiss(animated: true, completion: nil)
+        API.Board.post_board(withToken: API.currentToken, content: textView.text, pictures: items) { (json) in
+            print(json.description)
+            self.dismiss(animated: true, completion: nil)
+        }
+        
     }
     @IBAction func cancelBtnPressed(_ sender: UIButton) {
         dismiss(animated: true, completion: nil)

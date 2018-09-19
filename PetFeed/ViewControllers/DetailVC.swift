@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DetailVC: UIViewController,UITableViewDataSource,UITableViewDelegate {
+class DetailVC: UIViewController,UITableViewDataSource,UITableViewDelegate,UIGestureRecognizerDelegate {
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -18,6 +18,10 @@ class DetailVC: UIViewController,UITableViewDataSource,UITableViewDelegate {
         tableView.estimatedRowHeight = 44
         
         tableView.register(UINib(nibName: "CommentCell", bundle: nil), forCellReuseIdentifier: "cell")
+        self.navigationController?.setNavigationBarHidden(true, animated: true)
+        navigationController?.interactivePopGestureRecognizer?.delegate = self
+
+
 
     }
     

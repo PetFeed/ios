@@ -57,6 +57,7 @@ extension User {
                         rank: json["rank"].stringValue,
                         profile: json["profile"].stringValue)
         
+        
         return user
     }
 }
