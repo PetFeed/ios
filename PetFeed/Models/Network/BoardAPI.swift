@@ -14,7 +14,16 @@ import Alamofire
 
 
 class BoardAPI {
-    func get_board(withToken token:String,completion:@escaping (JSON)->Void) {
+    func get_all(withToken token:String,completion:@escaping (JSON)->Void) {
+        print(token)
+        Alamofire.request(API.base_url+"/board", method: .get, headers: ["x-access-token":token]).responseJSON { (response) in
+            if let value = response.result.value,response.result.isSuccess {
+                completion(JSON(value))
+            }
+        }
+    }
+    
+    func get(withToken token:String,completion:@escaping (JSON)->Void) {
         Alamofire.request(API.base_url+"/user/boards", method: .get, headers: ["x-access-token":token]).responseJSON { (response) in
             if let value = response.result.value,response.result.isSuccess {
                 completion(JSON(value))
@@ -22,11 +31,11 @@ class BoardAPI {
         }
     }
     
-    func post_board(withToken token:String,content: String, pictures: [PHAsset],completion:@escaping (JSON)->Void) {
+    func post(withToken token:String,content: String, pictures: [PHAsset],completion:@escaping (JSON)->Void) {
         
         var images:[UIImage] = []
         for i in pictures {
-            images.append(getAssetThumbnail(asset: i, size: 100))
+            images.append(getAssetThumbnail(asset: i, width: CGFloat(i.pixelWidth),height:CGFloat(i.pixelHeight)))
         }
         
         upload(withURL: API.base_url+"/board", token: token,content: content, imageData: images, parameters: ["hash_tags":"#asdf","contents":content]) { (json) in
@@ -79,9 +88,9 @@ class BoardAPI {
         
     }
     
-    func getAssetThumbnail(asset: PHAsset, size: CGFloat) -> UIImage {
+    func getAssetThumbnail(asset: PHAsset, width: CGFloat,height: CGFloat) -> UIImage {
         let retinaScale = UIScreen.main.scale
-        let retinaSquare = CGSize(width: size * retinaScale, height: size * retinaScale)//(size * retinaScale, size * retinaScale)
+        let retinaSquare = CGSize(width: width * retinaScale, height: height * retinaScale)//(size * retinaScale, size * retinaScale)
         let cropSizeLength = min(asset.pixelWidth, asset.pixelHeight)
         let square = CGRect(x:0, y: 0,width: CGFloat(cropSizeLength),height: CGFloat(cropSizeLength))
         let cropRect = square.applying(CGAffineTransform(scaleX: 1.0/CGFloat(asset.pixelWidth), y: 1.0/CGFloat(asset.pixelHeight)))

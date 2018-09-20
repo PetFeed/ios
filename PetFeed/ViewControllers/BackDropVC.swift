@@ -9,6 +9,9 @@
 import UIKit
 
 class BackDropVC: UIViewController {
+    
+    var items:[Board] = []
+    var refreshControl = UIRefreshControl()
 
     @IBOutlet weak var embeddedView: BackdropView!
     @IBOutlet weak var containerView: UIView!
@@ -88,7 +91,10 @@ class BackDropVC: UIViewController {
         tabInit()
 
         collectionView.register(UINib(nibName: "FeedCell", bundle: nil), forCellWithReuseIdentifier: "cell")
+        collectionView.refreshControl = refreshControl
+        refreshControl.addTarget(self, action: #selector(refresh), for: .valueChanged)
 
+        
         if let flowLayout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
             flowLayout.estimatedItemSize = CGSize(width: embeddedView.frame.width-20, height: 500)
         }
@@ -96,9 +102,13 @@ class BackDropVC: UIViewController {
         embeddedView.parentViewController = self
         embeddedView.originalFrame = self.view.frame
     }
+    
+    
     override func viewDidAppear(_ animated: Bool) {
         self.navigationController?.isNavigationBarHidden = true
     }
+    
+    
     func tabInit() {
         tabs = [searchBtn,notificationBtn,writeBtn,marketBtn,profileBtn]
         tabs.forEach { (element) in
@@ -191,24 +201,32 @@ extension BackDropVC {
         // Notify Child View Controller
         //viewController.removeFromParentViewController()
     }
+    
 }
 
 extension BackDropVC:UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout {
-
+    
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! FeedCell
         
         //cell.backgroundColor = self.randomColor()
-        cell.name = titleText
+        cell.name = items[indexPath.row].writer_nickname
+        cell.profileImageView.sd_setImage(with: URL(string: "\(API.base_url)/\(items[indexPath.row].writer_profile)"), completed: nil)
         cell.date = Date()
         cell.profileImage = #imageLiteral(resourceName: "profile.jpeg")
+        cell.content = items[indexPath.row].contents
+        cell.love = items[indexPath.row].likes.count
+        cell.comment = items[indexPath.row].comments.count
+        let url = URL(string: "\(API.base_url)/\(items[indexPath.row].pictures[0])")
+        cell.imageView?.sd_setImage(with: url, completed: nil)
         
-        cell.ButtonHandler = {()->Void in
+        
+        cell.ButtonHandler = {
             let vc = UIStoryboard(name: "Backdrop", bundle: nil).instantiateViewController(withIdentifier: "DetailVC") as! DetailVC
-            self.navigationController?.pushViewController(vc, animated: true)
+            super.navigationController?.pushViewController(vc, animated: true)
         }
-        
+        //cell.commentButton.addTarget(self, action: #selector(ProfileVC.commentButton(cell)), for: .touchUpInside)
         return cell
     }
     
@@ -216,10 +234,27 @@ extension BackDropVC:UICollectionViewDelegate,UICollectionViewDataSource,UIColle
     
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        return items.count
     }
     
+    @objc func refresh() {
+        self.items.removeAll()
+        API.Board.get_all(withToken: API.currentToken) { (json) in
+            json["data"].arrayValue.map{ i in
+                if let d = Board.transformUser(withJSON: i) {
+                    self.append(with: d)
+                }
+            }
+            self.collectionView.reloadData()
+            
+        }
+        self.refreshControl.endRefreshing()
+        
+    }
     
+    func append(with item:Board) {
+        self.items.append(item)
+    }
     
     // custom function to generate a random UIColor
     func randomColor() -> UIColor{

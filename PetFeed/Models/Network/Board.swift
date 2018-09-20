@@ -53,7 +53,6 @@ extension Board {
                          writer_profile: json["writer"]["profile"].stringValue,
                          contents: json["contents"].stringValue)
         
-        print(json["writer"].description)
         return board
     }
 }
