@@ -225,7 +225,7 @@ extension BackDropVC:UICollectionViewDelegate,UICollectionViewDataSource,UIColle
             cell.love = items[indexPath.row].likes.count
             cell.comment = items[indexPath.row].comments.count
             let url = URL(string: "\(API.base_url)/\(items[indexPath.row].pictures[0])")
-            cell.imageView?.sd_setImage(with: url, completed: nil)
+            //cell.imageView?.sd_setImage(with: url, completed: nil)
             
             
             cell.commentButtonHandler = {

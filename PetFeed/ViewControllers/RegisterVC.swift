@@ -65,5 +65,9 @@ class RegisterVC: UIViewController {
         self.id = id
         self.password = password
     }
-        
+    
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
 }
