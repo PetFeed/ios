@@ -36,7 +36,8 @@ struct Board {
     
     var likes: [String]
     
-    var writer:String
+    var writer_nickname:String
+    var writer_profile:String
     
     var contents: String
 }
@@ -48,12 +49,38 @@ extension Board {
                          comments: json["comments"].arrayValue.map{$0.stringValue},
                          hash_tags: json["hash_tags"].arrayValue.map{$0.stringValue},
                          likes: json["likes"].arrayValue.map{$0.stringValue},
-                         writer: json["writer"].stringValue,
+                         writer_nickname: json["writer"]["nickname"].stringValue,
+                         writer_profile: json["writer"]["profile"].stringValue,
                          contents: json["contents"].stringValue)
         
-        print("I made a board about \(board.contents)")
+        print(json["writer"].description)
         return board
     }
 }
 
 
+/*
+ {
+ "user_id" : "user1",
+ "rank" : "General",
+ "_id" : "5ba2de2b9ba4f23088168cd1",
+ "following" : [
+ 
+ ],
+ "logs" : [
+ 
+ ],
+ "user_pw" : "$2b$10$OLYcZgg6ItICYNock0Z2.u.iF9ZTD8FTeEz5PVI1U87Zs9zdHdpbm",
+ "profile" : "\/images\/default.jpg",
+ "followers" : [
+ 
+ ],
+ "__v" : 0,
+ "cards" : [
+ 
+ ],
+ "last_conn" : "2018-09-20T00:38:35.924Z",
+ "create_date" : "2018-09-19T14:11:57.320Z",
+ "nickname" : "user1"
+ }
+ */

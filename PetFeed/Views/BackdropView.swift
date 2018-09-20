@@ -19,7 +19,7 @@ class BackdropView: UIView {
     let offset_top_y:CGFloat = 44
     var offset_bottom_y:CGFloat {
         //TODO: 34 needs to be add only on iphone x
-        return scrollBar.frame.height + 52 + 34 //+(self.parentViewController?.tabBarController?.tabBar.frame.height)!
+        return scrollBar.frame.height + 52 //+ 34 //+(self.parentViewController?.tabBarController?.tabBar.frame.height)!
     }
     
     var tabbar_height: CGFloat {

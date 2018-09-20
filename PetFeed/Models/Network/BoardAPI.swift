@@ -29,7 +29,7 @@ class BoardAPI {
             images.append(getAssetThumbnail(asset: i, size: 100))
         }
         
-        upload(withURL: API.base_url+"/board", token: token, imageData: images, parameters: ["hash_tags":"#asdf","contents":content]) { (json) in
+        upload(withURL: API.base_url+"/board", token: token,content: content, imageData: images, parameters: ["hash_tags":"#asdf","contents":content]) { (json) in
             completion(json)
         }
     }

@@ -86,7 +86,7 @@
                                 </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="content.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="mXe-6j-nIo">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="content.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="mXe-6j-nIo">
                                 <rect key="frame" x="0.0" y="194" width="393" height="195"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="195" id="zEl-hP-MdT"/>

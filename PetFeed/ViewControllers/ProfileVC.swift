@@ -45,12 +45,14 @@ class ProfileVC: UIViewController {
         collectionView.register(UINib(nibName: "FeedCell", bundle: nil), forCellWithReuseIdentifier: "cell")
     
         makeHeader()
-
+        
         
         if let flowLayout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
             flowLayout.estimatedItemSize = CGSize(width: view.frame.width-20, height: 500)
         }
         //collectionView.reloadData()
+        
+        
     }
     
     @objc func refresh() {
@@ -74,7 +76,7 @@ class ProfileVC: UIViewController {
 
     func makeHeader() {
         if API.currentUser != nil {
-            
+            refresh()
             let headerHeight:CGFloat = 195
             let headerView = UIView(frame: CGRect(x: 0,
                                                   y: -headerHeight,
@@ -136,13 +138,15 @@ extension ProfileVC: UICollectionViewDelegate, UICollectionViewDataSource {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! FeedCell
 
         //cell.backgroundColor = self.randomColor()
-        cell.name = items[indexPath.row].writer
+        cell.name = items[indexPath.row].writer_nickname
+        cell.profileImageView.sd_setImage(with: URL(string: "\(API.base_url)/\(items[indexPath.row].writer_profile)"), completed: nil)
         cell.date = Date()
         cell.profileImage = #imageLiteral(resourceName: "profile.jpeg")
         cell.content = items[indexPath.row].contents
         cell.love = items[indexPath.row].likes.count
         cell.comment = items[indexPath.row].comments.count
-        
+        let url = URL(string: "\(API.base_url)/\(items[indexPath.row].pictures[0])")
+        cell.imageView?.sd_setImage(with: url, completed: nil)
         
         
         cell.ButtonHandler = {

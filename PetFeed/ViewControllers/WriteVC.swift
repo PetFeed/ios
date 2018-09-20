@@ -59,7 +59,8 @@ class WriteVC: UIViewController {
             return
         }
         
-        API.Board.post_board(withToken: API.currentToken, content: textView.text, pictures: items) { (json) in
+        API.Board.post_board(withToken: API.currentToken, content: text, pictures: items) { (json) in
+            print(json.description)
             self.dismiss(animated: true, completion: nil)
         }
         
