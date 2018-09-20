@@ -42,7 +42,7 @@ class DetailVC: UIViewController,UITableViewDataSource,UITableViewDelegate,UIGes
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return (board?.comments.count ?? 0) + 1
     }
     
     
@@ -56,7 +56,9 @@ class DetailVC: UIViewController,UITableViewDataSource,UITableViewDelegate,UIGes
             return cell
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! CommentCell
-            cell.initialize(profile: #imageLiteral(resourceName: "content.jpeg"), name: "이창현", content: "천재", date: "1분 전")
+            let comment = board?.comments[indexPath.row-1]
+            print(comment ?? "Comment not found")
+            cell.initialize(profile: #imageLiteral(resourceName: "content.jpeg"), name: "Null", content: comment?.content ?? "", date: comment?.date ?? Date())
             return cell
         }
        

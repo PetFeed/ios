@@ -28,11 +28,20 @@ import Alamofire
  }
  */
 
+struct Comment {
+    var content: String
+    var writer_nickname: String
+    var profile_image: String
+    var date: Date
+}
+
 struct Board {
     var pictures: [String]
-    var comments: [String]
+    var comments: [Comment]
     
     var hash_tags: [String]
+    
+    var date:Date
     
     var likes: [String]
     
@@ -44,14 +53,22 @@ struct Board {
 
 extension Board {
     static func transformUser(withJSON json:JSON) -> Board? {
+        let str = json["createdate"].stringValue
+        let date = Date.dateFromISOString(string: str)
         
         let board = Board(pictures: json["pictures"].arrayValue.map{$0.stringValue},
-                         comments: json["comments"].arrayValue.map{$0.stringValue},
+                          comments: json["comments"].arrayValue.map{
+                                    Comment(content: $0["content"].stringValue,
+                                            writer_nickname: $0["writer"].stringValue,
+                                            profile_image: $0["writer"].stringValue,
+                                            date: Date())} ,
                          hash_tags: json["hash_tags"].arrayValue.map{$0.stringValue},
+                         date: date ?? Date(),
                          likes: json["likes"].arrayValue.map{$0.stringValue},
                          writer_nickname: json["writer"]["nickname"].stringValue,
                          writer_profile: json["writer"]["profile"].stringValue,
                          contents: json["contents"].stringValue)
+        
         
         return board
     }

@@ -52,6 +52,7 @@
 		78E61E01211D5D5900BEBE67 /* HashTagCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 78E61E00211D5D5900BEBE67 /* HashTagCell.xib */; };
 		78F3D2E8212C243B0065BD89 /* RegisterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F3D2E7212C243B0065BD89 /* RegisterVC.swift */; };
 		78F6B6FA2153E29300D11C4F /* DetailHeaderViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F6B6F92153E29300D11C4F /* DetailHeaderViewCell.swift */; };
+		78F6B6FC2153FD7800D11C4F /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F6B6FB2153FD7800D11C4F /* Date.swift */; };
 		78F741132123356700972923 /* profile.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 78F741122123356700972923 /* profile.jpeg */; };
 		78F741152123357000972923 /* content.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 78F741142123357000972923 /* content.jpeg */; };
 /* End PBXBuildFile section */
@@ -106,6 +107,7 @@
 		78E61E00211D5D5900BEBE67 /* HashTagCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HashTagCell.xib; sourceTree = "<group>"; };
 		78F3D2E7212C243B0065BD89 /* RegisterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RegisterVC.swift; path = PetFeed/ViewControllers/RegisterVC.swift; sourceTree = SOURCE_ROOT; };
 		78F6B6F92153E29300D11C4F /* DetailHeaderViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailHeaderViewCell.swift; sourceTree = "<group>"; };
+		78F6B6FB2153FD7800D11C4F /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		78F741122123356700972923 /* profile.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = profile.jpeg; sourceTree = "<group>"; };
 		78F741142123357000972923 /* content.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = content.jpeg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -197,6 +199,7 @@
 				7892222E211803AE00498839 /* Colors.swift */,
 				7841B6A02118A2EB00E7D121 /* Array.swift */,
 				78516B462147D92D002A3A13 /* Double.swift */,
+				78F6B6FB2153FD7800D11C4F /* Date.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -402,6 +405,7 @@
 				7892222D2118032F00498839 /* UIView.swift in Sources */,
 				7841B69E21189F9F00E7D121 /* FeedCell.swift in Sources */,
 				78CAACC5214BD80100E77CD1 /* CollectionCell.swift in Sources */,
+				78F6B6FC2153FD7800D11C4F /* Date.swift in Sources */,
 				78CE7CD3212C181D00A3CB41 /* LoginVC.swift in Sources */,
 				78CD4D87214AA60C004E903C /* User.swift in Sources */,
 				7892222F211803AE00498839 /* Colors.swift in Sources */,

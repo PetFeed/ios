@@ -21,12 +21,19 @@ class CommentCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        profileImageView.layer.cornerRadius = profileImageView.frame.size.width / 2;
+        profileImageView.clipsToBounds = true;
     }
     
-    func initialize(profile: UIImage, name: String, content: String, date:String) {
+    func initialize(profile: UIImage, name: String, content: String, date:Date) {
         profileImageView.image = profile
         nameLabel.text = name
         contentLabel.text = content
-        dateLabel.text = date
+        
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy.MM.dd"
+        let result = formatter.string(from: date)
+        
+        dateLabel.text = result
     }
 }

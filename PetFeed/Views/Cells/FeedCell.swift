@@ -21,6 +21,8 @@ class FeedCell: UICollectionViewCell {
     
     @IBOutlet weak var imageView: UIImageView!
     
+    @IBOutlet weak var contentHeight: NSLayoutConstraint!
+    
     var profileImage:UIImage! {
         didSet {
             profileImageView.image = profileImage
@@ -45,6 +47,7 @@ class FeedCell: UICollectionViewCell {
     
     var image:UIImage! {
         didSet {
+            
             imageView.image = image
         }
     }
