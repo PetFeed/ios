@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class LoginVC: UIViewController {
 
@@ -21,8 +22,10 @@ class LoginVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         setUI()
     }
+    
     
     func setUI() {
         loginButton.backgroundColor = UIColor.camoGreen

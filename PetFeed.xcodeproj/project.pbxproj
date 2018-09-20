@@ -22,6 +22,7 @@
 		78516B472147D92D002A3A13 /* Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78516B462147D92D002A3A13 /* Double.swift */; };
 		78583121215253C300DA67E7 /* Board.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78583120215253C300DA67E7 /* Board.swift */; };
 		78669CFF21488BAF00AC61BC /* DetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78669CFE21488BAF00AC61BC /* DetailVC.swift */; };
+		787F53B02154129D003F5C43 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 787F53AF2154129D003F5C43 /* GoogleService-Info.plist */; };
 		78801C76214FCC1000EA7B5F /* CommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78801C74214FCC1000EA7B5F /* CommentCell.swift */; };
 		78801C77214FCC1000EA7B5F /* CommentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 78801C75214FCC1000EA7B5F /* CommentCell.xib */; };
 		7887431721418657005AECCA /* Tabs.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7887431621418657005AECCA /* Tabs.storyboard */; };
@@ -75,6 +76,7 @@
 		78516B462147D92D002A3A13 /* Double.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Double.swift; sourceTree = "<group>"; };
 		78583120215253C300DA67E7 /* Board.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Board.swift; sourceTree = "<group>"; };
 		78669CFE21488BAF00AC61BC /* DetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailVC.swift; sourceTree = "<group>"; };
+		787F53AF2154129D003F5C43 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		78801C74214FCC1000EA7B5F /* CommentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentCell.swift; sourceTree = "<group>"; };
 		78801C75214FCC1000EA7B5F /* CommentCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommentCell.xib; sourceTree = "<group>"; };
 		7887431621418657005AECCA /* Tabs.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Tabs.storyboard; sourceTree = "<group>"; };
@@ -226,6 +228,7 @@
 			isa = PBXGroup;
 			children = (
 				78A0FE8021152AAE0028A6D9 /* AppDelegate.swift */,
+				787F53AF2154129D003F5C43 /* GoogleService-Info.plist */,
 				78F741122123356700972923 /* profile.jpeg */,
 				78F741142123357000972923 /* content.jpeg */,
 				7802DB042117FE970079C311 /* Views */,
@@ -339,6 +342,7 @@
 				78F741152123357000972923 /* content.jpeg in Resources */,
 				78E61E01211D5D5900BEBE67 /* HashTagCell.xib in Resources */,
 				7802DAFD2117F5D40079C311 /* NanumSquareRoundOTFR.otf in Resources */,
+				787F53B02154129D003F5C43 /* GoogleService-Info.plist in Resources */,
 				78A0FE8821152AB00028A6D9 /* Assets.xcassets in Resources */,
 				7802DAFC2117F5D40079C311 /* NanumSquareRoundOTFB.otf in Resources */,
 				78A0FE8621152AAE0028A6D9 /* Backdrop.storyboard in Resources */,
@@ -359,18 +363,24 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-PetFeed/Pods-PetFeed-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/Pickle/Pickle.framework",
+				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 				"${BUILT_PRODUCTS_DIR}/libwebp/libwebp.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Pickle.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/libwebp.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -581,11 +591,8 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = A358VZ5QEA;
 				INFOPLIST_FILE = PetFeed/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = changhyeon.PetFeed;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.changhyeon.PetFeed;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -600,11 +607,8 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = A358VZ5QEA;
 				INFOPLIST_FILE = PetFeed/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = changhyeon.PetFeed;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.changhyeon.PetFeed;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
