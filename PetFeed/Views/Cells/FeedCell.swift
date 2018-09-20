@@ -20,6 +20,7 @@ class FeedCell: UICollectionViewCell {
     @IBOutlet weak var commentLabel: UILabel!
     
     @IBOutlet weak var imageView: UIImageView!
+    
     var profileImage:UIImage! {
         didSet {
             profileImageView.image = profileImage
@@ -72,10 +73,10 @@ class FeedCell: UICollectionViewCell {
         super.awakeFromNib()
     }
     
-    var ButtonHandler:(()-> Void)!
+    var commentButtonHandler:(()-> Void)!
 
     @IBAction func commentButtonPressed(_ sender: Any) {
-        self.ButtonHandler()
+        self.commentButtonHandler()
     }
     
     override func preferredLayoutAttributesFitting(_ layoutAttributes: UICollectionViewLayoutAttributes) -> UICollectionViewLayoutAttributes {
@@ -93,3 +94,4 @@ class FeedCell: UICollectionViewCell {
         
     }
 }
+

@@ -89,6 +89,7 @@ class BackDropVC: UIViewController {
         super.viewDidLoad()
         
         tabInit()
+        refresh()
 
         collectionView.register(UINib(nibName: "FeedCell", bundle: nil), forCellWithReuseIdentifier: "cell")
         collectionView.refreshControl = refreshControl
@@ -222,8 +223,9 @@ extension BackDropVC:UICollectionViewDelegate,UICollectionViewDataSource,UIColle
         cell.imageView?.sd_setImage(with: url, completed: nil)
         
         
-        cell.ButtonHandler = {
+        cell.commentButtonHandler = {
             let vc = UIStoryboard(name: "Backdrop", bundle: nil).instantiateViewController(withIdentifier: "DetailVC") as! DetailVC
+            
             super.navigationController?.pushViewController(vc, animated: true)
         }
         //cell.commentButton.addTarget(self, action: #selector(ProfileVC.commentButton(cell)), for: .touchUpInside)

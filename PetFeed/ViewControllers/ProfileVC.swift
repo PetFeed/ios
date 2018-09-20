@@ -139,7 +139,7 @@ extension ProfileVC: UICollectionViewDelegate, UICollectionViewDataSource {
 
         //cell.backgroundColor = self.randomColor()
         cell.name = items[indexPath.row].writer_nickname
-        cell.profileImageView.sd_setImage(with: URL(string: "\(API.base_url)/\(items[indexPath.row].writer_profile)"), completed: nil)
+        cell.profileImageView.sd_setImage(with: URL(string: "\(API.base_url)\(items[indexPath.row].writer_profile)"), completed: nil)
         cell.date = Date()
         cell.profileImage = #imageLiteral(resourceName: "profile.jpeg")
         cell.content = items[indexPath.row].contents
@@ -149,8 +149,9 @@ extension ProfileVC: UICollectionViewDelegate, UICollectionViewDataSource {
         cell.imageView?.sd_setImage(with: url, completed: nil)
         
         
-        cell.ButtonHandler = {
+        cell.commentButtonHandler = {
             let vc = UIStoryboard(name: "Backdrop", bundle: nil).instantiateViewController(withIdentifier: "DetailVC") as! DetailVC
+            vc.board = self.items[indexPath.row]
             super.navigationController?.pushViewController(vc, animated: true)
         }
         //cell.commentButton.addTarget(self, action: #selector(ProfileVC.commentButton(cell)), for: .touchUpInside)

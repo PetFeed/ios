@@ -56,7 +56,7 @@ extension User {
                         cards: json["cards"].arrayValue.map{$0.stringValue},
                         rank: json["rank"].stringValue,
                         profile: json["profile"].stringValue)
-        
+        print(user.profile)
         
         return user
     }

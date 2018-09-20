@@ -241,7 +241,7 @@
                                 <rect key="frame" x="0.0" y="58" width="375" height="720"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="header" id="oUS-65-dJB">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="header" id="oUS-65-dJB" customClass="DetailHeaderViewCell" customModule="PetFeed" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="500"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="oUS-65-dJB" id="5gU-eo-EEN">
@@ -362,6 +362,15 @@
                                                 <constraint firstItem="THj-RT-r7n" firstAttribute="leading" secondItem="5gU-eo-EEN" secondAttribute="leading" id="y3Q-po-292"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="commentLabel" destination="vNK-9O-RrN" id="K5r-2H-X6S"/>
+                                            <outlet property="contentImageView" destination="L91-hp-YOT" id="geY-jW-FnM"/>
+                                            <outlet property="contentLabel" destination="vyP-JH-ftt" id="CL7-pJ-Ypk"/>
+                                            <outlet property="dateLabel" destination="JQQ-TE-h8g" id="1sx-lx-3fI"/>
+                                            <outlet property="likeLabel" destination="XXs-9e-bMo" id="XQF-rb-c0F"/>
+                                            <outlet property="nameLabel" destination="L2T-xJ-DZq" id="nQU-Fc-IBL"/>
+                                            <outlet property="profileImageView" destination="rj1-gT-YAf" id="rYd-lH-xwI"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>

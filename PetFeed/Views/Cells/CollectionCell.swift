@@ -42,7 +42,7 @@ extension CollectionCell: UICollectionViewDataSource,UICollectionViewDelegate {
         cell.date = Date()
         cell.profileImage = #imageLiteral(resourceName: "profile.jpeg")
         
-        cell.ButtonHandler = {()->Void in
+        cell.commentButtonHandler = {()->Void in
             let vc = UIStoryboard(name: "Backdrop", bundle: nil).instantiateViewController(withIdentifier: "DetailVC") as! DetailVC
             //self.navigationController?.pushViewController(vc, animated: true)
         }

@@ -12,6 +12,13 @@ class DetailVC: UIViewController,UITableViewDataSource,UITableViewDelegate,UIGes
     
     @IBOutlet weak var tableView: UITableView!
     
+    var board:Board? {
+        didSet {
+            print(board.debugDescription)
+            //tableView.reloadData()
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.rowHeight = UITableViewAutomaticDimension
@@ -42,8 +49,11 @@ class DetailVC: UIViewController,UITableViewDataSource,UITableViewDelegate,UIGes
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.row == 0 { //header
-            let cell = tableView.dequeueReusableCell(withIdentifier: "header")
-            return cell!
+            let cell = tableView.dequeueReusableCell(withIdentifier: "header") as! DetailHeaderViewCell
+            if let b = board {
+                cell.info = b
+            }
+            return cell
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! CommentCell
             cell.initialize(profile: #imageLiteral(resourceName: "content.jpeg"), name: "이창현", content: "천재", date: "1분 전")
