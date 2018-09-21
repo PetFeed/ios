@@ -88,6 +88,26 @@ class BoardAPI {
         
     }
     
+    func comment(withToken token:String, parent: String, content:String, type:String,completion:@escaping (JSON)-> Void) {
+        let headers: HTTPHeaders = [
+            "Content-Type": "application/x-www-form-urlencoded",
+            "x-access-token": token
+        ]
+        let parameters = [
+            "parent":parent,
+            "content":content,
+            "type":type
+        ]
+        print(parameters)
+        Alamofire.request("\(API.base_url)/comment",method:.post,parameters:parameters,encoding:URLEncoding.httpBody,headers:headers)
+            .responseJSON(completionHandler: { (response) in
+                //1. JSON 변환
+                if let value = response.result.value,response.result.isSuccess {
+                    completion(JSON(value))
+                }
+            })
+    }
+    
     func getAssetThumbnail(asset: PHAsset, width: CGFloat,height: CGFloat) -> UIImage {
         let retinaScale = UIScreen.main.scale
         let retinaSquare = CGSize(width: width * retinaScale, height: height * retinaScale)//(size * retinaScale, size * retinaScale)

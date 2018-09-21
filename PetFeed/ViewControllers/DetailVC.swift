@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DetailVC: UIViewController,UITableViewDataSource,UITableViewDelegate,UIGestureRecognizerDelegate {
+class DetailVC: UIViewController,UIGestureRecognizerDelegate {
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -18,6 +18,11 @@ class DetailVC: UIViewController,UITableViewDataSource,UITableViewDelegate,UIGes
             //tableView.reloadData()
         }
     }
+    @IBOutlet weak var commentParentView: UIView!
+    
+    @IBOutlet weak var profileImageView: profileImageView!
+    
+    @IBOutlet weak var commentField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,19 +33,41 @@ class DetailVC: UIViewController,UITableViewDataSource,UITableViewDelegate,UIGes
         self.navigationController?.setNavigationBarHidden(true, animated: true)
         navigationController?.interactivePopGestureRecognizer?.delegate = self
 
-
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: .UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: .UIKeyboardWillHide, object: nil)
+        commentField.delegate = self
+        commentField.layer.masksToBounds = true
 
     }
+    @objc func keyboardWillShow(_ sender: Notification) {
+        let userInfo:NSDictionary = sender.userInfo! as NSDictionary
+        let keyboardFrame:NSValue = userInfo.value(forKey: UIKeyboardFrameEndUserInfoKey) as! NSValue
+        let keyboardRectangle = keyboardFrame.cgRectValue
+        let keyboardHeight = keyboardRectangle.height
+        self.commentField.frame.origin.y = -keyboardHeight
+    }
+    
+    @objc func keyboardWillHide(_ sender: Notification) {
+        self.commentField.frame.origin.y = 0
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    
     
     override func viewDidAppear(_ animated: Bool) {
         //self.navigationController?.isNavigationBarHidden = false
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
     
+}
+
+extension DetailVC: UITextFieldDelegate {
+    
+}
+
+extension DetailVC: UITableViewDelegate,UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return (board?.comments.count ?? 0) + 1
     }
@@ -57,11 +84,8 @@ class DetailVC: UIViewController,UITableViewDataSource,UITableViewDelegate,UIGes
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! CommentCell
             let comment = board?.comments[indexPath.row-1]
-            print(comment ?? "Comment not found")
-            cell.initialize(profile: #imageLiteral(resourceName: "content.jpeg"), name: "Null", content: comment?.content ?? "", date: comment?.date ?? Date())
+            cell.initialize(profile: #imageLiteral(resourceName: "content.jpeg"), name: comment?.writer_nickname ?? "", content: comment?.content ?? "", date: comment?.date ?? Date())
             return cell
         }
-       
-        
     }
 }

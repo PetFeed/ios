@@ -59,7 +59,7 @@ extension Board {
         let board = Board(pictures: json["pictures"].arrayValue.map{$0.stringValue},
                           comments: json["comments"].arrayValue.map{
                                     Comment(content: $0["content"].stringValue,
-                                            writer_nickname: $0["writer"].stringValue,
+                                            writer_nickname: $0["writer"]["user_id"].stringValue,
                                             profile_image: $0["writer"].stringValue,
                                             date: Date())} ,
                          hash_tags: json["hash_tags"].arrayValue.map{$0.stringValue},
