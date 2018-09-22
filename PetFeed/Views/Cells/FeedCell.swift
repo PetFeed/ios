@@ -71,16 +71,21 @@ class FeedCell: UICollectionViewCell {
     
     @IBOutlet weak var commentButton: UIButton!
     
-    
     override func awakeFromNib() {
         super.awakeFromNib()
     }
     
     var commentButtonHandler:(()-> Void)!
+    var likeButtonHandler:(()->Void)!
 
     @IBAction func commentButtonPressed(_ sender: Any) {
         self.commentButtonHandler()
     }
+    
+    @IBAction func likeButtonPressed(_ sender: Any) {
+        self.likeButtonHandler()
+    }
+    
     
     override func preferredLayoutAttributesFitting(_ layoutAttributes: UICollectionViewLayoutAttributes) -> UICollectionViewLayoutAttributes {
         setNeedsLayout()

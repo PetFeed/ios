@@ -237,8 +237,49 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="h88-vp-TTV">
+                                <rect key="frame" x="0.0" y="44" width="375" height="58"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="rj1-gT-YAf" userLabel="profileImage" customClass="profileImageView" customModule="PetFeed" customModuleProvider="target">
+                                        <rect key="frame" x="16" y="0.0" width="42" height="42"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="rj1-gT-YAf" secondAttribute="height" multiplier="1:1" id="8KJ-Bh-jDb"/>
+                                            <constraint firstAttribute="height" constant="42" id="R2y-ZP-oRd"/>
+                                            <constraint firstAttribute="width" constant="42" id="yvD-ZG-xmU"/>
+                                        </constraints>
+                                    </imageView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="L89-rc-sMp">
+                                        <rect key="frame" x="70" y="3" width="253" height="36"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이창현" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L2T-xJ-DZq" userLabel="name">
+                                                <rect key="frame" x="0.0" y="0.0" width="253" height="18"/>
+                                                <fontDescription key="fontDescription" name="NanumSquareRoundOTFB" family="NanumSquareRoundOTF" pointSize="16"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2018.7.18" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JQQ-TE-h8g" userLabel="date">
+                                                <rect key="frame" x="0.0" y="18" width="253" height="18"/>
+                                                <fontDescription key="fontDescription" name="NanumSquareRoundOTFR" family="NanumSquareRoundOTF" pointSize="10"/>
+                                                <color key="textColor" red="0.12549019610000001" green="0.12549019610000001" blue="0.12549019610000001" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8da-gI-aQQ">
+                                        <rect key="frame" x="335" y="9" width="24" height="24"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="24" id="jXa-Sg-bEE"/>
+                                            <constraint firstAttribute="height" constant="24" id="rA6-7r-bhq"/>
+                                        </constraints>
+                                        <state key="normal" image="more_vert">
+                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                                <edgeInsets key="layoutMargins" top="0.0" left="16" bottom="16" right="16"/>
+                            </stackView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="500" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="swP-V3-doJ">
-                                <rect key="frame" x="0.0" y="102" width="375" height="624"/>
+                                <rect key="frame" x="0.0" y="102" width="375" height="676"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="header" id="oUS-65-dJB" customClass="DetailHeaderViewCell" customModule="PetFeed" customModuleProvider="target">
@@ -251,16 +292,10 @@
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="THj-RT-r7n">
                                                     <rect key="frame" x="0.0" y="0.0" width="375" height="499.66666666666669"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="13" translatesAutoresizingMaskIntoConstraints="NO" id="vyP-JH-ftt">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" text="본문~~본문~~본문~~본문~~본문~~본문~~본문~~본문~~본문~~본문~~본문~~본문~~본문~~본문~~본문~~본문~~본문~~본문~~본문~~본문~~본문~~본문~~본문~~본문~~본문~~본문~~" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="13" translatesAutoresizingMaskIntoConstraints="NO" id="vyP-JH-ftt">
                                                             <rect key="frame" x="0.0" y="0.0" width="375" height="252.66666666666666"/>
-                                                            <attributedString key="attributedText">
-                                                                <fragment content="본문~~본문~~본문~~본문~~본문~~본문~~본문~~본문~~본문~~본문~~본문~~본문~~본문~~본문~~본문~~본문~~본문~~본문~~본문~~본문~~본문~~본문~~본문~~본문~~본문~~본문~~">
-                                                                    <attributes>
-                                                                        <font key="NSFont" size="17" name="NanumSquareRoundOTFR"/>
-                                                                        <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="truncatingTail" baseWritingDirection="natural" headIndent="16" tighteningFactorForTruncation="0.0"/>
-                                                                    </attributes>
-                                                                </fragment>
-                                                            </attributedString>
+                                                            <fontDescription key="fontDescription" name="NanumSquareRoundOTFR" family="NanumSquareRoundOTF" pointSize="12"/>
+                                                            <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="content.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="L91-hp-YOT">
@@ -334,47 +369,6 @@
                                     <outlet property="delegate" destination="BvC-1C-h4f" id="EEL-F5-W7m"/>
                                 </connections>
                             </tableView>
-                            <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="h88-vp-TTV">
-                                <rect key="frame" x="0.0" y="44" width="375" height="58"/>
-                                <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="rj1-gT-YAf" userLabel="profileImage" customClass="profileImageView" customModule="PetFeed" customModuleProvider="target">
-                                        <rect key="frame" x="16" y="0.0" width="42" height="42"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" secondItem="rj1-gT-YAf" secondAttribute="height" multiplier="1:1" id="8KJ-Bh-jDb"/>
-                                            <constraint firstAttribute="height" constant="42" id="R2y-ZP-oRd"/>
-                                            <constraint firstAttribute="width" constant="42" id="yvD-ZG-xmU"/>
-                                        </constraints>
-                                    </imageView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="L89-rc-sMp">
-                                        <rect key="frame" x="70" y="3" width="253" height="36"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이창현" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L2T-xJ-DZq" userLabel="name">
-                                                <rect key="frame" x="0.0" y="0.0" width="253" height="18"/>
-                                                <fontDescription key="fontDescription" name="NanumSquareRoundOTFB" family="NanumSquareRoundOTF" pointSize="16"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2018.7.18" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JQQ-TE-h8g" userLabel="date">
-                                                <rect key="frame" x="0.0" y="18" width="253" height="18"/>
-                                                <fontDescription key="fontDescription" name="NanumSquareRoundOTFR" family="NanumSquareRoundOTF" pointSize="10"/>
-                                                <color key="textColor" red="0.12549019610000001" green="0.12549019610000001" blue="0.12549019610000001" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="displayP3"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                        </subviews>
-                                    </stackView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8da-gI-aQQ">
-                                        <rect key="frame" x="335" y="9" width="24" height="24"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="24" id="jXa-Sg-bEE"/>
-                                            <constraint firstAttribute="height" constant="24" id="rA6-7r-bhq"/>
-                                        </constraints>
-                                        <state key="normal" image="more_vert">
-                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        </state>
-                                    </button>
-                                </subviews>
-                                <edgeInsets key="layoutMargins" top="0.0" left="16" bottom="16" right="16"/>
-                            </stackView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lO8-34-jLu" userLabel="Comment Parent View">
                                 <rect key="frame" x="0.0" y="726" width="375" height="52"/>
                                 <subviews>
@@ -422,9 +416,9 @@
                         <constraints>
                             <constraint firstItem="swP-V3-doJ" firstAttribute="top" secondItem="h88-vp-TTV" secondAttribute="bottom" id="9vL-yu-HMA"/>
                             <constraint firstItem="1tJ-2U-gfh" firstAttribute="trailing" secondItem="lO8-34-jLu" secondAttribute="trailing" id="FI6-Fu-DEd"/>
+                            <constraint firstItem="1tJ-2U-gfh" firstAttribute="bottom" secondItem="swP-V3-doJ" secondAttribute="bottom" id="KuL-7A-8eA"/>
                             <constraint firstItem="1tJ-2U-gfh" firstAttribute="bottom" secondItem="lO8-34-jLu" secondAttribute="bottom" id="Wnl-z4-hzI"/>
                             <constraint firstItem="1tJ-2U-gfh" firstAttribute="trailing" secondItem="h88-vp-TTV" secondAttribute="trailing" id="cNg-eY-TEE"/>
-                            <constraint firstItem="lO8-34-jLu" firstAttribute="top" secondItem="swP-V3-doJ" secondAttribute="bottom" id="euN-aS-91P"/>
                             <constraint firstItem="h88-vp-TTV" firstAttribute="top" secondItem="1tJ-2U-gfh" secondAttribute="top" id="jLg-zF-rSN"/>
                             <constraint firstItem="lO8-34-jLu" firstAttribute="leading" secondItem="1tJ-2U-gfh" secondAttribute="leading" id="ryx-LP-A0P"/>
                             <constraint firstItem="swP-V3-doJ" firstAttribute="leading" secondItem="1tJ-2U-gfh" secondAttribute="leading" id="wpR-i7-6iG"/>
@@ -436,6 +430,7 @@
                     <navigationItem key="navigationItem" id="3sI-EG-aJ7"/>
                     <connections>
                         <outlet property="commentField" destination="qx3-b3-RLo" id="532-hg-BhN"/>
+                        <outlet property="commentFieldBottomConstraint" destination="Wnl-z4-hzI" id="Dhv-uC-Xm3"/>
                         <outlet property="commentParentView" destination="lO8-34-jLu" id="TxK-5h-nhN"/>
                         <outlet property="profileImageView" destination="dLk-cZ-lyO" id="f3A-DR-rTv"/>
                         <outlet property="tableView" destination="swP-V3-doJ" id="1Fy-cX-1zz"/>

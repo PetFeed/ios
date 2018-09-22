@@ -23,6 +23,7 @@ class DetailVC: UIViewController,UIGestureRecognizerDelegate {
     @IBOutlet weak var profileImageView: profileImageView!
     
     @IBOutlet weak var commentField: UITextField!
+    @IBOutlet weak var commentFieldBottomConstraint: NSLayoutConstraint!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,11 +45,11 @@ class DetailVC: UIViewController,UIGestureRecognizerDelegate {
         let keyboardFrame:NSValue = userInfo.value(forKey: UIKeyboardFrameEndUserInfoKey) as! NSValue
         let keyboardRectangle = keyboardFrame.cgRectValue
         let keyboardHeight = keyboardRectangle.height
-        self.commentField.frame.origin.y = -keyboardHeight
+        commentFieldBottomConstraint.constant  = keyboardHeight
     }
     
     @objc func keyboardWillHide(_ sender: Notification) {
-        self.commentField.frame.origin.y = 0
+        commentFieldBottomConstraint.constant = 0
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
