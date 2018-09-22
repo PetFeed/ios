@@ -14,7 +14,7 @@ class DetailVC: UIViewController,UIGestureRecognizerDelegate {
     
     var board:Board? {
         didSet {
-            print(board.debugDescription)
+            //print(board.debugDescription)
             //tableView.reloadData()
         }
     }

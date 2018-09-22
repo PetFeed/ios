@@ -53,8 +53,8 @@ class RegisterVC: UIViewController {
                 if json["success"].boolValue == false {
                     self.show_alert(with: json["message"].stringValue)
                 } else {
-                    self.show_alert(with: json.description)
-                    //self.view.window?.rootViewController?.dismiss(animated: true, completion: nil)
+                    //self.show_alert(with: json.description)
+                    self.view.window?.rootViewController?.dismiss(animated: true, completion: nil)
                 }
             }
             

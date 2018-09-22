@@ -35,7 +35,8 @@ class BoardAPI {
         
         var images:[UIImage] = []
         for i in pictures {
-            images.append(getAssetThumbnail(asset: i, width: CGFloat(i.pixelWidth),height:CGFloat(i.pixelHeight)))
+            
+            images.append(getAssetThumbnail(asset: i, width: CGFloat(i.pixelWidth/2),height:CGFloat(i.pixelHeight/2)))
         }
         
         upload(withURL: API.base_url+"/board", token: token,content: content, imageData: images, parameters: ["hash_tags":"#asdf","contents":content]) { (json) in
@@ -53,9 +54,9 @@ class BoardAPI {
         
         
         Alamofire.upload(multipartFormData: { (multipartFormData) in
-            for i in imageData {
-                if let image = UIImageJPEGRepresentation(i, 0.5) {
-                    multipartFormData.append(image, withName: "pictures", fileName: "image.jpeg", mimeType: "image/jpeg")
+            for (n,item) in imageData.enumerated() {
+                if let image = UIImageJPEGRepresentation(item, 0.1) {
+                    multipartFormData.append(image, withName: "pictures", fileName: "image\(n).jpeg", mimeType: "image/jpeg")
                 }
             }
 
@@ -98,7 +99,7 @@ class BoardAPI {
             "content":content,
             "type":type
         ]
-        print(parameters)
+        //print(parameters)
         Alamofire.request("\(API.base_url)/comment",method:.post,parameters:parameters,encoding:URLEncoding.httpBody,headers:headers)
             .responseJSON(completionHandler: { (response) in
                 //1. JSON 변환

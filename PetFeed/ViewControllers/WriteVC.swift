@@ -60,7 +60,7 @@ class WriteVC: UIViewController {
         }
         
         API.Board.post(withToken: API.currentToken, content: text, pictures: items) { (json) in
-            print(json.description)
+            print(json["success"])
             self.dismiss(animated: true, completion: nil)
         }
         
@@ -124,6 +124,10 @@ extension WriteVC: ImagePickerControllerDelegate {
     
     func imagePickerController(_ picker: ImagePickerController, didFinishPickingImageAssets assets: [PHAsset]) {
         items = assets
+//        for i in assets {
+//            print(i.pixelWidth,"and",i.pixelHeight)
+//        }
+        
         picker.dismiss(animated: true) {
             self.collectionView.reloadData()
         }

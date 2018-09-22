@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import ImageSlideshow
 
 class SearchVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
     @IBOutlet weak var tableView: UITableView!

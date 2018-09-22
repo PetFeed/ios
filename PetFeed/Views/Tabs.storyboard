@@ -290,7 +290,7 @@
                                 <rect key="frame" x="0.0" y="44" width="375" height="734"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <view key="tableHeaderView" contentMode="scaleToFill" id="WMX-cV-1Nw">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="520"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="663"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
                                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="사람, 해시태그, 또는 사진을 검색해보세요." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Euu-lw-TN0">
@@ -465,7 +465,7 @@
                                 </view>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="pjS-jR-FMS" customClass="CollectionCell" customModule="PetFeed" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="548" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="691" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="pjS-jR-FMS" id="Kv9-yI-u7B">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.666666666666664"/>

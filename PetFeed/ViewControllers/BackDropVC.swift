@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import ImageSlideshow
 
 class BackDropVC: UIViewController {
     
@@ -224,9 +225,13 @@ extension BackDropVC:UICollectionViewDelegate,UICollectionViewDataSource,UIColle
             cell.content = items[indexPath.row].contents
             cell.love = items[indexPath.row].likes.count
             cell.comment = items[indexPath.row].comments.count
+            
+            cell.superViewController = self
+            
             if (items[indexPath.row].pictures.count > 0) {
-                let url = URL(string: "\(API.base_url)/\(items[indexPath.row].pictures[0])")
-                //cell.imageView?.sd_setImage(with: url, completed: nil)
+                let array:[SDWebImageSource] = items[indexPath.row].pictures.map{SDWebImageSource(urlString: "\(API.base_url)/\($0)")!}
+                print(array[0].url.debugDescription)
+                cell.setImagesWith(source: array)
             }
             
             

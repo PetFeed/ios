@@ -10,6 +10,8 @@ pod 'Pickle'
 pod 'SDWebImage/WebP'
 pod 'Firebase/Core'
 pod 'Firebase/Messaging'
+pod 'ImageSlideshow', '~> 1.6'
+pod "ImageSlideshow/SDWebImage"
 
 
   # Pods for PetFeed

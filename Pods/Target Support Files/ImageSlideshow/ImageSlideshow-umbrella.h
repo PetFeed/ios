@@ -11,6 +11,6 @@
 #endif
 
 
-FOUNDATION_EXPORT double LIHImageSliderVersionNumber;
-FOUNDATION_EXPORT const unsigned char LIHImageSliderVersionString[];
+FOUNDATION_EXPORT double ImageSlideshowVersionNumber;
+FOUNDATION_EXPORT const unsigned char ImageSlideshowVersionString[];
 
