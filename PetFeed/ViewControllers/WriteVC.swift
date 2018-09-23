@@ -25,6 +25,8 @@ class WriteVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
+        
         textView.delegate = self
         textView.text = "해시태그와 함께 사진, 동영상에 대해 설명해주세요. (250자)"
         textView.textColor = UIColor(red: 151/255, green: 151/255, blue: 151/255, alpha: 1.0)

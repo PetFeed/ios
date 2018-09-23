@@ -230,7 +230,6 @@ extension BackDropVC:UICollectionViewDelegate,UICollectionViewDataSource,UIColle
             
             if (items[indexPath.row].pictures.count > 0) {
                 let array:[SDWebImageSource] = items[indexPath.row].pictures.map{SDWebImageSource(urlString: "\(API.base_url)/\($0)")!}
-                print(array[0].url.debugDescription)
                 cell.setImagesWith(source: array)
             }
             

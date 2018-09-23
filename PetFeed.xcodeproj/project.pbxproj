@@ -22,6 +22,7 @@
 		78516B472147D92D002A3A13 /* Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78516B462147D92D002A3A13 /* Double.swift */; };
 		78583121215253C300DA67E7 /* Board.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78583120215253C300DA67E7 /* Board.swift */; };
 		78669CFF21488BAF00AC61BC /* DetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78669CFE21488BAF00AC61BC /* DetailVC.swift */; };
+		7876C8A4215733C8000F5F0C /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7876C8A3215733C8000F5F0C /* UIImage.swift */; };
 		787F53B02154129D003F5C43 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 787F53AF2154129D003F5C43 /* GoogleService-Info.plist */; };
 		78801C76214FCC1000EA7B5F /* CommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78801C74214FCC1000EA7B5F /* CommentCell.swift */; };
 		78801C77214FCC1000EA7B5F /* CommentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 78801C75214FCC1000EA7B5F /* CommentCell.xib */; };
@@ -76,6 +77,7 @@
 		78516B462147D92D002A3A13 /* Double.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Double.swift; sourceTree = "<group>"; };
 		78583120215253C300DA67E7 /* Board.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Board.swift; sourceTree = "<group>"; };
 		78669CFE21488BAF00AC61BC /* DetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailVC.swift; sourceTree = "<group>"; };
+		7876C8A3215733C8000F5F0C /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
 		787F53AF2154129D003F5C43 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		78801C74214FCC1000EA7B5F /* CommentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentCell.swift; sourceTree = "<group>"; };
 		78801C75214FCC1000EA7B5F /* CommentCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommentCell.xib; sourceTree = "<group>"; };
@@ -202,6 +204,7 @@
 				7841B6A02118A2EB00E7D121 /* Array.swift */,
 				78516B462147D92D002A3A13 /* Double.swift */,
 				78F6B6FB2153FD7800D11C4F /* Date.swift */,
+				7876C8A3215733C8000F5F0C /* UIImage.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -426,6 +429,7 @@
 				78151DA92116D206007EE2AA /* SearchVC.swift in Sources */,
 				78CD4D89214AAA65004E903C /* ViewController.swift in Sources */,
 				78A0FE95211532070028A6D9 /* BackdropView.swift in Sources */,
+				7876C8A4215733C8000F5F0C /* UIImage.swift in Sources */,
 				78A0FE8121152AAE0028A6D9 /* AppDelegate.swift in Sources */,
 				78C50587214525CC00BB97A3 /* NotificationCell.swift in Sources */,
 				7887432321438E44005AECCA /* profileImageView.swift in Sources */,
@@ -593,7 +597,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = A358VZ5QEA;
 				INFOPLIST_FILE = PetFeed/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.changhyeon.PetFeed;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -609,7 +616,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = A358VZ5QEA;
 				INFOPLIST_FILE = PetFeed/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.changhyeon.PetFeed;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
