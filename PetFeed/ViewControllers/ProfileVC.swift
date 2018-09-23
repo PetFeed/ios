@@ -138,25 +138,14 @@ extension ProfileVC: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! FeedCell
 
-        //cell.backgroundColor = self.randomColor()
-        cell.name = items[indexPath.row].writer_nickname
-        cell.profileImageView.sd_setImage(with: URL(string: "\(API.base_url)\(items[indexPath.row].writer_profile)"), completed: nil)
-        cell.date = items[indexPath.row].date
-        cell.content = items[indexPath.row].contents
-        cell.love = items[indexPath.row].likes.count
-        cell.comment = items[indexPath.row].comments.count
-        
-        if (items[indexPath.row].pictures.count > 0) {
-            let array:[SDWebImageSource] = items[indexPath.row].pictures.map{SDWebImageSource(urlString: "\(API.base_url)/\($0)")!}
-            cell.setImagesWith(source: array)
-        }
+        cell.initalize(withBoard: items[indexPath.row])
         
         cell.commentButtonHandler = {
             let vc = UIStoryboard(name: "Backdrop", bundle: nil).instantiateViewController(withIdentifier: "DetailVC") as! DetailVC
             vc.board = self.items[indexPath.row]
             super.navigationController?.pushViewController(vc, animated: true)
         }
-        //cell.commentButton.addTarget(self, action: #selector(ProfileVC.commentButton(cell)), for: .touchUpInside)
+        
         return cell
     }
     

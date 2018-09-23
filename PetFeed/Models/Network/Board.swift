@@ -41,6 +41,8 @@ struct Board {
     
     var hash_tags: [String]
     
+    var id:String
+    
     var date:Date
     
     var likes: [String]
@@ -62,7 +64,8 @@ extension Board {
                                             writer_nickname: $0["writer"]["user_id"].stringValue,
                                             profile_image: $0["writer"].stringValue,
                                             date: Date())} ,
-                         hash_tags: json["hash_tags"].arrayValue.map{$0.stringValue},
+                          hash_tags: json["hash_tags"].arrayValue.map{$0.stringValue},
+                          id: json["_id"].stringValue,
                          date: date ?? Date(),
                          likes: json["likes"].arrayValue.map{$0.stringValue},
                          writer_nickname: json["writer"]["nickname"].stringValue,

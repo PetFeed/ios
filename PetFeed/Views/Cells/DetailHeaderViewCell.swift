@@ -29,13 +29,20 @@ class DetailHeaderViewCell: UITableViewCell {
                 
                 contentLabel.text = i.contents
                 
-                let url = URL(string: "\(API.base_url)/\(i.pictures[0])")
-                contentImageView.sd_setImage(with: url, completed: nil)
+//                if i.pictures.count > 0 {
+//                    let url = URL(string: "\(API.base_url)/\(i.pictures[0])")
+//                    contentImageView.sd_setImage(with: url, completed: nil)
+//                }
+                
                 
                 profileImageView.sd_setImage(with: URL(string: "\(API.base_url)\(i.writer_profile)"), completed: nil)
                 
                 nameLabel.text = i.writer_nickname
-                dateLabel.text = "Temp Date.."
+                
+                let formatter = DateFormatter()
+                formatter.dateFormat = "yyyy.MM.dd"
+                let result = formatter.string(from: i.date)
+                dateLabel.text = result
             }
            
         }

@@ -8,6 +8,7 @@
 
 import UIKit
 import ImageSlideshow
+import SDWebImage
 
 class FeedCell: UICollectionViewCell {
     
@@ -28,45 +29,34 @@ class FeedCell: UICollectionViewCell {
     
     //TODO: Make these values to board class, and make intialize function
     
-    var profileImage:UIImage! {
-        didSet {
-            profileImageView.image = profileImage
-        }
-    }
+    var board:Board?
     
-    var name:String = "이창현" {
-        didSet {
-            nameLabel.text = name
-        }
-    }
-    
-    var date:Date = Date() {
-        didSet {
+    func initalize(withBoard data:Board) {
+        self.board = data
+        
+        if let board = self.board {
+            nameLabel.text = board.writer_nickname
+            
+            profileImageView.sd_setImage(with: URL(string: "\(API.base_url)/\(board.writer_profile)"))
+            
             let formatter = DateFormatter()
             formatter.dateFormat = "yyyy.MM.dd"
-            let result = formatter.string(from: date)
-
+            let result = formatter.string(from: board.date)
             dateLabel.text = result
+            
+            contentLabel.text = board.contents
+            
+            loveLabel.text = "+\(board.likes.count)"
+            commentLabel.text = "+\(board.comments.count)"
+            
+            if (board.pictures.count > 0) {
+                let array:[SDWebImageSource] = board.pictures.map{SDWebImageSource(urlString: "\(API.base_url)/\($0)")!}
+                self.setImagesWith(source: array)
+            }
         }
     }
     
     
-    var content:String = "nil" {
-        didSet {
-            contentLabel.text = content
-        }
-    }
-    
-    var love:Int = 0 {
-        didSet {
-            loveLabel.text = "+\(love)"
-        }
-    }
-    var comment:Int = 0 {
-        didSet {
-            commentLabel.text = "+\(comment)"
-        }
-    }
     
     @IBOutlet weak var commentButton: UIButton!
     

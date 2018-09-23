@@ -212,28 +212,10 @@ extension BackDropVC:UICollectionViewDelegate,UICollectionViewDataSource,UIColle
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! FeedCell
         
-        //cell.backgroundColor = self.randomColor()
         if items.count > 0 {
-            cell.name = items[indexPath.row].writer_nickname
-            cell.profileImageView.sd_setImage(with: URL(string: "\(API.base_url)/\(items[indexPath.row].writer_profile)"), completed: nil)
-            cell.profileImageView.sd_setImage(with: URL(string: "\(API.base_url)/\(items[indexPath.row].writer_profile)")) { (image, error, cache, url) in
-                //cell.contentHeight.constant = image?.size.height ?? CGFloat(195)
-            }
-            
-            
-            cell.date = items[indexPath.row].date
-            cell.content = items[indexPath.row].contents
-            cell.love = items[indexPath.row].likes.count
-            cell.comment = items[indexPath.row].comments.count
+            cell.initalize(withBoard: items[indexPath.row])
             
             cell.superViewController = self
-            
-            if (items[indexPath.row].pictures.count > 0) {
-                let array:[SDWebImageSource] = items[indexPath.row].pictures.map{SDWebImageSource(urlString: "\(API.base_url)/\($0)")!}
-                cell.setImagesWith(source: array)
-            }
-            
-            
             
             cell.commentButtonHandler = {
                 let vc = UIStoryboard(name: "Backdrop", bundle: nil).instantiateViewController(withIdentifier: "DetailVC") as! DetailVC
@@ -241,8 +223,8 @@ extension BackDropVC:UICollectionViewDelegate,UICollectionViewDataSource,UIColle
                 
                 super.navigationController?.pushViewController(vc, animated: true)
             }
+            
         }
-        //cell.commentButton.addTarget(self, action: #selector(ProfileVC.commentButton(cell)), for: .touchUpInside)
         return cell
     }
     

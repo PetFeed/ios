@@ -384,7 +384,7 @@
                                         <rect key="frame" x="52" y="8" width="307" height="36"/>
                                         <color key="backgroundColor" red="0.96862745098039216" green="0.96862745098039216" blue="0.96862745098039216" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="textColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <fontDescription key="fontDescription" name="NanumSquareRoundOTFR" family="NanumSquareRoundOTF" pointSize="12"/>
                                         <textInputTraits key="textInputTraits"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -397,7 +397,18 @@
                                                 <color key="value" red="0.83137254901960778" green="0.83137254901960778" blue="0.83137254901960778" alpha="1" colorSpace="calibratedRGB"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="textFieldValueChanged:" destination="BvC-1C-h4f" eventType="editingChanged" id="4wo-1w-BNB"/>
+                                        </connections>
                                     </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="559-Wm-geg">
+                                        <rect key="frame" x="322" y="13" width="30" height="26"/>
+                                        <fontDescription key="fontDescription" name="NanumSquareRoundOTFEB" family="NanumSquareRoundOTF" pointSize="12"/>
+                                        <state key="normal" title="게시"/>
+                                        <connections>
+                                            <action selector="sendButtonPressed:" destination="BvC-1C-h4f" eventType="touchUpInside" id="Xjp-cG-brW"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -408,6 +419,9 @@
                                     <constraint firstItem="dLk-cZ-lyO" firstAttribute="top" secondItem="lO8-34-jLu" secondAttribute="top" constant="12" id="Wem-GN-xjG"/>
                                     <constraint firstAttribute="bottom" secondItem="dLk-cZ-lyO" secondAttribute="bottom" constant="12" id="aXQ-xk-Rcr"/>
                                     <constraint firstItem="qx3-b3-RLo" firstAttribute="leading" secondItem="dLk-cZ-lyO" secondAttribute="trailing" constant="8" id="hgX-t9-yjv"/>
+                                    <constraint firstAttribute="trailing" secondItem="559-Wm-geg" secondAttribute="trailing" constant="23" id="ki8-YE-zt4"/>
+                                    <constraint firstItem="559-Wm-geg" firstAttribute="top" secondItem="lO8-34-jLu" secondAttribute="top" constant="13" id="veS-MZ-5tf"/>
+                                    <constraint firstAttribute="bottom" secondItem="559-Wm-geg" secondAttribute="bottom" constant="13" id="w1Z-L2-HtT"/>
                                     <constraint firstItem="dLk-cZ-lyO" firstAttribute="leading" secondItem="lO8-34-jLu" secondAttribute="leading" constant="16" id="zL0-sF-ww1"/>
                                 </constraints>
                             </view>
@@ -433,6 +447,7 @@
                         <outlet property="commentFieldBottomConstraint" destination="Wnl-z4-hzI" id="Dhv-uC-Xm3"/>
                         <outlet property="commentParentView" destination="lO8-34-jLu" id="TxK-5h-nhN"/>
                         <outlet property="profileImageView" destination="dLk-cZ-lyO" id="f3A-DR-rTv"/>
+                        <outlet property="sendButton" destination="559-Wm-geg" id="SYh-HP-rnJ"/>
                         <outlet property="tableView" destination="swP-V3-doJ" id="1Fy-cX-1zz"/>
                     </connections>
                 </viewController>

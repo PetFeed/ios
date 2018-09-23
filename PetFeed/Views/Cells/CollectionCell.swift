@@ -31,16 +31,14 @@ class CollectionCell: UITableViewCell {
 
 extension CollectionCell: UICollectionViewDataSource,UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 3;
+        return 1;
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! FeedCell
         
         //cell.backgroundColor = self.randomColor()
-        cell.name = "제목"
-        cell.date = Date()
-        cell.profileImage = #imageLiteral(resourceName: "profile.jpeg")
+        //cell.initalize(withBoard: )
         
         cell.commentButtonHandler = {()->Void in
             let vc = UIStoryboard(name: "Backdrop", bundle: nil).instantiateViewController(withIdentifier: "DetailVC") as! DetailVC

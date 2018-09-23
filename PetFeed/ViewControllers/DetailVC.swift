@@ -25,6 +25,10 @@ class DetailVC: UIViewController,UIGestureRecognizerDelegate {
     @IBOutlet weak var commentField: UITextField!
     @IBOutlet weak var commentFieldBottomConstraint: NSLayoutConstraint!
     
+    @IBOutlet weak var sendButton: UIButton!
+    
+    var temp_image:UIImage?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.rowHeight = UITableViewAutomaticDimension
@@ -57,10 +61,24 @@ class DetailVC: UIViewController,UIGestureRecognizerDelegate {
     }
     
     
-    override func viewDidAppear(_ animated: Bool) {
-        //self.navigationController?.isNavigationBarHidden = false
+    @IBAction func sendButtonPressed(_ sender: UIButton) {
+        if let board = self.board {
+            API.Board.comment(withToken: API.currentToken, parent: board.id, content: commentField.text ?? "", type: "") { (json) in
+                print(json.debugDescription)
+            }
+        }
+        sender.endEditing(true)
     }
+    
 
+    @IBAction func textFieldValueChanged(_ sender: UITextField) {
+        print("changed")
+        if sender.text?.count == 0 {
+            sendButton.isEnabled = false
+        } else {
+            sendButton.isEnabled = true
+        }
+    }
     
 }
 
@@ -80,6 +98,7 @@ extension DetailVC: UITableViewDelegate,UITableViewDataSource {
             let cell = tableView.dequeueReusableCell(withIdentifier: "header") as! DetailHeaderViewCell
             if let b = board {
                 cell.info = b
+                cell.contentImageView.image = temp_image ?? #imageLiteral(resourceName: "content.jpeg")
             }
             return cell
         } else {
