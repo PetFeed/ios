@@ -23,7 +23,15 @@ class BoardAPI {
         }
     }
     
-    func get(withToken token:String,completion:@escaping (JSON)->Void) {
+    func get(withID id:String, token:String, completion:@escaping (JSON)-> Void) {
+        Alamofire.request(API.base_url+"/board/\(id)", method: .get, headers: ["x-access-token":token]).responseJSON { (response) in
+            if let value = response.result.value,response.result.isSuccess {
+                completion(JSON(value))
+            }
+        }
+    }
+    
+    func getUserBoards(withToken token:String,completion:@escaping (JSON)->Void) {
         Alamofire.request(API.base_url+"/user/boards", method: .get, headers: ["x-access-token":token]).responseJSON { (response) in
             if let value = response.result.value,response.result.isSuccess {
                 completion(JSON(value))
@@ -44,6 +52,24 @@ class BoardAPI {
         upload(withURL: API.base_url+"/board", token: token,content: content, imageData: images, parameters: ["hash_tags":"#asdf","contents":content]) { (json) in
             completion(json)
         }
+    }
+    
+    func like(withToken token:String,toBoardID id:String,completion:@escaping (JSON)->Void) {
+        let headers: HTTPHeaders = [
+            "Content-Type": "application/x-www-form-urlencoded",
+            "x-access-token": token
+        ]
+        let parameters = [
+            "board_id":id
+        ]
+        //print(parameters)
+        Alamofire.request("\(API.base_url)/board/like",method:.post,parameters:parameters,encoding:URLEncoding.httpBody,headers:headers)
+            .responseJSON(completionHandler: { (response) in
+                //1. JSON 변환
+                if let value = response.result.value,response.result.isSuccess {
+                    completion(JSON(value))
+                }
+            })
     }
     
     private func upload(withURL: String, token:String,content: String = "", imageData: [UIImage],parameters: [String:String], completion: @escaping(JSON) -> Void) {

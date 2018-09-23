@@ -220,10 +220,16 @@ extension BackDropVC:UICollectionViewDelegate,UICollectionViewDataSource,UIColle
             cell.commentButtonHandler = {
                 let vc = UIStoryboard(name: "Backdrop", bundle: nil).instantiateViewController(withIdentifier: "DetailVC") as! DetailVC
                 vc.board = self.items[indexPath.row]
+                vc.temp_images = cell.imageShow.images
                 
                 super.navigationController?.pushViewController(vc, animated: true)
             }
             
+            cell.likeButtonHandler = {
+                API.Board.like(withToken: API.currentToken, toBoardID: self.items[indexPath.row].id, completion: { (json) in
+                    //print(json.debugDescription)
+                })
+            }
         }
         return cell
     }
@@ -244,7 +250,6 @@ extension BackDropVC:UICollectionViewDelegate,UICollectionViewDataSource,UIColle
                 }
             }
             self.collectionView.reloadData()
-            self.collectionView.layoutIfNeeded()
             
         }
         self.refreshControl.endRefreshing()

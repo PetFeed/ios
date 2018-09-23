@@ -58,7 +58,7 @@ class ProfileVC: UIViewController {
     
     @objc func refresh() {
         self.items.removeAll()
-        API.Board.get(withToken: API.currentToken) { (json) in
+        API.Board.getUserBoards(withToken: API.currentToken) { (json) in
             json["data"].arrayValue.map{ i in
                 if let d = Board.transformUser(withJSON: i) {
                     self.append(with: d)

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import ImageSlideshow
 
 class DetailHeaderViewCell: UITableViewCell {
     @IBOutlet weak var profileImageView: profileImageView!
@@ -15,7 +16,8 @@ class DetailHeaderViewCell: UITableViewCell {
     @IBOutlet weak var dateLabel: UILabel!
     
     @IBOutlet weak var contentLabel: UILabel!
-    @IBOutlet weak var contentImageView: UIImageView!
+    
+    @IBOutlet weak var imageShow: ImageSlideshow!
     
     
     @IBOutlet weak var likeLabel: UILabel!
@@ -33,6 +35,7 @@ class DetailHeaderViewCell: UITableViewCell {
 //                    let url = URL(string: "\(API.base_url)/\(i.pictures[0])")
 //                    contentImageView.sd_setImage(with: url, completed: nil)
 //                }
+                
                 
                 
                 profileImageView.sd_setImage(with: URL(string: "\(API.base_url)\(i.writer_profile)"), completed: nil)

@@ -70,16 +70,10 @@ class FeedCell: UICollectionViewCell {
         pageControl.pageIndicatorTintColor = UIColor.black
         imageShow.pageIndicator = pageControl
         
-        // optional way to show activity indicator during image load (skipping the line will show no activity indicator)
         imageShow.activityIndicator = DefaultActivityIndicator()
         imageShow.currentPageChanged = { page in
             //"\(API.base_url)/\()"
         }
-        
-        // can be used with other sample sources as `afNetworkingSource`, `alamofireSource` or `sdWebImageSource` or `kingfisherSource`
-        //let localSource = [ImageSource(image: UIImage("content.jpeg")!)]
-
-        //imageShow.setImageInputs(localSource as! [InputSource])
         
         let recognizer = UITapGestureRecognizer(target: self, action: #selector(FeedCell.didTap))
         imageShow.addGestureRecognizer(recognizer)

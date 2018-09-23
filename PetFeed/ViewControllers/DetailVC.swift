@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import ImageSlideshow
 class DetailVC: UIViewController,UIGestureRecognizerDelegate {
     
     @IBOutlet weak var tableView: UITableView!
@@ -27,7 +27,7 @@ class DetailVC: UIViewController,UIGestureRecognizerDelegate {
     
     @IBOutlet weak var sendButton: UIButton!
     
-    var temp_image:UIImage?
+    var temp_images:[InputSource] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,29 +50,64 @@ class DetailVC: UIViewController,UIGestureRecognizerDelegate {
         let keyboardRectangle = keyboardFrame.cgRectValue
         let keyboardHeight = keyboardRectangle.height
         commentFieldBottomConstraint.constant  = keyboardHeight
+        tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: keyboardHeight+80, right: 0)
     }
     
     @objc func keyboardWillHide(_ sender: Notification) {
         commentFieldBottomConstraint.constant = 0
+        tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
     }
     
+    func refreshBoard() {
+        if let id = board?.id {
+            API.Board.get(withID: id, token: API.currentToken) { (json) in
+                if json["success"].boolValue == true {
+                    let boardData = Board.transformUser(withJSON: json["data"])
+                    self.board = boardData
+                    self.tableView.reloadData()
+                }
+            }
+        }
+    }
     
     @IBAction func sendButtonPressed(_ sender: UIButton) {
         if let board = self.board {
             API.Board.comment(withToken: API.currentToken, parent: board.id, content: commentField.text ?? "", type: "") { (json) in
-                print(json.debugDescription)
+                if json["success"].boolValue == true {
+                    self.refreshBoard()
+                }
             }
         }
-        sender.endEditing(true)
+        self.commentField.text = ""
+        self.view.endEditing(true)
     }
     
-
+    @IBAction func likeButtonPressed(_ sender: UIButton) {
+        
+        if let id = board?.id,let likes = board?.likes {
+            
+            if likes.contains(API.currentUser.id ) {
+                sender.setImage(#imageLiteral(resourceName: "Petfeed:Icons brown:favorite empty.png"), for: .normal)
+            } else{
+                sender.setImage(#imageLiteral(resourceName: "Petfeed:Icons brown:favorite.png"), for: .normal)
+            }
+            
+            API.Board.like(withToken: API.currentToken, toBoardID: id, completion: { (json) in
+                if json["success"].boolValue == true {
+                    self.refreshBoard()
+                } else {
+                    self.show_alert(with: "Error")
+                }
+            })
+        }
+        
+    }
+    
     @IBAction func textFieldValueChanged(_ sender: UITextField) {
-        print("changed")
         if sender.text?.count == 0 {
             sendButton.isEnabled = false
         } else {
@@ -98,7 +133,10 @@ extension DetailVC: UITableViewDelegate,UITableViewDataSource {
             let cell = tableView.dequeueReusableCell(withIdentifier: "header") as! DetailHeaderViewCell
             if let b = board {
                 cell.info = b
-                cell.contentImageView.image = temp_image ?? #imageLiteral(resourceName: "content.jpeg")
+                
+                if temp_images.count > 0 {
+                    cell.imageShow.setImageInputs(temp_images)
+                }
             }
             return cell
         } else {
