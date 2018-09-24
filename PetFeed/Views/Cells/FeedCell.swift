@@ -31,6 +31,8 @@ class FeedCell: UICollectionViewCell {
     
     var board:Board?
     
+    @IBOutlet weak var likeButton: UIButton!
+    
     func initalize(withBoard data:Board) {
         self.board = data
         
@@ -47,6 +49,13 @@ class FeedCell: UICollectionViewCell {
             contentLabel.text = board.contents
             
             loveLabel.text = "+\(board.likes.count)"
+            if board.likes.contains(API.currentUser.id ) {
+                likeButton.setImage(UIImage(named: "favorite_empty"), for: .normal)
+            } else{
+                likeButton.setImage(UIImage(named: "favorite"), for: .normal)
+            }
+            
+            
             commentLabel.text = "+\(board.comments.count)"
             
             if (board.pictures.count > 0) {

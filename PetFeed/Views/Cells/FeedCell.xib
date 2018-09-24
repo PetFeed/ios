@@ -177,6 +177,7 @@
                 <outlet property="dateLabel" destination="qc0-7k-RZg" id="HH1-oz-m3A"/>
                 <outlet property="heightConstraint" destination="wRu-wu-7kz" id="NsG-YB-iVf"/>
                 <outlet property="imageShow" destination="pN4-yT-3wI" id="ZND-NB-cT0"/>
+                <outlet property="likeButton" destination="Szs-4e-Ob9" id="n44-dp-5w4"/>
                 <outlet property="loveLabel" destination="kFf-GC-P12" id="mi9-pG-mlC"/>
                 <outlet property="nameLabel" destination="7at-wJ-MeO" id="yOq-AC-n7U"/>
                 <outlet property="profileImageView" destination="4JT-02-aJZ" id="4uY-na-CFN"/>

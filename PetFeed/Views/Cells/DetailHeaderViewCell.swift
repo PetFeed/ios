@@ -19,6 +19,7 @@ class DetailHeaderViewCell: UITableViewCell {
     
     @IBOutlet weak var imageShow: ImageSlideshow!
     
+    @IBOutlet weak var likeButton: UIButton!
     
     @IBOutlet weak var likeLabel: UILabel!
     @IBOutlet weak var commentLabel: UILabel!
@@ -26,6 +27,13 @@ class DetailHeaderViewCell: UITableViewCell {
     var info:Board? {
         didSet {
             if let i = info {
+                if i
+                    .likes.contains(API.currentUser.id ) {
+                    likeButton.setImage(UIImage(named: "favorite"), for: .normal)
+                } else{
+                    likeButton.setImage(UIImage(named: "favorite_empty"), for: .normal)
+                }
+                
                 commentLabel.text = "+\(i.comments.count)"
                 likeLabel.text = "+\(i.likes.count)"
                 

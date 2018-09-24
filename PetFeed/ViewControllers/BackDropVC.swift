@@ -227,7 +227,7 @@ extension BackDropVC:UICollectionViewDelegate,UICollectionViewDataSource,UIColle
             
             cell.likeButtonHandler = {
                 API.Board.like(withToken: API.currentToken, toBoardID: self.items[indexPath.row].id, completion: { (json) in
-                    //print(json.debugDescription)
+                    self.refreshWithid(id: self.items[indexPath.row].id)
                 })
             }
         }
@@ -239,6 +239,19 @@ extension BackDropVC:UICollectionViewDelegate,UICollectionViewDataSource,UIColle
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return items.count
+    }
+    
+    func refreshWithid(id: String) {
+        API.Board.get(withID: id, token: API.currentToken) { (json) in
+            if json["success"].boolValue == true {
+                
+                if let index = self.items.index(where: {$0.id == id}),
+                    let boardData = Board.transformUser(withJSON: json["data"]) {
+                    self.items[index] = boardData
+                    self.collectionView.reloadData()
+                }
+            }
+        }
     }
     
     @objc func refresh() {

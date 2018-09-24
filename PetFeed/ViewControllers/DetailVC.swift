@@ -14,8 +14,7 @@ class DetailVC: UIViewController,UIGestureRecognizerDelegate {
     
     var board:Board? {
         didSet {
-            //print(board.debugDescription)
-            //tableView.reloadData()
+            
         }
     }
     @IBOutlet weak var commentParentView: UIView!
@@ -90,11 +89,7 @@ class DetailVC: UIViewController,UIGestureRecognizerDelegate {
         
         if let id = board?.id,let likes = board?.likes {
             
-            if likes.contains(API.currentUser.id ) {
-                sender.setImage(#imageLiteral(resourceName: "Petfeed:Icons brown:favorite empty.png"), for: .normal)
-            } else{
-                sender.setImage(#imageLiteral(resourceName: "Petfeed:Icons brown:favorite.png"), for: .normal)
-            }
+            
             
             API.Board.like(withToken: API.currentToken, toBoardID: id, completion: { (json) in
                 if json["success"].boolValue == true {
@@ -137,6 +132,8 @@ extension DetailVC: UITableViewDelegate,UITableViewDataSource {
                 if temp_images.count > 0 {
                     cell.imageShow.setImageInputs(temp_images)
                 }
+                
+                
             }
             return cell
         } else {

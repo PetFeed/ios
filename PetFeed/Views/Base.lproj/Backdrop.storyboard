@@ -362,6 +362,7 @@
                                             <outlet property="contentLabel" destination="vyP-JH-ftt" id="CL7-pJ-Ypk"/>
                                             <outlet property="dateLabel" destination="JQQ-TE-h8g" id="1sx-lx-3fI"/>
                                             <outlet property="imageShow" destination="dXx-dK-SA1" id="SKo-Q9-pbL"/>
+                                            <outlet property="likeButton" destination="SEr-KA-N54" id="Ebd-fa-zDc"/>
                                             <outlet property="likeLabel" destination="XXs-9e-bMo" id="XQF-rb-c0F"/>
                                             <outlet property="nameLabel" destination="L2T-xJ-DZq" id="nQU-Fc-IBL"/>
                                             <outlet property="profileImageView" destination="rj1-gT-YAf" id="rYd-lH-xwI"/>
