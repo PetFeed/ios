@@ -49,17 +49,19 @@ class FeedCell: UICollectionViewCell {
             contentLabel.text = board.contents
             
             loveLabel.text = "+\(board.likes.count)"
+            
             if board.likes.contains(API.currentUser.id ) {
-                likeButton.setImage(UIImage(named: "favorite_empty"), for: .normal)
-            } else{
                 likeButton.setImage(UIImage(named: "favorite"), for: .normal)
+            } else{
+                //print("likes: ",board.likes,"and mine : ",API.currentUser.id)
+                likeButton.setImage(UIImage(named: "favorite_empty"), for: .normal)
             }
             
             
             commentLabel.text = "+\(board.comments.count)"
             
-            if (board.pictures.count > 0) {
-                let array:[SDWebImageSource] = board.pictures.map{SDWebImageSource(urlString: "\(API.base_url)/\($0)")!}
+            if (board.low_pictures.count > 0) {
+                let array:[SDWebImageSource] = board.low_pictures.map{SDWebImageSource(urlString: "\(API.base_url)/\($0)")!}
                 self.setImagesWith(source: array)
             }
         }
@@ -90,9 +92,16 @@ class FeedCell: UICollectionViewCell {
     
     @objc func didTap() {
         if let s = superViewController {
-            let fullScreenController = imageShow.presentFullScreenController(from: s)
-            // set the activity indicator for full screen controller (skipping the line will show no activity indicator)
-            fullScreenController.slideshow.activityIndicator = DefaultActivityIndicator(style: .white, color: nil)
+            let vc = UIStoryboard(name: "Backdrop", bundle: nil).instantiateViewController(withIdentifier: "DetailVC") as! DetailVC
+            let superCell = superview
+            
+            vc.board = board
+            vc.temp_images = imageShow.images
+            
+            s.navigationController?.pushViewController(vc, animated: true)
+//            let fullScreenController = imageShow.presentFullScreenController(from: s)
+//            // set the activity indicator for full screen controller (skipping the line will show no activity indicator)
+//            fullScreenController.slideshow.activityIndicator = DefaultActivityIndicator(style: .white, color: nil)
         }
         
     }

@@ -43,11 +43,8 @@ class BoardAPI {
         
         var images:[UIImage] = []
         for i in pictures {
-            let a = getAssetThumbnail(asset: i)
-            images.append(a.resizeUI(size: CGSize(width: i.pixelWidth/3, height: i.pixelHeight/3))!)
+            images.append(getAssetThumbnail(asset: i))
         }
-        
-        
         
         upload(withURL: API.base_url+"/board", token: token,content: content, imageData: images, parameters: ["hash_tags":"#asdf","contents":content]) { (json) in
             completion(json)
@@ -83,7 +80,7 @@ class BoardAPI {
         
         Alamofire.upload(multipartFormData: { (multipartFormData) in
             for (n,item) in imageData.enumerated() {
-                if let image = UIImageJPEGRepresentation(item, 0.1) {
+                if let image = UIImageJPEGRepresentation(item, 0.5) {
                     multipartFormData.append(image, withName: "pictures", fileName: "image\(n).jpeg", mimeType: "image/jpeg")
                 }
             }

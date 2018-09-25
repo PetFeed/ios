@@ -225,6 +225,7 @@ extension BackDropVC:UICollectionViewDelegate,UICollectionViewDataSource,UIColle
                 super.navigationController?.pushViewController(vc, animated: true)
             }
             
+            
             cell.likeButtonHandler = {
                 API.Board.like(withToken: API.currentToken, toBoardID: self.items[indexPath.row].id, completion: { (json) in
                     self.refreshWithid(id: self.items[indexPath.row].id)

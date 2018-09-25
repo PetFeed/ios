@@ -37,6 +37,8 @@ struct Comment {
 
 struct Board {
     var pictures: [String]
+    var low_pictures: [String]
+    
     var comments: [Comment]
     
     var hash_tags: [String]
@@ -59,11 +61,12 @@ extension Board {
         let date = Date.dateFromISOString(string: str)
         
         let board = Board(pictures: json["pictures"].arrayValue.map{$0.stringValue},
+                          low_pictures: json["lowPictures"].arrayValue.map{$0.stringValue},
                           comments: json["comments"].arrayValue.map{
                                     Comment(content: $0["content"].stringValue,
                                             writer_nickname: $0["writer"]["user_id"].stringValue,
                                             profile_image: $0["writer"].stringValue,
-                                            date: Date())} ,
+                                            date: Date.dateFromISOString(string: $0["create_date"].stringValue) ?? Date() )} ,
                           hash_tags: json["hash_tags"].arrayValue.map{$0.stringValue},
                           id: json["_id"].stringValue,
                          date: date ?? Date(),

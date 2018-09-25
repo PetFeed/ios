@@ -25,6 +25,7 @@ class DetailHeaderViewCell: UITableViewCell {
     @IBOutlet weak var commentLabel: UILabel!
     
     var info:Board? {
+        
         didSet {
             if let i = info {
                 if i

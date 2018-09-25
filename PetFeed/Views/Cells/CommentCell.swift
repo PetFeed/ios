@@ -30,10 +30,6 @@ class CommentCell: UITableViewCell {
         nameLabel.text = name
         contentLabel.text = content
         
-        let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy.MM.dd"
-        let result = formatter.string(from: date)
-        
-        dateLabel.text = result
+        dateLabel.text = date.getDate()
     }
 }
