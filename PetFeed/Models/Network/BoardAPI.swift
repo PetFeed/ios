@@ -14,6 +14,25 @@ import Alamofire
 
 
 class BoardAPI {
+    func delete(withID id:String,token:String,completion:@escaping (JSON)->Void) {
+        let headers: HTTPHeaders = [
+            "Content-Type": "application/x-www-form-urlencoded",
+            "x-access-token": token
+        ]
+        
+        let parameters = [
+            "board_id":id
+        ]
+        //print(parameters)
+        Alamofire.request("\(API.base_url)/board/",method:.delete,parameters:parameters,encoding:URLEncoding.httpBody,headers:headers)
+            .responseJSON(completionHandler: { (response) in
+                //1. JSON 변환
+                if let value = response.result.value,response.result.isSuccess {
+                    completion(JSON(value))
+                }
+            })
+    }
+    
     func get_all(withToken token:String,completion:@escaping (JSON)->Void) {
         print(token)
         Alamofire.request(API.base_url+"/board", method: .get, headers: ["x-access-token":token]).responseJSON { (response) in
@@ -41,10 +60,7 @@ class BoardAPI {
     
     func post(withToken token:String,content: String, pictures: [PHAsset],completion:@escaping (JSON)->Void) {
         
-        var images:[UIImage] = []
-        for i in pictures {
-            images.append(getAssetThumbnail(asset: i))
-        }
+        var images:[UIImage] = pictures.map{getAssetThumbnail(asset: $0)}
         
         upload(withURL: API.base_url+"/board", token: token,content: content, imageData: images, parameters: ["hash_tags":"#asdf","contents":content]) { (json) in
             completion(json)
@@ -134,19 +150,23 @@ class BoardAPI {
             })
     }
     
-    func getAssetThumbnail(asset: PHAsset) -> UIImage {
-        var img: UIImage?
+    func getAssetThumbnail(asset: PHAsset, size: CGFloat = 1) -> UIImage {
+        let retinaScale = UIScreen.main.scale
+        let retinaSquare = CGSize(width: size * retinaScale, height: size * retinaScale)//(size * retinaScale, size * retinaScale)
+        let cropSizeLength = min(asset.pixelWidth, asset.pixelHeight)
+        let square = CGRect(x:0, y: 0,width: CGFloat(cropSizeLength),height: CGFloat(cropSizeLength))
+        let cropRect = square.applying(CGAffineTransform(scaleX: 1.0/CGFloat(asset.pixelWidth), y: 1.0/CGFloat(asset.pixelHeight)))
         let manager = PHImageManager.default()
         let options = PHImageRequestOptions()
-        options.version = .original
+        var thumbnail = UIImage()
         options.isSynchronous = true
-        manager.requestImageData(for: asset, options: options) { data, _, _, _ in
-            
-            if let data = data {
-                img = UIImage(data: data)
-            }
-        }
-        return img!
+        options.deliveryMode = .highQualityFormat
+        options.resizeMode = .exact
+        options.normalizedCropRect = cropRect
+        manager.requestImage(for: asset, targetSize: retinaSquare, contentMode: .aspectFit, options: options, resultHandler: {(result, info)->Void in
+            thumbnail = result!
+        })
+        return thumbnail
     }
     
     

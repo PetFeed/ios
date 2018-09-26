@@ -20,67 +20,72 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="111" id="KGk-i7-Jjw" customClass="CommentCell" customModule="PetFeed" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="360" height="87"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="138" id="KGk-i7-Jjw" customClass="CommentCell" customModule="PetFeed" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="360" height="114"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="360" height="86.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="360" height="113.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="LPT-TW-W6A">
-                        <rect key="frame" x="16" y="9.5" width="42" height="42"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="42" id="OQt-yE-8S2"/>
-                            <constraint firstAttribute="width" constant="42" id="hAv-XZ-MXe"/>
-                        </constraints>
-                    </imageView>
-                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="R02-U7-sI5">
-                        <rect key="frame" x="70" y="9.5" width="290" height="71"/>
+                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="v1j-cX-eFd">
+                        <rect key="frame" x="16" y="11" width="145" height="92"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이름" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uq2-PR-Ugb">
-                                <rect key="frame" x="0.0" y="0.0" width="290" height="21"/>
-                                <fontDescription key="fontDescription" name="NanumSquareRoundOTFEB" family="NanumSquareRoundOTF" pointSize="12"/>
-                                <color key="textColor" red="0.12549019610000001" green="0.12549019610000001" blue="0.12549019610000001" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="내용" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P57-Ro-BdW">
-                                <rect key="frame" x="0.0" y="25" width="290" height="21"/>
-                                <fontDescription key="fontDescription" name="NanumSquareRoundOTFR" family="NanumSquareRoundOTF" pointSize="12"/>
-                                <color key="textColor" red="0.12549019610000001" green="0.12549019610000001" blue="0.12549019610000001" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="qpd-wf-MIC">
-                                <rect key="frame" x="0.0" y="50" width="290" height="21"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="LPT-TW-W6A">
+                                <rect key="frame" x="0.0" y="25" width="42" height="42"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="42" id="OQt-yE-8S2"/>
+                                    <constraint firstAttribute="width" constant="42" id="hAv-XZ-MXe"/>
+                                </constraints>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="R02-U7-sI5">
+                                <rect key="frame" x="54" y="25" width="91" height="42"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2018.01.01" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dbJ-g4-KnR">
-                                        <rect key="frame" x="0.0" y="0.0" width="30" height="21"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="30" id="b49-q3-gZq"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="NanumSquareRoundOTFR" family="NanumSquareRoundOTF" pointSize="8"/>
-                                        <color key="textColor" red="0.12549019610000001" green="0.12549019610000001" blue="0.12549019610000001" alpha="0.29999999999999999" colorSpace="calibratedRGB"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이름" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uq2-PR-Ugb">
+                                        <rect key="frame" x="0.0" y="0.0" width="91" height="11.5"/>
+                                        <fontDescription key="fontDescription" name="NanumSquareRoundOTFEB" family="NanumSquareRoundOTF" pointSize="12"/>
+                                        <color key="textColor" red="0.12549019610000001" green="0.12549019610000001" blue="0.12549019610000001" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bdt-0F-eAA">
-                                        <rect key="frame" x="42" y="0.0" width="248" height="21"/>
-                                        <fontDescription key="fontDescription" name="NanumSquareRoundOTFEB" family="NanumSquareRoundOTF" pointSize="8"/>
-                                        <state key="normal" title="답글 달기">
-                                            <color key="titleColor" red="0.12549019610000001" green="0.12549019610000001" blue="0.12549019610000001" alpha="0.29999999999999999" colorSpace="calibratedRGB"/>
-                                        </state>
-                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="내용" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P57-Ro-BdW">
+                                        <rect key="frame" x="0.0" y="15.5" width="91" height="13.5"/>
+                                        <fontDescription key="fontDescription" name="NanumSquareRoundOTFR" family="NanumSquareRoundOTF" pointSize="12"/>
+                                        <color key="textColor" red="0.12549019610000001" green="0.12549019610000001" blue="0.12549019610000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="qpd-wf-MIC">
+                                        <rect key="frame" x="0.0" y="33" width="91" height="9"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2018.01.01" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dbJ-g4-KnR">
+                                                <rect key="frame" x="0.0" y="0.0" width="42.5" height="9"/>
+                                                <fontDescription key="fontDescription" name="NanumSquareRoundOTFR" family="NanumSquareRoundOTF" pointSize="8"/>
+                                                <color key="textColor" red="0.12549019610000001" green="0.12549019610000001" blue="0.12549019610000001" alpha="0.29999999999999999" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bdt-0F-eAA">
+                                                <rect key="frame" x="48.5" y="0.0" width="42.5" height="9"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="32" id="gvQ-Zs-zTH"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="NanumSquareRoundOTFEB" family="NanumSquareRoundOTF" pointSize="8"/>
+                                                <state key="normal" title="답글 달기">
+                                                    <color key="titleColor" red="0.12549019610000001" green="0.12549019610000001" blue="0.12549019610000001" alpha="0.29999999999999999" colorSpace="calibratedRGB"/>
+                                                </state>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
                                 </subviews>
                             </stackView>
                         </subviews>
+                        <constraints>
+                            <constraint firstItem="R02-U7-sI5" firstAttribute="height" secondItem="LPT-TW-W6A" secondAttribute="height" id="yom-iP-SgO"/>
+                        </constraints>
                     </stackView>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="R02-U7-sI5" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="9" id="CK0-cv-Npm"/>
-                    <constraint firstAttribute="bottom" secondItem="LPT-TW-W6A" secondAttribute="bottom" constant="9" id="D84-P8-BHu"/>
-                    <constraint firstItem="LPT-TW-W6A" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="9" id="Kab-5t-yfq"/>
-                    <constraint firstAttribute="trailing" secondItem="R02-U7-sI5" secondAttribute="trailing" id="VXq-ut-RCI"/>
-                    <constraint firstItem="LPT-TW-W6A" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="fUq-Zo-OM2"/>
-                    <constraint firstItem="R02-U7-sI5" firstAttribute="leading" secondItem="LPT-TW-W6A" secondAttribute="trailing" constant="12" id="vxN-VG-lk5"/>
-                    <constraint firstAttribute="bottom" secondItem="R02-U7-sI5" secondAttribute="bottom" constant="9" id="zTB-Nr-0uk"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="v1j-cX-eFd" secondAttribute="bottom" id="1fJ-KD-GOG"/>
+                    <constraint firstItem="v1j-cX-eFd" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="4o3-Nd-GMe"/>
+                    <constraint firstItem="v1j-cX-eFd" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="HTD-Nj-Obg"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="v1j-cX-eFd" secondAttribute="trailing" id="XmW-vN-70o"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
@@ -90,7 +95,7 @@
                 <outlet property="nameLabel" destination="uq2-PR-Ugb" id="wMg-wk-IVe"/>
                 <outlet property="profileImageView" destination="LPT-TW-W6A" id="dBc-ed-jsY"/>
             </connections>
-            <point key="canvasLocation" x="-28.800000000000001" y="85.907046476761622"/>
+            <point key="canvasLocation" x="-28.800000000000001" y="97.151424287856074"/>
         </tableViewCell>
     </objects>
 </document>

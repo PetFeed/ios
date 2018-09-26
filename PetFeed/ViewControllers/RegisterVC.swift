@@ -15,12 +15,30 @@ class RegisterVC: UIViewController {
     @IBOutlet weak var passwordField: UITextField!
     @IBOutlet weak var re_passwordfield: UITextField!
     
+    @IBOutlet weak var nickNameField: UITextField!
+    
+    
+    
     var id:String = ""
     var password:String = ""
+    var nickname:String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: .UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: .UIKeyboardWillHide, object: nil)
+    }
+    
+    @objc func keyboardWillShow(_ sender: Notification) {
+        let userInfo:NSDictionary = sender.userInfo! as NSDictionary
+        let keyboardFrame:NSValue = userInfo.value(forKey: UIKeyboardFrameEndUserInfoKey) as! NSValue
+        let keyboardRectangle = keyboardFrame.cgRectValue
+        let keyboardHeight = keyboardRectangle.height
+        self.view.frame.origin = CGPoint(x: 0, y: -100)
+    }
+    
+    @objc func keyboardWillHide(_ sender: Notification) {
+        self.view.frame.origin = CGPoint(x: 0, y: 0)
     }
 
     @IBAction func exitButtonPressed(_ sender: UIButton) {
@@ -37,6 +55,10 @@ class RegisterVC: UIViewController {
                 show_alert(with: "비밀번호를 입력해주세요.")
                 return
             }
+            guard let nickname = nickNameField.text,!nickname.isEmpty else {
+                show_alert(with: "닉네임을 입력해주세요.")
+                return
+            }
             
             if password != re_passwordfield.text {
                 show_alert(with: "비밀번호가 맞지 않습니다.")
@@ -46,10 +68,11 @@ class RegisterVC: UIViewController {
             let storyboard = UIStoryboard(name: "Login", bundle: nil)
             let vc = storyboard.instantiateViewController(withIdentifier: "register2") as! RegisterVC
             self.present(vc, animated: true) {
-                vc.registerReady(withID: id, andPS: password)
+                vc.registerReady(withID: id, andPS: password, name: nickname)
             }
         } else if sender.tag == 1 { //End
-            API.Auth.register(id: id, password: password) { (json) in
+            
+            API.Auth.register(id: id, password: password,nickname: nickname) { (json) in
                 if json["success"].boolValue == false {
                     self.show_alert(with: json["message"].stringValue)
                 } else {
@@ -61,9 +84,10 @@ class RegisterVC: UIViewController {
         }
     }
     
-    func registerReady(withID id:String,andPS password:String) {
+    func registerReady(withID id:String,andPS password:String,name nickname:String) {
         self.id = id
         self.password = password
+        self.nickname = nickname
     }
     
     

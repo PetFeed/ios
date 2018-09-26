@@ -51,6 +51,7 @@ struct Board {
     
     var writer_nickname:String
     var writer_profile:String
+    var writer_id:String
     
     var contents: String
 }
@@ -73,6 +74,7 @@ extension Board {
                          likes: json["likes"].arrayValue.map{$0.stringValue},
                          writer_nickname: json["writer"]["nickname"].stringValue,
                          writer_profile: json["writer"]["profile"].stringValue,
+                         writer_id: json["writer"]["_id"].stringValue,
                          contents: json["contents"].stringValue)
         
         

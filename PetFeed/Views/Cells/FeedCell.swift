@@ -30,6 +30,9 @@ class FeedCell: UICollectionViewCell {
     //TODO: Make these values to board class, and make intialize function
     
     var board:Board?
+    @IBAction func moreButtonPressed(_ sender: Any) {
+        self.moreButtonHandler()
+    }
     
     @IBOutlet weak var likeButton: UIButton!
     
@@ -114,6 +117,7 @@ class FeedCell: UICollectionViewCell {
     
     var commentButtonHandler:(()-> Void)!
     var likeButtonHandler:(()->Void)!
+    var moreButtonHandler:(()->Void)!
 
     @IBAction func commentButtonPressed(_ sender: Any) {
         self.commentButtonHandler()

@@ -231,6 +231,32 @@ extension BackDropVC:UICollectionViewDelegate,UICollectionViewDataSource,UIColle
                     self.refreshWithid(id: self.items[indexPath.row].id)
                 })
             }
+            
+            cell.moreButtonHandler = {
+                print(self.items[indexPath.row].writer_id,"and mine is : ",API.currentUser.id)
+                
+                let actionSheet = UIAlertController(title: "더보기", message: nil, preferredStyle: .actionSheet)
+                
+                if self.items[indexPath.row].writer_id == API.currentUser.id {
+                    actionSheet.addAction(UIAlertAction(title: "삭제", style: .default, handler: { (result) in
+                        API.Board.delete(withID: self.items[indexPath.row].id, token: API.currentToken, completion: { (json) in
+                            print(json)
+                            self.refreshWithid(id: self.items[indexPath.row].id)
+                        })
+                    }))
+                } else {
+                    actionSheet.addAction(UIAlertAction(title: "신고", style: .default, handler: { (result) in
+                        
+                    }))
+                }
+                
+                actionSheet.addAction(UIAlertAction(title: "취소", style: UIAlertActionStyle.cancel, handler: nil))
+                
+                self.present(actionSheet, animated: true, completion: nil)
+                
+                
+                
+            }
         }
         return cell
     }

@@ -24,6 +24,8 @@ class DetailHeaderViewCell: UITableViewCell {
     @IBOutlet weak var likeLabel: UILabel!
     @IBOutlet weak var commentLabel: UILabel!
     
+    var superViewController:UIViewController?
+    
     var info:Board? {
         
         didSet {
@@ -62,6 +64,31 @@ class DetailHeaderViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        imageShow.pageIndicatorPosition = .init(horizontal: .center, vertical: .customUnder(padding: -30))
+        imageShow.contentScaleMode = UIViewContentMode.scaleAspectFill
+        
+        let pageControl = UIPageControl()
+        pageControl.currentPageIndicatorTintColor = UIColor.lightGray
+        pageControl.pageIndicatorTintColor = UIColor.black
+        imageShow.pageIndicator = pageControl
+        
+        imageShow.activityIndicator = DefaultActivityIndicator()
+        imageShow.currentPageChanged = { page in
+            //"\(API.base_url)/\()"
+        }
+        
+        let recognizer = UITapGestureRecognizer(target: self, action: #selector(FeedCell.didTap))
+        imageShow.addGestureRecognizer(recognizer)
     }
+    
+    @objc func didTap() {
+        if let s = superViewController {
+            
+            let fullScreenController = imageShow.presentFullScreenController(from: s)
+            // set the activity indicator for full screen controller (skipping the line will show no activity indicator)
+            fullScreenController.slideshow.activityIndicator = DefaultActivityIndicator(style: .white, color: nil)
+        }
+        
+    }
+    
 }

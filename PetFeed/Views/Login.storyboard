@@ -255,6 +255,33 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="닉네임" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A6V-dT-J0X">
+                                <rect key="frame" x="16" y="447" width="39" height="16"/>
+                                <fontDescription key="fontDescription" name="NanumSquareRoundOTFEB" family="NanumSquareRoundOTF" pointSize="14"/>
+                                <color key="textColor" red="0.2156862745" green="0.2156862745" blue="0.2156862745" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="닉네임 입력" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="N7k-ys-MaN">
+                                <rect key="frame" x="16" y="475" width="280" height="48"/>
+                                <color key="backgroundColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="GKh-Yz-Q4m"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" name="NanumSquareRoundOTFB" family="NanumSquareRoundOTF" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="4"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="0.5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" red="0.2666666667" green="0.1764705882" blue="0.14901960780000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -262,6 +289,7 @@
                             <constraint firstItem="JIV-tp-tQs" firstAttribute="top" secondItem="QWh-m1-IYx" secondAttribute="bottom" id="2na-WS-gku"/>
                             <constraint firstItem="OhY-wh-mN2" firstAttribute="top" secondItem="Bma-CH-rGn" secondAttribute="bottom" constant="24" id="6tn-qJ-Cgd"/>
                             <constraint firstItem="o7A-GK-4n0" firstAttribute="leading" secondItem="H6f-EW-wSd" secondAttribute="leading" constant="16" id="9KC-dd-VpY"/>
+                            <constraint firstItem="N7k-ys-MaN" firstAttribute="leading" secondItem="H6f-EW-wSd" secondAttribute="leading" constant="16" id="9TH-K0-XmT"/>
                             <constraint firstItem="iXh-Wj-O2X" firstAttribute="leading" secondItem="H6f-EW-wSd" secondAttribute="leading" constant="16" id="Ag3-86-pXm"/>
                             <constraint firstItem="iXh-Wj-O2X" firstAttribute="top" secondItem="gOF-bu-7qj" secondAttribute="bottom" constant="12" id="Axi-p5-3Ge"/>
                             <constraint firstItem="QWh-m1-IYx" firstAttribute="leading" secondItem="H6f-EW-wSd" secondAttribute="leading" id="C7M-eW-1gM"/>
@@ -270,15 +298,19 @@
                             <constraint firstItem="H6f-EW-wSd" firstAttribute="trailing" secondItem="QWh-m1-IYx" secondAttribute="trailing" id="IcI-qn-K5w"/>
                             <constraint firstItem="Cmw-cs-AA7" firstAttribute="leading" secondItem="H6f-EW-wSd" secondAttribute="leading" constant="16" id="Mod-EB-9zG"/>
                             <constraint firstItem="ASe-gq-Ipb" firstAttribute="leading" secondItem="H6f-EW-wSd" secondAttribute="leading" constant="16" id="PqY-Zt-t2M"/>
+                            <constraint firstItem="H6f-EW-wSd" firstAttribute="trailing" secondItem="N7k-ys-MaN" secondAttribute="trailing" constant="79" id="Pqr-FU-pRA"/>
                             <constraint firstAttribute="trailing" secondItem="JIV-tp-tQs" secondAttribute="trailing" id="TdX-HM-ztd"/>
                             <constraint firstAttribute="bottom" secondItem="JIV-tp-tQs" secondAttribute="bottom" id="Thz-Hl-cxG"/>
                             <constraint firstItem="ASe-gq-Ipb" firstAttribute="top" secondItem="Cmw-cs-AA7" secondAttribute="bottom" constant="12" id="UHM-UZ-BI7"/>
                             <constraint firstItem="OhY-wh-mN2" firstAttribute="leading" secondItem="H6f-EW-wSd" secondAttribute="leading" constant="16" id="YJP-CO-Vys"/>
                             <constraint firstItem="JIV-tp-tQs" firstAttribute="leading" secondItem="RKb-gb-Z9q" secondAttribute="leading" id="aBc-UT-n7Q"/>
+                            <constraint firstItem="A6V-dT-J0X" firstAttribute="top" secondItem="iXh-Wj-O2X" secondAttribute="bottom" constant="24" id="dfO-79-fSv"/>
+                            <constraint firstItem="A6V-dT-J0X" firstAttribute="leading" secondItem="H6f-EW-wSd" secondAttribute="leading" constant="16" id="grj-oS-Cha"/>
                             <constraint firstItem="o7A-GK-4n0" firstAttribute="top" secondItem="ASe-gq-Ipb" secondAttribute="bottom" constant="24" id="iBm-7h-mGb"/>
                             <constraint firstItem="Bma-CH-rGn" firstAttribute="top" secondItem="H6f-EW-wSd" secondAttribute="top" constant="4" id="lE7-B7-oF5"/>
                             <constraint firstItem="H6f-EW-wSd" firstAttribute="trailing" secondItem="Vzg-Db-zZX" secondAttribute="trailing" constant="79" id="rbu-yv-m3e"/>
                             <constraint firstItem="gOF-bu-7qj" firstAttribute="top" secondItem="Vzg-Db-zZX" secondAttribute="bottom" constant="24" id="rnf-ah-PMt"/>
+                            <constraint firstItem="N7k-ys-MaN" firstAttribute="top" secondItem="A6V-dT-J0X" secondAttribute="bottom" constant="12" id="rsh-OS-Lyj"/>
                             <constraint firstItem="H6f-EW-wSd" firstAttribute="trailing" secondItem="iXh-Wj-O2X" secondAttribute="trailing" constant="79" id="uvX-Dp-829"/>
                             <constraint firstItem="gOF-bu-7qj" firstAttribute="leading" secondItem="H6f-EW-wSd" secondAttribute="leading" constant="16" id="v72-6j-qh9"/>
                             <constraint firstItem="Vzg-Db-zZX" firstAttribute="top" secondItem="o7A-GK-4n0" secondAttribute="bottom" constant="12" id="v8d-AR-Se9"/>
@@ -288,6 +320,7 @@
                     </view>
                     <connections>
                         <outlet property="idField" destination="ASe-gq-Ipb" id="haf-xN-JCX"/>
+                        <outlet property="nickNameField" destination="N7k-ys-MaN" id="a0U-20-q5m"/>
                         <outlet property="passwordField" destination="Vzg-Db-zZX" id="247-D3-xun"/>
                         <outlet property="re_passwordfield" destination="iXh-Wj-O2X" id="9rk-5E-GZ5"/>
                     </connections>

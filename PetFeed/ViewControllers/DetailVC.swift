@@ -41,6 +41,8 @@ class DetailVC: UIViewController,UIGestureRecognizerDelegate {
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: .UIKeyboardWillHide, object: nil)
         commentField.delegate = self
         commentField.layer.masksToBounds = true
+        
+        tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: commentParentView.frame.height, right: 0)
 
     }
     @objc func keyboardWillShow(_ sender: Notification) {
@@ -49,12 +51,12 @@ class DetailVC: UIViewController,UIGestureRecognizerDelegate {
         let keyboardRectangle = keyboardFrame.cgRectValue
         let keyboardHeight = keyboardRectangle.height
         commentFieldBottomConstraint.constant  = keyboardHeight
-        tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: keyboardHeight+80, right: 0)
+        tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: keyboardHeight+commentParentView.frame.height, right: 0)
     }
     
     @objc func keyboardWillHide(_ sender: Notification) {
         commentFieldBottomConstraint.constant = 0
-        tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: commentParentView.frame.height, right: 0)
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -128,7 +130,7 @@ extension DetailVC: UITableViewDelegate,UITableViewDataSource {
             let cell = tableView.dequeueReusableCell(withIdentifier: "header") as! DetailHeaderViewCell
             if let b = board {
                 cell.info = b
-                
+                cell.superViewController = self
                 if temp_images.count > 0 {
                     cell.imageShow.setImageInputs(temp_images)
                 }

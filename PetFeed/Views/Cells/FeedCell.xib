@@ -73,6 +73,9 @@
                                                 <state key="normal" image="more_vert">
                                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="moreButtonPressed:" destination="gTV-IL-0wX" eventType="touchUpInside" id="8gU-eZ-0xE"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <edgeInsets key="layoutMargins" top="0.0" left="16" bottom="16" right="16"/>
