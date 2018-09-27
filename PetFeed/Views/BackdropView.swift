@@ -54,21 +54,9 @@ class BackdropView: UIView {
             self.opacityView.backgroundColor = col2
             self.opacityView.layer.opacity = 1-percent
             
-//            self.scrollBar.backgroundColor = UIColor(red: 68.0 / 255.0, green: 45.0 / 255.0, blue: 38.0 / 255.0, alpha:  CGFloat(percent+0.1))
-            
             self.opacityViewOnOutside.layer.opacity = percent
             
-            //print(percent)
-            
             self.parentViewController?.collectionView.layer.opacity = percent
-            //self.scrollBar.layer.opacity = percent
-
-            //parentViewController?.updateFrame(percent)
-//            let width:CGFloat = self.originalFrame.width * bottomBar_min_size
-//                                + (self.originalFrame.width * CGFloat(1-bottomBar_min_size)
-//                                * CGFloat(percent))
-
-            //self.parentViewController?.updateFrame(width)
             
         }
     }
@@ -115,14 +103,10 @@ class BackdropView: UIView {
         sender.setTranslation(CGPoint.zero, in: self)
         
         //percent
-        
-        //percent = 1 - Float((sender.location(in: parentView!).y) / (originalFrame.height-(self.parentViewController?.tabBarController?.tabBar.frame.height)!))
-        
         let touchPosY = self.frame.origin.y-UIApplication.shared.statusBarFrame.height
         
         percent = 1 - Float(touchPosY / (parentView.frame.height - offset_top_y - offset_bottom_y))
         
-        //print("height1 : \(sender.location(in: parentView).y-offset_top_y) and height2 : \(originalFrame.height+offset_top_y)")
         if sender.state == .began {
             //누르기 시작할 떄부터
             moved = sender.location(in: parentView!).y

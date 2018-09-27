@@ -95,8 +95,6 @@ class ProfileVC: UIViewController {
             profile.clipsToBounds = true;
             headerView.addSubview(profile)
             
-            //let follower_num = UILabel(frame: CGRect(x: headerView.frame.width-61, y: 38, width: 45+15+10, height: 26))
-            
             let follower_num = InfoNumberText(frame: CGRect(x: headerView.frame.width-61, y: 38, width: 45+15+10, height: 26), number_text: Double(API.currentUser.followers.count).kmFormatted, description_text: "팔로워")
             headerView.addSubview(follower_num.number)
             headerView.addSubview(follower_num.description)

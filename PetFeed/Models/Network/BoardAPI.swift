@@ -58,16 +58,7 @@ class BoardAPI {
         }
     }
     
-    func post(withToken token:String,content: String, pictures: [PHAsset],completion:@escaping (JSON)->Void) {
-        
-        let images:[UIImage] = pictures.map{getThumbnail(asset: $0) ?? #imageLiteral(resourceName: "image-picker-camera.pdf")}
-        
-        let a = content.hashtags()
-        
-        upload(withURL: API.base_url+"/board", token: token,content: content,hashtags:a, imageData: images) { (json) in
-            completion(json)
-        }
-    }
+    
     
     func like(withToken token:String,toBoardID id:String,completion:@escaping (JSON)->Void) {
         let headers: HTTPHeaders = [
@@ -87,14 +78,23 @@ class BoardAPI {
             })
     }
     
+    
+    func post(withToken token:String,content: String, pictures: [PHAsset],completion:@escaping (JSON)->Void) {
+        
+        let images:[UIImage] = pictures.map{getThumbnail(asset: $0) ?? #imageLiteral(resourceName: "image-picker-camera.pdf")}
+        
+        let a = content.hashtags()
+        
+        upload(withURL: API.base_url+"/board", token: token,content: content,hashtags:a, imageData: images) { (json) in
+            completion(json)
+        }
+    }
+    
     private func upload(withURL: String, token:String,content: String = "",hashtags:[String], imageData: [UIImage], completion: @escaping(JSON) -> Void) {
         
         let request = NSMutableURLRequest(url: URL(string: withURL)!)
         request.httpMethod = HTTPMethod.post.rawValue
         request.setValue(token, forHTTPHeaderField: "x-access-token")
-        //request.setValue("multipart/form-data", forHTTPHeaderField: "Content-type")
-        
-        
         
         Alamofire.upload(multipartFormData: { (multipartFormData) in
             for (n,item) in imageData.enumerated() {
@@ -108,10 +108,6 @@ class BoardAPI {
             }
             
             multipartFormData.append(content.data(using: .utf8)!, withName: "contents")
-         
-//            for (key, value) in parameters {
-//                multipartFormData.append(value.data(using: String.Encoding(rawValue: String.Encoding.utf8.rawValue))!, withName: key)
-//            }
             
         }, with: request as URLRequest, encodingCompletion: { (result) in
             switch result {

@@ -243,7 +243,7 @@ extension BackDropVC:UICollectionViewDelegate,UICollectionViewDataSource,UIColle
                     }))
                 } else {
                     actionSheet.addAction(UIAlertAction(title: "신고", style: .default, handler: { (result) in
-                        
+                       //신고 액션
                     }))
                 }
                 

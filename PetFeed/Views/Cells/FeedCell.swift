@@ -117,6 +117,7 @@ class FeedCell: UICollectionViewCell {
         heightConstraint.constant = height
     }
     
+    
     var commentButtonHandler:(()-> Void)!
     var likeButtonHandler:(()->Void)!
     var moreButtonHandler:(()->Void)!

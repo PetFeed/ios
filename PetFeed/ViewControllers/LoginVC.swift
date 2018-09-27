@@ -74,9 +74,6 @@ class LoginVC: UIViewController {
             return
         }
         
-//        let parameters = ["user_id":id,"password"]
-//        print(parameters)
-        
         API.Auth.login(parameters: ["user_id": id, "user_pw": password, "fcm_token": Messaging.messaging().fcmToken ?? ""]) { (json) in
             if (json["success"].boolValue) {
                 API.currentToken = json["token"].stringValue
