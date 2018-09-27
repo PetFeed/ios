@@ -45,8 +45,13 @@ class DetailVC: UIViewController,UIGestureRecognizerDelegate {
         commentField.layer.masksToBounds = true
         
         tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: commentParentView.frame.height, right: 0)
-
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        UIApplication.shared.statusBarStyle = .default
+        
+    }
+    
     @objc func keyboardWillShow(_ sender: Notification) {
         let userInfo:NSDictionary = sender.userInfo! as NSDictionary
         let keyboardFrame:NSValue = userInfo.value(forKey: UIKeyboardFrameEndUserInfoKey) as! NSValue
@@ -113,6 +118,27 @@ class DetailVC: UIViewController,UIGestureRecognizerDelegate {
             sendButton.isEnabled = true
         }
     }
+    
+    @IBAction func moreButtonPressed(_ sender: UIButton) {
+        if let board = board {
+            let actionSheet = UIAlertController(title: "더보기", message: nil, preferredStyle: .actionSheet)
+            
+            actionSheet.addAction(UIAlertAction(title: "삭제", style: .default, handler: { (result) in
+                API.Board.delete(withID: board.id, token: API.currentToken, completion: { (json) in
+                    print(json)
+                    self.refreshBoard()
+                    
+                })
+            }))
+            
+            actionSheet.addAction(UIAlertAction(title: "취소", style: UIAlertActionStyle.cancel, handler: nil))
+            
+            self.present(actionSheet, animated: true, completion: nil)
+        }
+        
+        
+    }
+    
     
 }
 

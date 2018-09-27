@@ -16,7 +16,7 @@ class BackdropView: UIView {
     let opacity_max:Float = 1
     
     
-    let offset_top_y:CGFloat = 44
+    let offset_top_y:CGFloat = 32
     var offset_bottom_y:CGFloat {
         //TODO: 34 needs to be add only on iphone
         return scrollBar.frame.height + UIScreen.main.bounds.height*0.1//+52//+ 34 //+(self.parentViewController?.tabBarController?.tabBar.frame.height)!
@@ -150,6 +150,12 @@ extension BackdropView {
         
         
         self.currentDir = dir
+        
+        if currentDir == .up {
+            UIApplication.shared.statusBarStyle = .lightContent
+        } else {
+            UIApplication.shared.statusBarStyle = .default
+        }
         
         var maketo:Float {
             if self.currentDir == direction.up {

@@ -49,7 +49,7 @@ class ProfileVC: UIViewController {
         
         
         if let flowLayout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
-            flowLayout.estimatedItemSize = CGSize(width: view.frame.width-20, height: 500)
+            flowLayout.estimatedItemSize = CGSize(width: view.frame.width, height: 500)
         }
         //collectionView.reloadData()
         
@@ -65,7 +65,6 @@ class ProfileVC: UIViewController {
                 }
             }
             self.collectionView.reloadData()
-            
         }
         self.refreshControl.endRefreshing()
         
@@ -100,7 +99,7 @@ class ProfileVC: UIViewController {
             headerView.addSubview(following_num.number)
             headerView.addSubview(following_num.description)
             
-            let feed_num = InfoNumberText(frame: CGRect(x: headerView.frame.width-215, y: 38, width: 45+15+10, height: 26), number_text: Double(0).kmFormatted, description_text: "피드의 수")
+            let feed_num = InfoNumberText(frame: CGRect(x: headerView.frame.width-215, y: 38, width: 45+15+10, height: 26), number_text: Double(items.count).kmFormatted, description_text: "피드의 수")
             headerView.addSubview(feed_num.number)
             headerView.addSubview(feed_num.description)
             
@@ -137,14 +136,40 @@ extension ProfileVC: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! FeedCell
-
-        cell.initalize(withBoard: items[indexPath.row])
-        
-        cell.commentButtonHandler = {
-            let vc = UIStoryboard(name: "Backdrop", bundle: nil).instantiateViewController(withIdentifier: "DetailVC") as! DetailVC
-            vc.board = self.items[indexPath.row]
-            super.navigationController?.pushViewController(vc, animated: true)
+        if items.count >= indexPath.row {
+            cell.initalize(withBoard: items[indexPath.row])
+            
+            cell.commentButtonHandler = {
+                let vc = UIStoryboard(name: "Backdrop", bundle: nil).instantiateViewController(withIdentifier: "DetailVC") as! DetailVC
+                vc.board = self.items[indexPath.row]
+                super.navigationController?.pushViewController(vc, animated: true)
+            }
+            
+            cell.likeButtonHandler = {
+                API.Board.like(withToken: API.currentToken, toBoardID: self.items[indexPath.row].id, completion: { (json) in
+                    self.refresh()
+                })
+            }
+            
+            cell.moreButtonHandler = {
+                let actionSheet = UIAlertController(title: "더보기", message: nil, preferredStyle: .actionSheet)
+                
+                actionSheet.addAction(UIAlertAction(title: "삭제", style: .default, handler: { (result) in
+                    API.Board.delete(withID: self.items[indexPath.row].id, token: API.currentToken, completion: { (json) in
+                        print(json)
+                        self.refresh()
+                    })
+                }))
+                
+                actionSheet.addAction(UIAlertAction(title: "취소", style: UIAlertActionStyle.cancel, handler: nil))
+                
+                self.present(actionSheet, animated: true, completion: nil)
+                
+                
+                
+            }
         }
+        
         
         return cell
     }

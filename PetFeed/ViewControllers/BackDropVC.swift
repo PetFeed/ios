@@ -232,8 +232,6 @@ extension BackDropVC:UICollectionViewDelegate,UICollectionViewDataSource,UIColle
             }
             
             cell.moreButtonHandler = {
-                print(self.items[indexPath.row].writer_id,"and mine is : ",API.currentUser.id)
-                
                 let actionSheet = UIAlertController(title: "더보기", message: nil, preferredStyle: .actionSheet)
                 
                 if self.items[indexPath.row].writer_id == API.currentUser.id {
