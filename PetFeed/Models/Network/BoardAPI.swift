@@ -60,9 +60,16 @@ class BoardAPI {
     
     func post(withToken token:String,content: String, pictures: [PHAsset],completion:@escaping (JSON)->Void) {
         
-        var images:[UIImage] = pictures.map{getAssetThumbnail(asset: $0)}
+        let images:[UIImage] = pictures.map{getThumbnail(asset: $0) ?? #imageLiteral(resourceName: "image-picker-camera.pdf")}
         
-        upload(withURL: API.base_url+"/board", token: token,content: content, imageData: images, parameters: ["hash_tags":"#asdf","contents":content]) { (json) in
+        let str = content
+        let regex = "#[a-zA-z_가-힣ㄱ-ㅎㅏ-ㅣ]+"
+        if let range = str.range(of: regex, options: .regularExpression) {
+            let text: String = String(str[range])
+            print(text)
+        }
+        
+        upload(withURL: API.base_url+"/board", token: token,content: content,hashtags:["#test"], imageData: images) { (json) in
             completion(json)
         }
     }
@@ -85,7 +92,7 @@ class BoardAPI {
             })
     }
     
-    private func upload(withURL: String, token:String,content: String = "", imageData: [UIImage],parameters: [String:String], completion: @escaping(JSON) -> Void) {
+    private func upload(withURL: String, token:String,content: String = "",hashtags:[String], imageData: [UIImage], completion: @escaping(JSON) -> Void) {
         
         let request = NSMutableURLRequest(url: URL(string: withURL)!)
         request.httpMethod = HTTPMethod.post.rawValue
@@ -101,14 +108,14 @@ class BoardAPI {
                 }
             }
 
-            multipartFormData.append("#test".data(using: .utf8)!, withName: "hash_tags")
+            multipartFormData.append(NSKeyedArchiver.archivedData(withRootObject: ["#test"]), withName: "hash_tags")
             multipartFormData.append(content.data(using: .utf8)!, withName: "contents")
 
 //            for (key, value) in parameters {
 //                multipartFormData.append(value.data(using: String.Encoding(rawValue: String.Encoding.utf8.rawValue))!, withName: key)
 //            }
             
-        }, with: request as! URLRequest, encodingCompletion: { (result) in
+        }, with: request as URLRequest, encodingCompletion: { (result) in
             switch result {
             case .success(let upload, _, _):
                 upload.responseJSON { response in
@@ -150,22 +157,24 @@ class BoardAPI {
             })
     }
     
-    func getAssetThumbnail(asset: PHAsset, size: CGFloat = 1) -> UIImage {
-        let retinaScale = UIScreen.main.scale
-        let retinaSquare = CGSize(width: size * retinaScale, height: size * retinaScale)//(size * retinaScale, size * retinaScale)
-        let cropSizeLength = min(asset.pixelWidth, asset.pixelHeight)
-        let square = CGRect(x:0, y: 0,width: CGFloat(cropSizeLength),height: CGFloat(cropSizeLength))
-        let cropRect = square.applying(CGAffineTransform(scaleX: 1.0/CGFloat(asset.pixelWidth), y: 1.0/CGFloat(asset.pixelHeight)))
+    func getThumbnail(asset: PHAsset) -> UIImage? {
+        
+        var thumbnail: UIImage?
+        
         let manager = PHImageManager.default()
+        
         let options = PHImageRequestOptions()
-        var thumbnail = UIImage()
+        
+        options.version = .original
         options.isSynchronous = true
-        options.deliveryMode = .highQualityFormat
-        options.resizeMode = .exact
-        options.normalizedCropRect = cropRect
-        manager.requestImage(for: asset, targetSize: retinaSquare, contentMode: .aspectFit, options: options, resultHandler: {(result, info)->Void in
-            thumbnail = result!
-        })
+        
+        manager.requestImageData(for: asset, options: options) { data, _, _, _ in
+            
+            if let data = data {
+                thumbnail = UIImage(data: data)
+            }
+        }
+        
         return thumbnail
     }
     

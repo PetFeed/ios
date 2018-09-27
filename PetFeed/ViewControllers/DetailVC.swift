@@ -141,6 +141,7 @@ extension DetailVC: UITableViewDelegate,UITableViewDataSource {
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! CommentCell
             let comment = board?.comments[indexPath.row-1]
+            print(comment.debugDescription)
             cell.initialize(profile: #imageLiteral(resourceName: "content.jpeg"), name: comment?.writer_nickname ?? "", content: comment?.content ?? "", date: comment?.date ?? Date())
             return cell
         }

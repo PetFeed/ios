@@ -28,7 +28,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="v1j-cX-eFd">
-                        <rect key="frame" x="16" y="11" width="145" height="92"/>
+                        <rect key="frame" x="16" y="11" width="328" height="92"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="LPT-TW-W6A">
                                 <rect key="frame" x="0.0" y="25" width="42" height="42"/>
@@ -38,34 +38,31 @@
                                 </constraints>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="R02-U7-sI5">
-                                <rect key="frame" x="54" y="25" width="91" height="42"/>
+                                <rect key="frame" x="54" y="25" width="274" height="42"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이름" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uq2-PR-Ugb">
-                                        <rect key="frame" x="0.0" y="0.0" width="91" height="11.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="274" height="11.5"/>
                                         <fontDescription key="fontDescription" name="NanumSquareRoundOTFEB" family="NanumSquareRoundOTF" pointSize="12"/>
                                         <color key="textColor" red="0.12549019610000001" green="0.12549019610000001" blue="0.12549019610000001" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="내용" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P57-Ro-BdW">
-                                        <rect key="frame" x="0.0" y="15.5" width="91" height="13.5"/>
+                                        <rect key="frame" x="0.0" y="15.5" width="274" height="13.5"/>
                                         <fontDescription key="fontDescription" name="NanumSquareRoundOTFR" family="NanumSquareRoundOTF" pointSize="12"/>
                                         <color key="textColor" red="0.12549019610000001" green="0.12549019610000001" blue="0.12549019610000001" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="qpd-wf-MIC">
-                                        <rect key="frame" x="0.0" y="33" width="91" height="9"/>
+                                        <rect key="frame" x="0.0" y="33" width="274" height="9"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2018.01.01" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dbJ-g4-KnR">
-                                                <rect key="frame" x="0.0" y="0.0" width="42.5" height="9"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="134" height="9"/>
                                                 <fontDescription key="fontDescription" name="NanumSquareRoundOTFR" family="NanumSquareRoundOTF" pointSize="8"/>
                                                 <color key="textColor" red="0.12549019610000001" green="0.12549019610000001" blue="0.12549019610000001" alpha="0.29999999999999999" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bdt-0F-eAA">
-                                                <rect key="frame" x="48.5" y="0.0" width="42.5" height="9"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="32" id="gvQ-Zs-zTH"/>
-                                                </constraints>
+                                                <rect key="frame" x="140" y="0.0" width="134" height="9"/>
                                                 <fontDescription key="fontDescription" name="NanumSquareRoundOTFEB" family="NanumSquareRoundOTF" pointSize="8"/>
                                                 <state key="normal" title="답글 달기">
                                                     <color key="titleColor" red="0.12549019610000001" green="0.12549019610000001" blue="0.12549019610000001" alpha="0.29999999999999999" colorSpace="calibratedRGB"/>

@@ -17,7 +17,6 @@ class BackDropVC: UIViewController {
     @IBOutlet weak var embeddedView: BackdropView!
     @IBOutlet weak var containerView: UIView!
     
-    @IBOutlet weak var embeddedViewWidth: NSLayoutConstraint!
     
     @IBOutlet weak var collectionView: UICollectionView!
     
@@ -241,7 +240,7 @@ extension BackDropVC:UICollectionViewDelegate,UICollectionViewDataSource,UIColle
                     actionSheet.addAction(UIAlertAction(title: "삭제", style: .default, handler: { (result) in
                         API.Board.delete(withID: self.items[indexPath.row].id, token: API.currentToken, completion: { (json) in
                             print(json)
-                            self.refreshWithid(id: self.items[indexPath.row].id)
+                            self.refresh()
                         })
                     }))
                 } else {
@@ -297,6 +296,7 @@ extension BackDropVC:UICollectionViewDelegate,UICollectionViewDataSource,UIColle
     }
     
     func append(with item:Board) {
+        print(item)
         self.items.append(item)
     }
     

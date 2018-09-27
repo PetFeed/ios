@@ -29,6 +29,8 @@ import Alamofire
  */
 
 struct Comment {
+    var pos:Int = 0
+    var recomments: [Comment]
     var content: String
     var writer_nickname: String
     var profile_image: String
@@ -51,9 +53,10 @@ struct Board {
     
     var writer_nickname:String
     var writer_profile:String
-    var writer_id:String
     
     var contents: String
+    
+    var writer_id:String
 }
 
 extension Board {
@@ -64,19 +67,26 @@ extension Board {
         let board = Board(pictures: json["pictures"].arrayValue.map{$0.stringValue},
                           low_pictures: json["lowPictures"].arrayValue.map{$0.stringValue},
                           comments: json["comments"].arrayValue.map{
-                                    Comment(content: $0["content"].stringValue,
-                                            writer_nickname: $0["writer"]["user_id"].stringValue,
+                            Comment(pos: 0,
+                                    recomments: $0["re_comments"].arrayValue.map{
+                                        Comment(pos: 1,
+                                        recomments: [],
+                                        content: $0["content"].stringValue,
+                                        writer_nickname: $0["writer"]["user_id"].stringValue,
+                                        profile_image: $0["writer"].stringValue,
+                                        date: Date.dateFromISOString(string: $0["create_date"].stringValue) ?? Date())},
+                                    content: $0["content"].stringValue,
+                                        writer_nickname: $0["writer"]["user_id"].stringValue,
                                             profile_image: $0["writer"].stringValue,
-                                            date: Date.dateFromISOString(string: $0["create_date"].stringValue) ?? Date() )} ,
+                                            date: Date.dateFromISOString(string: $0["create_date"].stringValue) ?? Date())} ,
                           hash_tags: json["hash_tags"].arrayValue.map{$0.stringValue},
                           id: json["_id"].stringValue,
                          date: date ?? Date(),
                          likes: json["likes"].arrayValue.map{$0.stringValue},
                          writer_nickname: json["writer"]["nickname"].stringValue,
                          writer_profile: json["writer"]["profile"].stringValue,
-                         writer_id: json["writer"]["_id"].stringValue,
-                         contents: json["contents"].stringValue)
-        
+                         contents: json["contents"].stringValue,
+                         writer_id: json["writer"]["_id"].stringValue)
         
         return board
     }

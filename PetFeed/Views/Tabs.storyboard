@@ -206,6 +206,8 @@
                     </view>
                     <connections>
                         <outlet property="collectionView" destination="YKR-RC-Coq" id="RFV-SN-Uo4"/>
+                        <outlet property="nameLabel" destination="0pr-FA-I1a" id="pVe-Vp-JU7"/>
+                        <outlet property="profileImage" destination="ucF-k0-EnE" id="oHL-dO-chp"/>
                         <outlet property="textView" destination="JVC-HW-kVr" id="gcu-3y-yq2"/>
                     </connections>
                 </viewController>

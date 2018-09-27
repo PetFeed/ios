@@ -18,8 +18,8 @@ class BackdropView: UIView {
     
     let offset_top_y:CGFloat = 44
     var offset_bottom_y:CGFloat {
-        //TODO: 34 needs to be add only on iphone x
-        return scrollBar.frame.height + 52 //+ 34 //+(self.parentViewController?.tabBarController?.tabBar.frame.height)!
+        //TODO: 34 needs to be add only on iphone
+        return scrollBar.frame.height + UIScreen.main.bounds.height*0.1//+52//+ 34 //+(self.parentViewController?.tabBarController?.tabBar.frame.height)!
     }
     
     var tabbar_height: CGFloat {
@@ -54,7 +54,8 @@ class BackdropView: UIView {
             self.opacityView.backgroundColor = col2
             self.opacityView.layer.opacity = 1-percent
             
-            //self.scrollBar.layer.opacity = percent
+//            self.scrollBar.backgroundColor = UIColor(red: 68.0 / 255.0, green: 45.0 / 255.0, blue: 38.0 / 255.0, alpha:  CGFloat(percent+0.1))
+            
             self.opacityViewOnOutside.layer.opacity = percent
             
             //print(percent)

@@ -7,9 +7,9 @@
 	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
 	<string>ca-app-pub-3940256099942544/4411468910</string>
 	<key>CLIENT_ID</key>
-	<string>480678978816-mpbfn17leo1ac0vedn6sdns9q7omgaap.apps.googleusercontent.com</string>
+	<string>480678978816-aka3lqmkc13oi6nlef0vkrle1e8godut.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.480678978816-mpbfn17leo1ac0vedn6sdns9q7omgaap</string>
+	<string>com.googleusercontent.apps.480678978816-aka3lqmkc13oi6nlef0vkrle1e8godut</string>
 	<key>API_KEY</key>
 	<string>AIzaSyDARih30odaT7mtFW7OGlkncmc-oSSmiVs</string>
 	<key>GCM_SENDER_ID</key>
@@ -17,23 +17,23 @@
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.changhyeon.PetFeed</string>
+	<string>changhyeon.PetFeed</string>
 	<key>PROJECT_ID</key>
 	<string>petfeed-8ab2e</string>
 	<key>STORAGE_BUCKET</key>
 	<string>petfeed-8ab2e.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
-	<true></true>
+	<true/>
 	<key>IS_ANALYTICS_ENABLED</key>
-	<false></false>
+	<false/>
 	<key>IS_APPINVITE_ENABLED</key>
-	<false></false>
+	<false/>
 	<key>IS_GCM_ENABLED</key>
-	<true></true>
+	<true/>
 	<key>IS_SIGNIN_ENABLED</key>
-	<true></true>
+	<true/>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:480678978816:ios:c8af692f38b3fbe4</string>
+	<string>1:480678978816:ios:f911e4cbc3a124a2</string>
 	<key>DATABASE_URL</key>
 	<string>https://petfeed-8ab2e.firebaseio.com</string>
 </dict>

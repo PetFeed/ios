@@ -22,10 +22,16 @@ class WriteVC: UIViewController {
     
     @IBOutlet weak var collectionView: UICollectionView!
     
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var profileImage: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        if API.currentUser != nil {
+            nameLabel.text = API.currentUser.nickname
+            profileImage.sd_setImage(with: URL(string: "\(API.base_url)/\(API.base_url)"), completed: nil)
+        }
         
         textView.delegate = self
         textView.text = "해시태그와 함께 사진, 동영상에 대해 설명해주세요. (250자)"
@@ -49,10 +55,7 @@ class WriteVC: UIViewController {
         // Do any additional setup after loading the view.
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
+    
     
 
     @IBAction func confirmBtnPressed(_ sender: UIButton) {
@@ -62,7 +65,7 @@ class WriteVC: UIViewController {
         }
         
         API.Board.post(withToken: API.currentToken, content: text, pictures: items) { (json) in
-            print(json["success"])
+            print(json.debugDescription)
             self.dismiss(animated: true, completion: nil)
         }
         
