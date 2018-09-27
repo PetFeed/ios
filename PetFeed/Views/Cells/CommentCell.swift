@@ -25,8 +25,9 @@ class CommentCell: UITableViewCell {
         profileImageView.clipsToBounds = true;
     }
     
-    func initialize(profile: UIImage, name: String, content: String, date:Date) {
-        profileImageView.image = profile
+    func initialize(profile: String, name: String, content: String, date:Date) {
+        profileImageView.sd_setImage(with: URL(string: "\(API.base_url)/\(profile)"))
+
         nameLabel.text = name
         contentLabel.text = content
         

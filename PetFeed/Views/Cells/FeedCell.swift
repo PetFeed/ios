@@ -41,8 +41,10 @@ class FeedCell: UICollectionViewCell {
         
         if let board = self.board {
             nameLabel.text = board.writer_nickname
-            
-            profileImageView.sd_setImage(with: URL(string: "\(API.base_url)/\(board.writer_profile)"))
+            let url = board.writer_profile.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
+
+            profileImageView.sd_setImage(with: URL(string: "\(API.base_url)/\(url)"))
+            print(board.writer_nickname,": ",board.writer_profile)
             
             let formatter = DateFormatter()
             formatter.dateFormat = "yyyy.MM.dd"

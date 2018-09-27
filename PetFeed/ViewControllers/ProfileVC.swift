@@ -28,6 +28,10 @@ class ProfileVC: UIViewController {
             description.font = UIFont(name: "NanumSquareRoundOTFEB", size: 12)
             description.textColor = UIColor(red: 32/255, green: 32/255, blue: 32/255, alpha: 0.3)
         }
+        
+        func numberSet(text:String) {
+            number.text = text
+        }
     }
     
 
@@ -37,6 +41,7 @@ class ProfileVC: UIViewController {
     var items:[Board] = []
     private var refreshControl = UIRefreshControl()
 
+    var feed_num:ProfileVC.InfoNumberText?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -65,9 +70,9 @@ class ProfileVC: UIViewController {
                 }
             }
             self.collectionView.reloadData()
+            self.feed_num?.numberSet(text: "\(self.items.count)")
         }
         self.refreshControl.endRefreshing()
-        
     }
     
     func append(with item:Board) {
@@ -75,6 +80,7 @@ class ProfileVC: UIViewController {
     }
 
     func makeHeader() {
+        
         if API.currentUser != nil {
             refresh()
             let headerHeight:CGFloat = 195
@@ -99,9 +105,11 @@ class ProfileVC: UIViewController {
             headerView.addSubview(following_num.number)
             headerView.addSubview(following_num.description)
             
-            let feed_num = InfoNumberText(frame: CGRect(x: headerView.frame.width-215, y: 38, width: 45+15+10, height: 26), number_text: Double(items.count).kmFormatted, description_text: "피드의 수")
-            headerView.addSubview(feed_num.number)
-            headerView.addSubview(feed_num.description)
+            feed_num = InfoNumberText(frame: CGRect(x: headerView.frame.width-215, y: 38, width: 45+15+10, height: 26), number_text: Double(0).kmFormatted, description_text: "피드의 수")
+            if let feed = feed_num {
+                headerView.addSubview(feed.number)
+                headerView.addSubview(feed.description)
+            }
             
             let name_label = UILabel(frame: CGRect(x: 16, y: profile.frame.origin.y+profile.frame.height+24, width: 200, height: 26))
             name_label.font = UIFont(name: "NanumSquareRoundOTFEB", size: 24)
@@ -169,6 +177,7 @@ extension ProfileVC: UICollectionViewDelegate, UICollectionViewDataSource {
                 
             }
         }
+        
         
         
         return cell
