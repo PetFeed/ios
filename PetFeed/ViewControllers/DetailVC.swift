@@ -33,6 +33,8 @@ class DetailVC: UIViewController,UIGestureRecognizerDelegate {
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 44
         
+        profileImageView.sd_setImage(with: URL(string: API.base_url+API.currentUser.profile), placeholderImage: #imageLiteral(resourceName: "profile.jpeg"))
+        
         tableView.register(UINib(nibName: "CommentCell", bundle: nil), forCellReuseIdentifier: "cell")
         self.navigationController?.setNavigationBarHidden(true, animated: true)
         navigationController?.interactivePopGestureRecognizer?.delegate = self
@@ -141,7 +143,6 @@ extension DetailVC: UITableViewDelegate,UITableViewDataSource {
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! CommentCell
             let comment = board?.comments[indexPath.row-1]
-            print(comment.debugDescription)
             cell.initialize(profile: #imageLiteral(resourceName: "content.jpeg"), name: comment?.writer_nickname ?? "", content: comment?.content ?? "", date: comment?.date ?? Date())
             return cell
         }

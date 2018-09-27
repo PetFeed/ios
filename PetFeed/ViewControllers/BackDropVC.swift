@@ -97,7 +97,7 @@ class BackDropVC: UIViewController {
 
         
         if let flowLayout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
-            flowLayout.estimatedItemSize = CGSize(width: embeddedView.frame.width-20, height: 500)
+            flowLayout.estimatedItemSize = CGSize(width: embeddedView.frame.width, height: 500)
         }
         
         embeddedView.parentViewController = self
@@ -296,7 +296,6 @@ extension BackDropVC:UICollectionViewDelegate,UICollectionViewDataSource,UIColle
     }
     
     func append(with item:Board) {
-        print(item)
         self.items.append(item)
     }
     

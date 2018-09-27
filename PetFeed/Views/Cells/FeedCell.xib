@@ -80,18 +80,24 @@
                                         </subviews>
                                         <edgeInsets key="layoutMargins" top="0.0" left="16" bottom="16" right="16"/>
                                     </stackView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Dq-ic-8cz">
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="55o-XE-nRf">
                                         <rect key="frame" x="0.0" y="145" width="393" height="38"/>
-                                        <attributedString key="attributedText">
-                                            <fragment content="본문~~본문~~본문~~본문~~본문~~본문~~본문~~본문~~본문~~본문~~본문~~본문~~본문~~">
-                                                <attributes>
-                                                    <font key="NSFont" size="17" name="NanumSquareRoundOTFR"/>
-                                                    <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="truncatingTail" baseWritingDirection="natural" headIndent="16" tighteningFactorForTruncation="0.0"/>
-                                                </attributes>
-                                            </fragment>
-                                        </attributedString>
-                                        <nil key="highlightedColor"/>
-                                    </label>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Dq-ic-8cz">
+                                                <rect key="frame" x="16" y="0.0" width="361" height="38"/>
+                                                <attributedString key="attributedText">
+                                                    <fragment content="본문~~본문~~본문~~본문~~본문~~본문~~본문~~본문~~본문~~본문~~본문~~본문~~본문~~">
+                                                        <attributes>
+                                                            <font key="NSFont" size="17" name="NanumSquareRoundOTFR"/>
+                                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="truncatingTail" baseWritingDirection="natural" headIndent="16" tighteningFactorForTruncation="0.0"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                </attributedString>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <edgeInsets key="layoutMargins" top="0.0" left="16" bottom="0.0" right="16"/>
+                                    </stackView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pN4-yT-3wI" customClass="ImageSlideshow" customModule="ImageSlideshow">
                                         <rect key="frame" x="0.0" y="191" width="393" height="200"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -150,7 +156,6 @@
                                     </textField>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="2Dq-ic-8cz" firstAttribute="top" secondItem="NOD-eU-t7Z" secondAttribute="bottom" constant="8" id="bd6-OA-h4a"/>
                                     <constraint firstItem="t2x-f0-tYX" firstAttribute="top" secondItem="mDg-hp-z92" secondAttribute="bottom" constant="8" id="iPp-ap-CMu"/>
                                 </constraints>
                             </stackView>

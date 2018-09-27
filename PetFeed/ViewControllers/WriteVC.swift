@@ -30,7 +30,7 @@ class WriteVC: UIViewController {
         
         if API.currentUser != nil {
             nameLabel.text = API.currentUser.nickname
-            profileImage.sd_setImage(with: URL(string: "\(API.base_url)/\(API.base_url)"), completed: nil)
+            profileImage.sd_setImage(with: URL(string: API.base_url+API.currentUser.profile), placeholderImage: #imageLiteral(resourceName: "profile.jpeg"))
         }
         
         textView.delegate = self

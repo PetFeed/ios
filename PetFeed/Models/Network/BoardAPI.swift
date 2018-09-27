@@ -62,14 +62,9 @@ class BoardAPI {
         
         let images:[UIImage] = pictures.map{getThumbnail(asset: $0) ?? #imageLiteral(resourceName: "image-picker-camera.pdf")}
         
-        let str = content
-        let regex = "#[a-zA-z_가-힣ㄱ-ㅎㅏ-ㅣ]+"
-        if let range = str.range(of: regex, options: .regularExpression) {
-            let text: String = String(str[range])
-            print(text)
-        }
+        let a = content.hashtags()
         
-        upload(withURL: API.base_url+"/board", token: token,content: content,hashtags:["#test"], imageData: images) { (json) in
+        upload(withURL: API.base_url+"/board", token: token,content: content,hashtags:a, imageData: images) { (json) in
             completion(json)
         }
     }
@@ -108,9 +103,12 @@ class BoardAPI {
                 }
             }
 
-            multipartFormData.append(NSKeyedArchiver.archivedData(withRootObject: ["#test"]), withName: "hash_tags")
+            for value in hashtags {
+                multipartFormData.append(value.data(using: String.Encoding.utf8)! , withName: "hash_tags[]", mimeType:"text/plain")
+            }
+            
             multipartFormData.append(content.data(using: .utf8)!, withName: "contents")
-
+         
 //            for (key, value) in parameters {
 //                multipartFormData.append(value.data(using: String.Encoding(rawValue: String.Encoding.utf8.rawValue))!, withName: key)
 //            }

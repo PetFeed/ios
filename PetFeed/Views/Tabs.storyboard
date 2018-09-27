@@ -223,13 +223,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Market" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ATv-nt-NnZ">
-                                <rect key="frame" x="163" y="396" width="54" height="21"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="block" translatesAutoresizingMaskIntoConstraints="NO" id="nS7-H4-uXz">
+                                <rect key="frame" x="91" y="320" width="193" height="94"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="5v7-rw-1Lz"/>
@@ -237,7 +234,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="us3-1g-l7Q" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1801" y="86"/>
+            <point key="canvasLocation" x="1800.8" y="85.714285714285722"/>
         </scene>
         <!--ProfileVC-->
         <scene sceneID="25H-ZW-n7S">
@@ -534,6 +531,7 @@
     </scenes>
     <resources>
         <image name="add" width="48" height="48"/>
+        <image name="block" width="772" height="376"/>
         <image name="close" width="24" height="24"/>
         <image name="content.jpeg" width="355" height="200"/>
     </resources>

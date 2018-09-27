@@ -62,7 +62,7 @@ extension SearchVC:UICollectionViewDelegate,UICollectionViewDataSource {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! HashTagCell
         
         cell.title = items[indexPath.row]
-        cell.image = #imageLiteral(resourceName: "profile.jpeg")
+        cell.image = UIImage(named: "AppIcon")
         
         return cell
     }
